@@ -35,6 +35,7 @@ export const TYPES = {
   health:      {t: 'Plant health', i: '✚'},
   decision:    {t: 'Field-school decision', i: '⚑'},
   control:     {t: 'Survey point check', i: '⌖'},
+  track:       {t: 'Walked path', i: '〰'},
   sketch:      {t: 'Map sketch', i: '✐'},
   visit:       {t: 'Stop visited', i: '✓'},
   lot:         {t: 'Harvest lot', i: '⚖'},

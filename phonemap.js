@@ -56,6 +56,7 @@ function draw() {
   for (const q of M.tent || []) { const [x, y] = toScr(q.x, q.y); g.beginPath(); g.arc(x, y, r + 4, 0, 7); g.setLineDash([4, 3]); g.lineWidth = 2.5; g.strokeStyle = '#b4691f'; g.stroke(); g.setLineDash([]); g.fillStyle = '#fff'; g.font = 'bold 11px sans-serif'; g.textAlign = 'center'; g.fillStyle = '#b4691f'; g.fillText('?', x, y + 4); }
   for (const c of M.caps || []) { const [x, y] = toScr(c.x, c.y); g.fillStyle = c.done ? '#1f7a3a' : '#c0661b'; g.fillRect(x - 7, y - 7, 14, 14); g.strokeStyle = '#fff'; g.lineWidth = 2; g.strokeRect(x - 7, y - 7, 14, 14); }
   const dot = (p, col, ring) => { const [x, y] = toScr(p.x, p.y); if (ring) { g.beginPath(); g.arc(x, y, Math.max(8, ring * k), 0, 7); g.fillStyle = col + '22'; g.fill(); } g.beginPath(); g.arc(x, y, 8, 0, 7); g.fillStyle = col; g.fill(); g.lineWidth = 3; g.strokeStyle = '#fff'; g.stroke(); };
+  if (W.pts.length > 1) { g.beginPath(); W.pts.forEach((q, i) => { const [x, y] = toScr(q.x, q.y); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.setLineDash([6, 4]); g.lineWidth = 3; g.strokeStyle = '#1a6fd1'; g.stroke(); g.setLineDash([]); }
   if (M.gps?.farm?.inside) dot(M.gps.farm, '#1a6fd1', M.gps.acc);
   if (M.spot) dot(M.spot, '#7a3dc9');
   if (M.pick) { const [x, y] = toScr(M.pick.x, M.pick.y); g.strokeStyle = '#b23a2a'; g.lineWidth = 3; g.beginPath(); g.moveTo(x - 14, y); g.lineTo(x + 14, y); g.moveTo(x, y - 14); g.lineTo(x, y + 14); g.stroke(); g.beginPath(); g.arc(x, y, 10, 0, 7); g.stroke(); }
@@ -77,15 +78,47 @@ function drawLandmarks(g, k) {
 }
 
 /* ---------- GPS: used where the page may ask for it; otherwise the owner taps "I'm here" ---------- */
+/* walk path (a dot about every second, fixes worse than 30 m dropped) and stand-still averaging (60 s, weighted by accuracy).
+   Both are the phone's own readings: labelled model, not measured. */
+const W = {on: false, pts: [], last: 0, still: null};
+function feed(c, f) {
+  const now = Date.now();
+  if (W.on && c.accuracy <= 30 && now - W.last >= 1000) { W.last = now; W.pts.push({lat: c.latitude, lon: c.longitude, acc: Math.round(c.accuracy), t: now, x: f.x, y: f.y}); walkMsg(); }
+  if (W.still && c.accuracy <= 50) { W.still.fixes.push({lat: c.latitude, lon: c.longitude, acc: Math.max(c.accuracy, 3)}); }
+}
+const walkMsg = () => { const el = $('#mmWalk'); if (!el) return; const n = W.pts.length; el.textContent = W.on ? `⏹ Stop walk (${n} dots)` : '🚶 Start walk'; };
+async function toggleWalk() {
+  if (!W.on) { if (M.gpsState !== 'ok' && M.gpsState !== 'off') return toast('Waiting for GPS: wait for the blue dot first'); W.on = true; W.pts = []; W.last = 0; toast('Walking: a dot about every second'); walkMsg(); draw(); return; }
+  W.on = false; walkMsg();
+  if (W.pts.length < 5) { W.pts = []; draw(); return toast('Too short to save (under 5 dots)'); }
+  const pts = W.pts, len = pts.slice(1).reduce((s, q, i) => s + Math.hypot(q.x - pts[i].x, q.y - pts[i].y), 0), acc = Math.round(pts.reduce((s, q) => s + q.acc, 0) / pts.length);
+  try { await St.add({type: 'track', grade: 'model', text: `Walked path, ${pts.length} dots, about ${Math.round(len)} m`, data: {points: pts.map(q => [+q.lat.toFixed(7), +q.lon.toFixed(7), q.acc, q.t]), meanAcc: acc, basis: 'model, not measured (phone GPS, about 5 to 30 m)'}}); } catch (e) { return toast(e.message); }
+  await loadOwn(); draw(); toast('Walk saved');
+}
+async function stillRead() {
+  if (W.still) return toast('Already reading: stand still');
+  if (!M.pick || M.pick.survey) return toast('First tap the map exactly where you stand (for example a house corner)');
+  if (M.gpsState !== 'ok' && M.gpsState !== 'off') return toast('Waiting for GPS: wait for the blue dot first');
+  const at = {x: M.pick.x, y: M.pick.y}, btn = $('#mmStill'); W.still = {fixes: []}; const t0 = Date.now();
+  const tick = setInterval(() => { const s = Math.max(0, 60 - Math.round((Date.now() - t0) / 1000)); if (btn) btn.textContent = `Standing still… ${s} s (${W.still?.fixes.length || 0} readings)`; if (s <= 0) { clearInterval(tick); done(); } }, 500);
+  async function done() {
+    const fx = W.still.fixes; W.still = null; if (btn) btn.textContent = '⌖ Stand-still reading (60 s)';
+    if (fx.length < 5) return toast('Too few GPS readings (' + fx.length + '). Try again in the open.');
+    const wt = fx.map(q => 1 / (q.acc * q.acc)), sw = wt.reduce((a, b) => a + b, 0), lat = fx.reduce((s, q, i) => s + q.lat * wt[i], 0) / sw, lon = fx.reduce((s, q, i) => s + q.lon * wt[i], 0) / sw, acc = +(1 / Math.sqrt(sw)).toFixed(1);
+    const g = gpsToFarm(lat, lon);
+    try { await St.add({type: 'control', grade: 'model', text: 'Stand-still point (phone)', place: {x: +at.x.toFixed(1), y: +at.y.toFixed(1), label: 'Stand-still point'}, data: {pt: 'phone-' + Date.now(), x: at.x, y: at.y, gps: {lat, lon, acc}, readings: fx.length, offFromTap: +Math.hypot(g.x - at.x, g.y - at.y).toFixed(1), basis: 'model, not measured (average of phone GPS readings; the spot you tapped is the truth)'}}); } catch (e) { return toast(e.message); }
+    M.pick = null; paintPanel(); draw(); toast(`Saved: averaged ${fx.length} readings, GPS is ${Math.hypot(g.x - at.x, g.y - at.y).toFixed(1)} m from your tap`);
+  }
+}
 function startGps() {
   if (!navigator.geolocation) { M.gpsState = 'none'; return paintStatus(); }
   M.gpsState = 'looking';
   try {
-    M.watch = navigator.geolocation.watchPosition(pos => { const c = pos.coords, f = gpsToFarm(c.latitude, c.longitude); M.gps = {farm: f, acc: Math.round(c.accuracy)}; M.gpsState = f.inside ? 'ok' : 'off'; paintStatus(); draw(); },
+    M.watch = navigator.geolocation.watchPosition(pos => { const c = pos.coords, f = gpsToFarm(c.latitude, c.longitude); M.gps = {farm: f, acc: Math.round(c.accuracy)}; M.gpsState = f.inside ? 'ok' : 'off'; feed(c, f); paintStatus(); draw(); },
       e => { M.gpsState = e.code === 1 ? 'denied' : 'none'; paintStatus(); }, {enableHighAccuracy: true, maximumAge: 2000, timeout: 30000});
   } catch { M.gpsState = 'none'; paintStatus(); }
 }
-export function stopGps() { if (M.watch != null) navigator.geolocation?.clearWatch(M.watch); M.watch = null; }
+export function stopGps() { W.on = false; if (W.still) W.still = null; if (M.watch != null) navigator.geolocation?.clearWatch(M.watch); M.watch = null; }
 function paintStatus() {
   const el = $('#mmStatus'); if (!el) return; const s = M.gpsState;
   el.innerHTML = s === 'ok' ? `<b>📍 Blue dot is you</b> · GPS ±${M.gps.acc} m (model, not measured; the survey frame is assumed WGS84 until 3 GPS points are walked)`
@@ -159,6 +192,8 @@ export async function openMap(back) {
       <div class="mm-btns"><button id="mmIn" aria-label="Zoom in">+</button><button id="mmOut" aria-label="Zoom out">−</button><button id="mmFit" aria-label="Whole farm">⤢</button></div></div>
     <p class="p-small" id="mmStatus"></p>
     <div class="mm-row"><button id="mmHere">📍 I’m here</button><button id="mmMark">🌳 Mark a tree at my spot</button></div>
+    <div class="mm-row"><button id="mmWalk">🚶 Start walk</button><button id="mmStill">⌖ Stand-still reading (60 s)</button></div>
+    <p class="p-small">Walk draws a dashed path, a dot about every second. Stand-still: tap the map on the exact spot you stand (a house corner, the tank), press it and stay put for 60 seconds. It averages the GPS and saves how far GPS was from your tap. Three of these let the map line up with the real ground. Both are the phone's own readings (model, not measured).</p>
     <div id="mmPanel"></div><p class="p-small" id="mmCount"></p>
     <p class="p-small">Brown shapes are the house and tank, the dark line is the retaining wall, grey is the road, black squares are poles (from the survey drawing; heights and shapes are not measured on site). Blue flags are the five walk stops, orange flags are open questions. Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
   const cv = $('#mmCv'), W = Math.min(main.clientWidth || 360, 560); cv.width = W; cv.height = Math.round(W * 1.05); cv.style.width = W + 'px'; cv.style.height = cv.height + 'px'; fit(cv);
@@ -174,6 +209,7 @@ export async function openMap(back) {
   cv.onpointercancel = e => { ptr.delete(e.pointerId); };
   $('#mmHere').onclick = () => { if (M.gpsState === 'ok' && M.gps) { M.spot = null; toast('Using GPS for your spot'); return; } if (!M.pick) return toast('Tap the map where you stand first'); M.spot = {x: M.pick.x, y: M.pick.y}; M.pick = null; paintPanel(); draw(); toast('Your spot is set (purple dot)'); };
   $('#mmMark').onclick = () => { const s = M.gpsState === 'ok' && M.gps ? {x: M.gps.farm.x, y: M.gps.farm.y, how: 'gps'} : M.spot ? {...M.spot, how: 'spot'} : null; if (!s) return toast('Set your spot first: tap the map and press “I’m here”'); M.pick = s; paintPanel(); draw(); };
+  $('#mmWalk').onclick = toggleWalk; $('#mmStill').onclick = stillRead; walkMsg();
   paintStatus(); paintPanel(); paintList(); draw(); startGps();
 }
 const urls = [];
