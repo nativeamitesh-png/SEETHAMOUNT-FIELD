@@ -1,0 +1,1743 @@
+{
+ "note": "Every plant is listed; none is left out for safety (owner rule 15 Nov 2026). Plants with a hazard block are marked caution or unsafe with who, which part, how bad and the source, so the owner chooses. Bloom and harvest months are textbook for south India and must be checked on the farm.",
+ "plants": [
+  {
+   "k": "malabar-kino",
+   "en": "Malabar kino",
+   "ml": "Venga",
+   "sci": "Pterocarpus marsupium",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "N",
+    "T",
+    "X",
+    "F"
+   ],
+   "note": "Gliricidia swap: nitrogen (slow); timber, medicine. Near-threatened; felling rules apply",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "rosewood",
+   "en": "Rosewood",
+   "ml": "Eetti",
+   "sci": "Dalbergia latifolia",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "N",
+    "T",
+    "P"
+   ],
+   "note": "Gliricidia swap: nitrogen; coffee shade; very slow, permits",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "red-silk-cotton",
+   "en": "Red silk cotton",
+   "ml": "Elavu",
+   "sci": "Bombax ceiba",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "F",
+    "M"
+   ],
+   "note": "Jan-Mar nectar for birds, bats; young trunk has spines",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    1,
+    2,
+    3
+   ],
+   "harvest": []
+  },
+  {
+   "k": "kadam",
+   "en": "Kadam",
+   "ml": "Kadambu",
+   "sci": "Neolamarckia cadamba",
+   "layer": 1,
+   "stage": "P1",
+   "jobs": [
+    "M",
+    "T",
+    "F"
+   ],
+   "note": "Mulch and timber; tall, poor pollard",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "wild-jack",
+   "en": "Wild jack",
+   "ml": "Anjili",
+   "sci": "Artocarpus hirsutus",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "T",
+    "F",
+    "X"
+   ],
+   "note": "Valuable timber; fruit for bats, hornbills",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "arjuna",
+   "en": "Arjuna",
+   "ml": "Neermaruthu",
+   "sci": "Terminalia arjuna",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "R",
+    "F"
+   ],
+   "note": "Well and stream line only; bark medicine",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "peepal",
+   "en": "Peepal",
+   "ml": "Arayal",
+   "sci": "Ficus religiosa",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "F"
+   ],
+   "note": "Boundary only; keystone fruit; large roots",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "ben-teak",
+   "en": "Ben teak",
+   "ml": "Venteak",
+   "sci": "Lagerstroemia microcarpa",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T",
+    "M"
+   ],
+   "note": "Straight timber, pre-summer leaf mulch",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "mountain-ash-acrocarpus",
+   "en": "Mountain ash / Acrocarpus",
+   "ml": "(name to confirm)",
+   "sci": "Acrocarpus fraxinifolius",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "P",
+    "T"
+   ],
+   "note": "Pepper and coffee support; common coffee shade tree",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "toon-red-cedar",
+   "en": "Toon / red cedar",
+   "ml": "Chandanavembu",
+   "sci": "Toona ciliata",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "P",
+    "T"
+   ],
+   "note": "Pepper and coffee support; timber; wants moisture",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "haldina",
+   "en": "Haldina",
+   "ml": "Manjakadambu",
+   "sci": "Adina cordifolia (syn. Haldina cordifolia)",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T",
+    "F"
+   ],
+   "note": "Moist, riparian spots only",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "ironwood",
+   "en": "Ironwood",
+   "ml": "Irul",
+   "sci": "Xylia xylocarpa",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "T"
+   ],
+   "note": "Gliricidia swap: nitrogen; hard timber",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "white-teak",
+   "en": "White teak",
+   "ml": "Kumbil",
+   "sci": "Gmelina arborea",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "T",
+    "F"
+   ],
+   "note": "Mulch and timber; competes strongly with crops",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "monkey-jack",
+   "en": "Monkey jack",
+   "ml": "Theetiplavu (to confirm)",
+   "sci": "Artocarpus lacucha",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "M",
+    "F",
+    "X"
+   ],
+   "note": "Fruit for hornbills, barbets",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "cluster-fig",
+   "en": "Cluster fig",
+   "ml": "Athi",
+   "sci": "Ficus racemosa",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "F",
+    "R"
+   ],
+   "note": "Keystone wildlife fruit; boundary or well side, away from walls and tanks",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "harvest": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "k": "jamun",
+   "en": "Jamun",
+   "ml": "Njaval",
+   "sci": "Syzygium cumini",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "F",
+    "X",
+    "T"
+   ],
+   "note": "Fruit, honey, bats; thirsty, heavy shade",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    2,
+    3,
+    4
+   ],
+   "harvest": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "k": "indian-laurel",
+   "en": "Indian laurel",
+   "ml": "Karimaruthu",
+   "sci": "Terminalia elliptica",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "T",
+    "F"
+   ],
+   "note": "Timber, summer leaf mulch",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "maruthu",
+   "en": "Maruthu",
+   "ml": "Maruthu (to confirm)",
+   "sci": "Terminalia paniculata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "T",
+    "F"
+   ],
+   "note": "Deciduous timber, nectar",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "chebulic-myrobalan",
+   "en": "Chebulic myrobalan",
+   "ml": "Kadukka",
+   "sci": "Terminalia chebula",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Medicinal fruit, sold dry",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-elm",
+   "en": "Indian elm",
+   "ml": "Aavil",
+   "sci": "Holoptelea integrifolia",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Heavy leaf drop; butterfly host",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-ash-tree",
+   "en": "Indian ash tree",
+   "ml": "Uthi",
+   "sci": "Lannea coromandelica",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "P",
+    "M",
+    "F"
+   ],
+   "note": "Pepper support from cuttings; gliricidia swap for lopping",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "garuga",
+   "en": "Garuga",
+   "ml": "Annakkara (pepper growers: Karayam)",
+   "sci": "Garuga pinnata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "P",
+    "M",
+    "F"
+   ],
+   "note": "Pepper support from cuttings; Kerala pepper guide lists it as a standard not hit by gall wasp; repeat-lop mulch",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "bischofia",
+   "en": "Bischofia",
+   "ml": "Nira, Cholavenga",
+   "sci": "Bischofia javanica",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Wet pockets only; berries for birds",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "hog-plum",
+   "en": "Hog plum",
+   "ml": "Ambazham",
+   "sci": "Spondias pinnata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Strikes from cuttings; fruit for wildlife; native status disputed between sources",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-frankincense",
+   "en": "Indian frankincense",
+   "ml": "Kunthirikkam (to confirm)",
+   "sci": "Boswellia serrata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "Resin; rocky dry slopes; slow; Indian native but Kerala range not confirmed",
+   "site": "dry",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "mast-tree",
+   "en": "Mast tree",
+   "ml": "Aranamaram",
+   "sci": "Monoon longifolium (syn. Polyalthia longifolia)",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "F"
+   ],
+   "note": "Back on the list: sources say native to southern India; windbreak, bird nesting",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "champak",
+   "en": "Champak",
+   "ml": "Chembakam",
+   "sci": "Magnolia champaca",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "F"
+   ],
+   "note": "Back on the list: native (Kew POWO, IISc); scented flowers; damp spot",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "mountain-hemp-tree",
+   "en": "Mountain hemp tree",
+   "ml": "Vatta",
+   "sci": "Macaranga peltata",
+   "layer": 3,
+   "stage": "P1",
+   "jobs": [
+    "M",
+    "P"
+   ],
+   "note": "Pioneer; pepper support in places; short-lived",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "elephant-apple",
+   "en": "Elephant apple",
+   "ml": "Pattipunna",
+   "sci": "Dillenia pentagyna",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Large leaves for mulch; bee flowers",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "yellow-silk-cotton",
+   "en": "Yellow silk cotton",
+   "ml": "Appakudukka",
+   "sci": "Cochlospermum religiosum",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Dry slopes; dry-season bee nectar",
+   "site": "dry",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    12,
+    1,
+    2
+   ],
+   "harvest": []
+  },
+  {
+   "k": "malabar-bauhinia",
+   "en": "Malabar bauhinia",
+   "ml": "Aarampuli",
+   "sci": "Piliostigma malabaricum (syn. Bauhinia malabarica)",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Leaf mulch; not a nitrogen fixer",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "purple-bauhinia",
+   "en": "Purple bauhinia",
+   "ml": "Chuvanna Mandaram",
+   "sci": "Bauhinia purpurea",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "F"
+   ],
+   "note": "Light mulch; not a nitrogen fixer; origin borderline",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-gooseberry",
+   "en": "Indian gooseberry",
+   "ml": "Nelli",
+   "sci": "Phyllanthus emblica",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Light canopy, good with coffee; fruit, medicine",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    3,
+    4
+   ],
+   "harvest": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  {
+   "k": "spanish-cherry",
+   "en": "Spanish cherry",
+   "ml": "Elanji",
+   "sci": "Mimusops elengi",
+   "layer": 3,
+   "stage": "P3",
+   "jobs": [
+    "F"
+   ],
+   "note": "Slow evergreen; scented flowers, night moths",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "malabar-tamarind",
+   "en": "Malabar tamarind",
+   "ml": "Kudampuli",
+   "sci": "Garcinia gummi-gutta",
+   "layer": 3,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Shade-tolerant spice, bird nesting",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "vitex",
+   "en": "Vitex",
+   "ml": "Mayila",
+   "sci": "Vitex altissima",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "F",
+    "T"
+   ],
+   "note": "Bee tree; durable timber",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "dhaman",
+   "en": "Dhaman",
+   "ml": "Chadachi",
+   "sci": "Grewia tiliifolia",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M",
+    "T",
+    "F"
+   ],
+   "note": "Coppices well",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-bay",
+   "en": "Indian bay",
+   "ml": "Vayana, Kattukaruva",
+   "sci": "Cinnamomum malabatrum",
+   "layer": 3,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "Leaf spice; shade-tolerant understorey",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "naruvari",
+   "en": "Naruvari",
+   "ml": "(name to confirm)",
+   "sci": "Cordia dichotoma",
+   "layer": 3,
+   "stage": "P1",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Fruit for pickle; bird food",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "kokum",
+   "en": "Kokum",
+   "ml": "(name to confirm)",
+   "sci": "Garcinia indica",
+   "layer": 3,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "Fruit rind, seed butter; damp spot only; Vulnerable (IUCN)",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    11,
+    12,
+    1
+   ],
+   "harvest": [
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "k": "curry-leaf-tree",
+   "en": "Curry leaf tree",
+   "ml": "Kariveppila",
+   "sci": "Murraya koenigii",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Aromatic leaf, bee flowers; pick off ripe berries (seeds may be toxic); replaces neem for pest-repelling prunings",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    3,
+    4,
+    5
+   ],
+   "harvest": [
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "k": "negundo-chaste-tree",
+   "en": "Negundo (chaste tree)",
+   "ml": "Karinochi",
+   "sci": "Vitex negundo",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "Leaf medicine, bee shrub",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "pigeon-pea",
+   "en": "Pigeon pea",
+   "ml": "Thuvara",
+   "sci": "Cajanus cajan",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "Gliricidia swap: nitrogen for low layer; 2-3 year shrub; food",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [
+    10,
+    11,
+    12
+   ],
+   "harvest": [
+    12,
+    1,
+    2
+   ]
+  },
+  {
+   "k": "cowpea",
+   "en": "Cowpea",
+   "ml": "Vanpayar",
+   "sci": "Vigna unguiculata",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "Cover crop nitrogen; food",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "horse-gram",
+   "en": "Horse gram",
+   "ml": "Muthira",
+   "sci": "Macrotyloma uniflorum",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "Cover crop nitrogen; dry-tolerant; food",
+   "site": "dry",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "long-pepper",
+   "en": "Long pepper",
+   "ml": "Thippali",
+   "sci": "Piper longum",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "Medicinal spice under shade",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "indian-sarsaparilla",
+   "en": "Indian sarsaparilla",
+   "ml": "Nannari",
+   "sci": "Hemidesmus indicus",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "X"
+   ],
+   "note": "Root syrup and medicine; climber",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "gymnema",
+   "en": "Gymnema",
+   "ml": "Chakkarakolli",
+   "sci": "Gymnema sylvestre",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "X"
+   ],
+   "note": "Medicinal leaf; climber",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "turmeric-mango-ginger",
+   "en": "Turmeric / mango ginger",
+   "ml": "Manjal / Manga inji",
+   "sci": "Curcuma longa, C. amada",
+   "layer": 4,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "Rhizome spice under shade",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [],
+   "harvest": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "k": "galangal-kacholam",
+   "en": "Galangal / kacholam",
+   "ml": "Aratha / Kacholam",
+   "sci": "Alpinia galanga, Kaempferia galanga",
+   "layer": 4,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "Rhizome spices under shade",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "cardamom",
+   "en": "Cardamom",
+   "ml": "Elam",
+   "sci": "Elettaria cardamomum",
+   "layer": 4,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "Damp shade only, by water pockets",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)",
+   "bloom": [],
+   "harvest": [
+    10,
+    11,
+    12,
+    1
+   ]
+  },
+  {
+   "k": "brahmi-herbs",
+   "en": "Brahmi herbs",
+   "ml": "Kudangal, Neer brahmi, Keezharnelli",
+   "sci": "Centella asiatica, Bacopa monnieri, Phyllanthus amarus",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "X"
+   ],
+   "note": "Damp spots; medicine",
+   "site": "moist",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "vetiver",
+   "en": "Vetiver",
+   "ml": "Ramacham",
+   "sci": "Chrysopogon zizanioides",
+   "layer": 4,
+   "stage": "P1",
+   "jobs": [
+    "R",
+    "X"
+   ],
+   "note": "Bund binder, root oil",
+   "site": "any",
+   "src": "safe-only native plant list v2 (13 Nov 2026)"
+  },
+  {
+   "k": "jackfruit",
+   "en": "Jackfruit",
+   "ml": "പ്ലാവ്",
+   "sci": "Artocarpus heterophyllus",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm already; on the app safe list",
+   "site": "any",
+   "src": "app safe list (glossary)",
+   "bloom": [
+    12,
+    1,
+    2
+   ],
+   "harvest": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "k": "mango",
+   "en": "Mango",
+   "ml": "മാവ്",
+   "sci": "Mangifera indica",
+   "layer": 2,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm already; on the app safe list",
+   "site": "any",
+   "src": "app safe list (glossary)",
+   "bloom": [
+    12,
+    1,
+    2
+   ],
+   "harvest": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "k": "coconut",
+   "en": "Coconut palm",
+   "ml": "തെങ്ങ്",
+   "sci": "Cocos nucifera",
+   "layer": 1,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm already; on the app safe list",
+   "site": "any",
+   "src": "app safe list (glossary)",
+   "bloom": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "harvest": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "k": "guava",
+   "en": "Guava",
+   "ml": "പേര",
+   "sci": "Psidium guajava",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm already; on the app safe list",
+   "site": "any",
+   "src": "app safe list (glossary)"
+  },
+  {
+   "k": "moringa",
+   "en": "Drumstick",
+   "ml": "മുരിങ്ങ",
+   "sci": "Moringa oleifera",
+   "layer": 3,
+   "stage": "P1",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm already; on the app safe list",
+   "site": "any",
+   "src": "app safe list (glossary)",
+   "bloom": [
+    1,
+    2,
+    3
+   ],
+   "harvest": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "k": "coffee",
+   "en": "Robusta coffee",
+   "ml": "കാപ്പി",
+   "sci": "Coffea canephora",
+   "layer": 3,
+   "stage": "P3",
+   "jobs": [
+    "X",
+    "F"
+   ],
+   "note": "On the farm; safety not yet checked, so never recommended",
+   "site": "any",
+   "bloom": [
+    3,
+    4
+   ],
+   "harvest": [
+    11,
+    12,
+    1
+   ],
+   "src": "farm crop, unchecked",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs",
+    "part": "cherries, beans and leaves (caffeine)",
+    "how": "caffeine poisoning in dogs: restlessness, fast heart; husk piles are the main risk",
+    "src": "from knowledge, not source-checked"
+   }
+  },
+  {
+   "k": "pepper",
+   "en": "Black pepper",
+   "ml": "കുരുമുളക്",
+   "sci": "Piper nigrum",
+   "layer": 4,
+   "stage": "P3",
+   "jobs": [
+    "X"
+   ],
+   "note": "On the farm; safety not yet checked, so never recommended",
+   "site": "any",
+   "bloom": [
+    6,
+    7
+   ],
+   "harvest": [
+    12,
+    1,
+    2
+   ],
+   "src": "farm crop, unchecked",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs, cats",
+    "part": "berries",
+    "how": "irritant if eaten in quantity; no known serious toxicity",
+    "src": "from knowledge, not source-checked"
+   }
+  },
+  {
+   "k": "ixora",
+   "en": "Ixora (flame of the woods)",
+   "ml": "Chethi (ചെത്തി)",
+   "sci": "Ixora coccinea",
+   "layer": 3,
+   "stage": "P1",
+   "jobs": [
+    "F",
+    "X"
+   ],
+   "note": "Butterfly shrub; ASPCA: non-toxic to dogs, cats and horses",
+   "site": "sun",
+   "src": "ASPCA plant list, checked 15 Nov 2026"
+  },
+  {
+   "k": "banana",
+   "en": "Banana",
+   "ml": "Vazha (വാഴ)",
+   "sci": "Musa acuminata",
+   "layer": 3,
+   "stage": "P1",
+   "jobs": [
+    "F",
+    "X"
+   ],
+   "note": "On the farm already; ASPCA: non-toxic to dogs and cats",
+   "site": "any",
+   "src": "ASPCA plant list, checked 15 Nov 2026"
+  },
+  {
+   "k": "lemon",
+   "en": "Lemon",
+   "ml": "Cherunaranga (ചെറുനാരങ്ങ)",
+   "sci": "Citrus limon",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "F"
+   ],
+   "note": "CAUTION: vomiting, skin sensitivity to sun; fruit pulp in small amounts is low risk",
+   "site": "sun",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs, cats, horses",
+    "part": "peel oils and leaves (psoralens, limonene)",
+    "how": "vomiting, skin sensitivity to sun; fruit pulp in small amounts is low risk",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "lemongrass",
+   "en": "Lemongrass",
+   "ml": "Inchippullu (ഇഞ്ചിപ്പുല്ല്)",
+   "sci": "Cymbopogon citratus",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "R",
+    "M"
+   ],
+   "note": "CAUTION: stomach upset, vomiting; not usually serious",
+   "site": "sun",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs, cats, horses",
+    "part": "whole plant if chewed in quantity",
+    "how": "stomach upset, vomiting; not usually serious",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "avocado",
+   "en": "Avocado",
+   "ml": "Vennappazham (വെണ്ണപ്പഴം)",
+   "sci": "Persea americana",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "F"
+   ],
+   "note": "UNSAFE: can damage the heart in goats and birds; seed is a choking risk for dogs",
+   "site": "any",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "unsafe",
+    "who": "goats, cattle, birds, rabbits; dogs less so",
+    "part": "leaves, bark, skin, seed (persin)",
+    "how": "can damage the heart in goats and birds; seed is a choking risk for dogs",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "lantana",
+   "en": "Lantana",
+   "ml": "Arippoo (അരിപ്പൂ)",
+   "sci": "Lantana camara",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "P"
+   ],
+   "note": "UNSAFE: liver damage and sun sensitivity in livestock; can kill cattle",
+   "site": "sun",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "unsafe",
+    "who": "cattle, goats, dogs, people",
+    "part": "leaves and green berries",
+    "how": "liver damage and sun sensitivity in livestock; can kill cattle",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "oleander",
+   "en": "Oleander",
+   "ml": "Arali (അരളി)",
+   "sci": "Nerium oleander",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "P"
+   ],
+   "note": "UNSAFE: heart poison; small amounts can kill",
+   "site": "sun",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, dogs, cats, livestock",
+    "part": "every part, including smoke from burning",
+    "how": "heart poison; small amounts can kill",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "castor",
+   "en": "Castor",
+   "ml": "Aavanakku (ആവണക്ക്)",
+   "sci": "Ricinus communis",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "UNSAFE: a few chewed seeds can kill",
+   "site": "sun",
+   "src": "ASPCA plant list",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, dogs, livestock",
+    "part": "seeds (ricin)",
+    "how": "a few chewed seeds can kill",
+    "src": "ASPCA plant list"
+   }
+  },
+  {
+   "k": "gliricidia",
+   "en": "Gliricidia",
+   "ml": "Seemakkonna (ശീമക്കൊന്ന)",
+   "sci": "Gliricidia sepium",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "CAUTION: used as a rat poison; cattle and goats eat leaves in moderation",
+   "site": "any",
+   "src": "from knowledge, not source-checked",
+   "hazard": {
+    "level": "caution",
+    "who": "horses, dogs, rodents",
+    "part": "leaves and bark (coumarins)",
+    "how": "used as a rat poison; cattle and goats eat leaves in moderation",
+    "src": "from knowledge, not source-checked"
+   }
+  },
+  {
+   "k": "arecanut",
+   "en": "Arecanut",
+   "ml": "Kamuku (കമുക്)",
+   "sci": "Areca catechu",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T"
+   ],
+   "note": "CAUTION: vomiting and drooling in dogs; long-term chewing harms people",
+   "site": "any",
+   "src": "from knowledge, not source-checked",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs, people",
+    "part": "nuts (arecoline)",
+    "how": "vomiting and drooling in dogs; long-term chewing harms people",
+    "src": "from knowledge, not source-checked"
+   }
+  },
+  {
+   "k": "rambutan",
+   "en": "Rambutan",
+   "ml": "Rambutan (റമ്പൂട്ടാൻ)",
+   "sci": "Nephelium lappaceum",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "F"
+   ],
+   "note": "CAUTION: fruit flesh is eaten safely; clear fallen fruit where dogs roam; no pet-list entry found",
+   "site": "moist",
+   "src": "from knowledge, not source-checked",
+   "hazard": {
+    "level": "caution",
+    "who": "dogs, people",
+    "part": "raw seeds and peel (saponins, tannins); seeds can choke",
+    "how": "fruit flesh is eaten safely; clear fallen fruit where dogs roam; no pet-list entry found",
+    "src": "from knowledge, not source-checked"
+   }
+  },
+  {
+   "k": "dashapushpam",
+   "en": "Dashapushpam bed (ten sacred herbs)",
+   "ml": "Dashapushpam (ദശപുഷ്പം)",
+   "sci": "10 herbs incl. Emilia sonchifolia",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "M"
+   ],
+   "note": "CAUTION: muyalcheviyan harms the liver over time; the other eight herbs have no known serious toxicity",
+   "site": "any",
+   "src": "Hong Kong Hospital Authority toxic plant atlas; Merck Veterinary Manual",
+   "hazard": {
+    "level": "caution",
+    "who": "cattle, horses, people (liver); dogs (seeds)",
+    "part": "muyalcheviyan (Emilia sonchifolia): pyrrolizidine alkaloids; thiruthali (Ipomoea): seeds",
+    "how": "muyalcheviyan harms the liver over time; the other eight herbs have no known serious toxicity",
+    "src": "Hong Kong Hospital Authority toxic plant atlas; Merck Veterinary Manual"
+   }
+  },
+  {
+   "k": "erythrina",
+   "en": "Indian coral tree",
+   "ml": "Murikku (മുരിക്ക്)",
+   "sci": "Erythrina variegata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "CAUTION: seeds poisonous raw; thorny trunk",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, dogs, fish",
+    "part": "raw seeds; bark; thorns",
+    "how": "seeds poisonous raw; thorny trunk",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "pongamia",
+   "en": "Pongam",
+   "ml": "Ungu (ഉങ്ങ്)",
+   "sci": "Pongamia pinnata",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "X"
+   ],
+   "note": "CAUTION: seeds toxic; press cake unfit as feed",
+   "site": "moist",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, livestock, fish",
+    "part": "seeds (karanjin); press cake",
+    "how": "seeds toxic; press cake unfit as feed",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "adenanthera",
+   "en": "Red bead tree",
+   "ml": "Manjadi (മഞ്ചാടി)",
+   "sci": "Adenanthera pavonina",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N"
+   ],
+   "note": "CAUTION: raw seeds toxic; children collect them",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, dogs",
+    "part": "raw seeds",
+    "how": "raw seeds toxic; children collect them",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "butea",
+   "en": "Flame of the forest",
+   "ml": "Plasu (പ്ലാശ്)",
+   "sci": "Butea monosperma",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "F"
+   ],
+   "note": "CAUTION: reported poisonous to people",
+   "site": "sun",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people",
+    "part": "seed oil, flower sap",
+    "how": "reported poisonous to people",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "trema",
+   "en": "Trema",
+   "ml": "Pottama (not verified)",
+   "sci": "Trema orientale",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "UNSAFE: goat deaths recorded in Karnataka; liver damage",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "goats, cattle",
+    "part": "leaves (trematoxin)",
+    "how": "goat deaths recorded in Karnataka; liver damage",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "melia-dubia",
+   "en": "Malabar neem",
+   "ml": "Malaveppu (മലവേപ്പ്)",
+   "sci": "Melia dubia",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T"
+   ],
+   "note": "CAUTION: genus fruit toxic to pigs and other stock",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "pigs, livestock, dogs",
+    "part": "fruit",
+    "how": "genus fruit toxic to pigs and other stock",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "caryota",
+   "en": "Fishtail palm",
+   "ml": "Choondappana (ചൂണ്ടപ്പന)",
+   "sci": "Caryota urens",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "CAUTION: fruit burns mouth and skin",
+   "site": "moist",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, dogs",
+    "part": "fruit (oxalate)",
+    "how": "fruit burns mouth and skin",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "neem",
+   "en": "Neem",
+   "ml": "Aryaveppu (ആര്യവേപ്പ്)",
+   "sci": "Azadirachta indica",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "P",
+    "M"
+   ],
+   "note": "CAUTION: neem oil dangerous to small children; seeds toxic to pets",
+   "site": "sun",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "small children, dogs, cats",
+    "part": "oil and seeds",
+    "how": "neem oil dangerous to small children; seeds toxic to pets",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "semecarpus",
+   "en": "Marking nut",
+   "ml": "Cheru (ചേര്)",
+   "sci": "Semecarpus anacardium",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "M"
+   ],
+   "note": "UNSAFE: blistering sap, severe skin burns",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, dogs",
+    "part": "sap and nut shell",
+    "how": "blistering sap, severe skin burns",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "tephrosia",
+   "en": "Wild indigo",
+   "ml": "Kozhinjil (കൊഴിഞ്ഞിൽ)",
+   "sci": "Tephrosia purpurea",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "N",
+    "M"
+   ],
+   "note": "UNSAFE: toxic to goats and fish (confirmed)",
+   "site": "sun",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "goats, fish",
+    "part": "whole plant",
+    "how": "toxic to goats and fish (confirmed)",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "careya",
+   "en": "Kumbhi",
+   "ml": "Pezhu (പേഴ്)",
+   "sci": "Careya arborea",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "CAUTION: seeds slightly poisonous; bark stuns fish",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, fish",
+    "part": "seeds, bark",
+    "how": "seeds slightly poisonous; bark stuns fish",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "alstonia",
+   "en": "Devil tree",
+   "ml": "Ezhilampala (ഏഴിലംപാല)",
+   "sci": "Alstonia scholaris",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "UNSAFE: toxic plant; strong night scent",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, livestock",
+    "part": "bark (alkaloids), latex",
+    "how": "toxic plant; strong night scent",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "strychnos",
+   "en": "Strychnine tree",
+   "ml": "Kanjiram (കാഞ്ഞിരം)",
+   "sci": "Strychnos nux-vomica",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "M"
+   ],
+   "note": "UNSAFE: deadly in small amounts",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, dogs, livestock",
+    "part": "seeds and bark (strychnine)",
+    "how": "deadly in small amounts",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "rauvolfia",
+   "en": "Indian snakeroot",
+   "ml": "Sarpagandhi (സർപ്പഗന്ധി)",
+   "sci": "Rauvolfia serpentina",
+   "layer": 4,
+   "stage": "P2",
+   "jobs": [
+    "M"
+   ],
+   "note": "UNSAFE: lowers blood pressure dangerously; medicine only under a doctor",
+   "site": "moist",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "unsafe",
+    "who": "people, dogs",
+    "part": "roots (reserpine)",
+    "how": "lowers blood pressure dangerously; medicine only under a doctor",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "wrightia",
+   "en": "Sweet indrajao",
+   "ml": "Dhanthappala (ദന്തപ്പാല)",
+   "sci": "Wrightia tinctoria",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "M"
+   ],
+   "note": "CAUTION: latex irritates skin and eyes",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, dogs",
+    "part": "latex",
+    "how": "latex irritates skin and eyes",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "mallotus",
+   "en": "Kamala tree",
+   "ml": "Sindooram (സിന്ദൂരം)",
+   "sci": "Mallotus philippensis",
+   "layer": 3,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "CAUTION: dust irritates skin and eyes",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people",
+    "part": "fruit dust",
+    "how": "dust irritates skin and eyes",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "madhuca",
+   "en": "Mahua",
+   "ml": "Ilippa (ഇലിപ്പ)",
+   "sci": "Madhuca longifolia",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T",
+    "F"
+   ],
+   "note": "CAUTION: press cake poisons fish; flowers are eaten",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "fish, livestock",
+    "part": "press cake (saponins)",
+    "how": "press cake poisons fish; flowers are eaten",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "sapindus",
+   "en": "Soapnut",
+   "ml": "Pasakkottai (not verified)",
+   "sci": "Sapindus trifoliatus",
+   "layer": 2,
+   "stage": "P2",
+   "jobs": [
+    "X"
+   ],
+   "note": "CAUTION: fruit causes stomach upset; poisons fish",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people, dogs, fish",
+    "part": "fruit (saponins)",
+    "how": "fruit causes stomach upset; poisons fish",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  },
+  {
+   "k": "ailanthus",
+   "en": "Matti",
+   "ml": "Matti (മട്ടി)",
+   "sci": "Ailanthus triphysa",
+   "layer": 1,
+   "stage": "P2",
+   "jobs": [
+    "T"
+   ],
+   "note": "CAUTION: irritant; also a pepper standard",
+   "site": "any",
+   "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)",
+   "hazard": {
+    "level": "caution",
+    "who": "people",
+    "part": "leaf and bark",
+    "how": "irritant; also a pepper standard",
+    "src": "verified plant check 13 Nov 2026 (native-plant-verification.csv)"
+   }
+  }
+ ]
+}

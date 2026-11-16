@@ -1,0 +1,1727 @@
+{
+  "schema": "farmer-profile-seed-v1",
+  "farmId": "seethamount",
+  "baselineDate": "2026-11-06",
+  "domains": [
+    {
+      "id": "identity",
+      "label": "Identity & purpose",
+      "description": "Start with the land you actually have."
+    },
+    {
+      "id": "land",
+      "label": "Land & terrain",
+      "description": "Understand boundaries and the shape of the ground."
+    },
+    {
+      "id": "vegetation",
+      "label": "Plants & habitats",
+      "description": "Build on what already grows here."
+    },
+    {
+      "id": "water",
+      "label": "Water & irrigation",
+      "description": "Separate a water source from its measured capacity."
+    },
+    {
+      "id": "soil",
+      "label": "Soil & light",
+      "description": "Record observations before drawing conclusions."
+    },
+    {
+      "id": "infrastructure",
+      "label": "Access & structures",
+      "description": "Map the things that shape everyday work."
+    },
+    {
+      "id": "operations",
+      "label": "Work & production",
+      "description": "Understand effort, harvests and resources."
+    },
+    {
+      "id": "goals",
+      "label": "Goals & decisions",
+      "description": "Keep ambitions distinct from existing conditions."
+    }
+  ],
+  "facts": [
+    {
+      "id": "farm_name",
+      "domain": "identity",
+      "label": "Farm name",
+      "value": "Seethamount",
+      "evidence": "Owner-reported",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "location",
+      "domain": "identity",
+      "label": "Location",
+      "value": "Padichira, Wayanad, Kerala, India",
+      "evidence": "Survey-recorded",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "land_state",
+      "domain": "identity",
+      "label": "Current farm condition",
+      "value": "Established mixed tree-crop farm",
+      "evidence": "Owner-observed",
+      "locator": "\u00a716 Baseline conclusion",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "purpose",
+      "domain": "identity",
+      "label": "Purpose",
+      "value": "Biodiversity, household self-reliance and income together",
+      "evidence": "Owner-reported",
+      "locator": "\u00a71 Purpose and governing intent",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "area",
+      "domain": "land",
+      "label": "Main farm area",
+      "value": "2.41 acres; survey states 0.9753 ha",
+      "evidence": "Survey-recorded",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "well_parcel",
+      "domain": "land",
+      "label": "Separate well parcel",
+      "value": "Additional to the main farm; parcel area unknown",
+      "evidence": "Owner-reported",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "terrain",
+      "domain": "land",
+      "label": "General terrain",
+      "value": "Falls broadly from the western road side toward the east; local terraces and bunds",
+      "evidence": "Owner-observed",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "survey",
+      "domain": "land",
+      "label": "Survey detail",
+      "value": "27 March 2026; 1 m contours; stated 5 \u00d7 5 m grid",
+      "evidence": "Survey-recorded",
+      "locator": "\u00a73 Land, location and terrain",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "datum",
+      "domain": "land",
+      "label": "Elevation and boundary reconciliation",
+      "value": "Datum, scale and coordinates unresolved. Atlas candidate boundary area differs from printed area; satellite 760 label conflicts with survey levels.",
+      "evidence": "Unresolved",
+      "locator": "DWG candidate boundary and baseline \u00a73 comparison",
+      "sourceId": "dwg-analysis",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "coconut",
+      "domain": "vegetation",
+      "label": "Coconut population",
+      "value": "About 90 palms; reported count, not a mapped productive census",
+      "evidence": "Estimate",
+      "locator": "\u00a75 Vegetation and crop inventory",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "gliricidia",
+      "domain": "vegetation",
+      "label": "Gliricidia population",
+      "value": "About 400 trees",
+      "evidence": "Estimate",
+      "locator": "\u00a75 Vegetation and crop inventory",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "coffee",
+      "domain": "vegetation",
+      "label": "Coffee population",
+      "value": "Robusta reported; visually at least 1.5 acres of understorey; bush count unknown",
+      "evidence": "Estimate",
+      "locator": "\u00a75\u20136 Vegetation and coffee baseline",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "pepper",
+      "domain": "vegetation",
+      "label": "Pepper population",
+      "value": "About 100 older vines plus about 200 planted September\u2013October 2026",
+      "evidence": "Owner-reported",
+      "locator": "\u00a75 Vegetation and crop inventory",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "inventory",
+      "domain": "vegetation",
+      "label": "Individual plant map",
+      "value": "Complete species, living and bearing counts, and individual positions are not established",
+      "evidence": "Unresolved",
+      "locator": "\u00a715 Open baseline questions",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "well",
+      "domain": "water",
+      "label": "Water source",
+      "value": "Open well on a separate lower parcel; pump nameplate confirms 2 HP",
+      "evidence": "Owner-reported",
+      "locator": "\u00a78 Water supply and irrigation",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "sprinklers",
+      "domain": "water",
+      "label": "Installed irrigation",
+      "value": "Approximately 40\u201359 sprinklers; no more than eight operated simultaneously",
+      "evidence": "Owner-reported",
+      "locator": "\u00a78 Water supply and irrigation",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "supply",
+      "domain": "water",
+      "label": "Summer water capacity",
+      "value": "Discharge, water-level recovery, daily recoverable volume and summer reliability unknown",
+      "evidence": "Unresolved",
+      "locator": "\u00a78 Water supply and irrigation",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "runoff",
+      "domain": "water",
+      "label": "Observed runoff",
+      "value": "Road water enters at the gate and follows access; house-platform water leaves the east edge",
+      "evidence": "Owner-observed",
+      "locator": "\u00a77 Light, soil and water movement",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "soil",
+      "domain": "soil",
+      "label": "Soil observations",
+      "value": "Dark topsoil beneath litter; sticky or clayey-feeling when wet. No known laboratory test.",
+      "evidence": "Owner-observed",
+      "locator": "\u00a77 Light, soil and water movement",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "light",
+      "domain": "soil",
+      "label": "Crop-height light",
+      "value": "Mixed openings and shade; seasonal light totals unmeasured",
+      "evidence": "Owner-observed",
+      "locator": "\u00a77 Light, soil and water movement",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "house",
+      "domain": "infrastructure",
+      "label": "House and caretaker site",
+      "value": "Old house remains; rebuilding not started. Caretaker house planned at former cowshed.",
+      "evidence": "Owner-reported",
+      "locator": "\u00a74 and \u00a713 Buildings and plans",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "access",
+      "domain": "infrastructure",
+      "label": "Access",
+      "value": "Private access descends from the panchayat road; small-lorry access reported possible",
+      "evidence": "Owner-reported",
+      "locator": "\u00a74 Boundaries, access and built features",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "retaining",
+      "domain": "infrastructure",
+      "label": "Retaining wall",
+      "value": "Cracks and bulging reported; professional structural condition assessment not supplied",
+      "evidence": "Owner-observed",
+      "locator": "\u00a74 Boundaries, access and built features",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "labour",
+      "domain": "operations",
+      "label": "Typical hired labour",
+      "value": "About 5\u201310 person-days/month at about \u20b9850/person-day; owner labour additional",
+      "evidence": "Owner-reported",
+      "locator": "\u00a712 Production, sales and labour",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "sale",
+      "domain": "operations",
+      "label": "Recorded coconut sale",
+      "value": "October 2026: 250 kg at \u20b947/kg from one picking; annual yield and net income unknown",
+      "evidence": "Owner-reported",
+      "locator": "\u00a712 Production, sales and labour",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "income",
+      "domain": "goals",
+      "label": "Income objective",
+      "value": "Income is a goal; no numerical target established in this baseline",
+      "evidence": "Unresolved",
+      "locator": "\u00a71 and \u00a715 Purpose and open questions",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "sharing",
+      "domain": "goals",
+      "label": "Crop sharing with wildlife",
+      "value": "Some shared fruit and eaten leaves acceptable; acceptable loss levels not quantified",
+      "evidence": "Owner-reported",
+      "locator": "\u00a71 Purpose and governing intent",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    },
+    {
+      "id": "future",
+      "domain": "goals",
+      "label": "Future enterprises",
+      "value": "Ponds, gardens, nursery and other enterprises appear as intentions requiring current confirmation",
+      "evidence": "Planned",
+      "locator": "\u00a713 Plans, kept separate from existing conditions",
+      "sourceId": "baseline-v1",
+      "sourceDate": "2026-11-06",
+      "observedOn": "",
+      "status": "baseline",
+      "scope": "Main farm unless explicitly stated",
+      "note": "Imported from baseline v1; not a new field verification."
+    }
+  ],
+  "sources": [
+    {
+      "id": "baseline-v1",
+      "name": "Seethamount Farm Baseline Profile v1",
+      "kind": "Baseline document",
+      "date": "2026-11-06",
+      "status": "Read and structured",
+      "url": "baseline.md",
+      "sha256": "019988f6571a69985acd532a9cac76330f23f165584847dc0562718c8b86ea11"
+    },
+    {
+      "id": "survey-contours",
+      "name": "Contour survey sheet",
+      "kind": "Survey PDF",
+      "date": "2026-03-27",
+      "status": "Available; datum and boundary unresolved",
+      "url": "contours.pdf"
+    },
+    {
+      "id": "survey-trees",
+      "name": "Tree-symbol survey sheet",
+      "kind": "Survey PDF",
+      "date": "2026-03-27",
+      "status": "Selected trees, not complete inventory",
+      "url": "trees.pdf"
+    },
+    {
+      "id": "survey-levels",
+      "name": "Spot-level survey sheet",
+      "kind": "Survey PDF",
+      "date": "2026-03-27",
+      "status": "Available",
+      "url": "levels.pdf"
+    },
+    {
+      "id": "dwg-analysis",
+      "name": "Provisional DWG extraction and survey comparison",
+      "kind": "Calculated analysis",
+      "date": "2026-11-06",
+      "status": "Provisional boundary and datum; not a resurvey",
+      "url": "source-elevations.csv"
+    }
+  ],
+  "questions": [
+    {
+      "id": "land_state",
+      "domain": "identity",
+      "title": "What is the farm like today?",
+      "options": [
+        "Established farm",
+        "Mostly unplanted land",
+        "A mix of planted and open areas",
+        "Abandoned or naturally regrowing land"
+      ],
+      "why": "We should build on the farm you have, rather than assume a blank site.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "farm_role",
+      "domain": "identity",
+      "title": "What is this farm mainly for?",
+      "options": [
+        "Family food",
+        "Main livelihood",
+        "Extra income",
+        "Restoring nature",
+        "Learning or demonstration",
+        "A home on the land"
+      ],
+      "why": "Your purpose helps decide what deserves space, time and money.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_residence",
+      "domain": "identity",
+      "title": "Who spends time on the farm?",
+      "options": [
+        "I live here",
+        "Family lives here",
+        "A caretaker stays here",
+        "We visit regularly",
+        "Visits are occasional"
+      ],
+      "why": "Daily presence affects what care and monitoring are realistic.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_tenure",
+      "domain": "identity",
+      "title": "What is your relationship to the land?",
+      "options": [
+        "Owned",
+        "Leased",
+        "Family or shared land",
+        "Managed for someone else",
+        "Still being arranged"
+      ],
+      "why": "Permission and long-term security matter before investing in lasting changes.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "farm_season",
+      "domain": "identity",
+      "title": "Which seasons cause the biggest difficulties?",
+      "options": [
+        "Heavy-rain months",
+        "Dry months",
+        "Very hot months",
+        "Cold or frost months",
+        "Strong-wind periods",
+        "No clear difficulty yet"
+      ],
+      "why": "Seasonal problems should shape the plan, not just today\u2019s weather.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_history",
+      "domain": "identity",
+      "title": "What has this land been used for before?",
+      "options": [
+        "Mixed farming",
+        "Plantation or orchard",
+        "Grazing",
+        "Annual crops",
+        "Forest or natural regrowth",
+        "I have records to check"
+      ],
+      "why": "Past land use can help explain today\u2019s soil, plants and water issues.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_knowledge",
+      "domain": "identity",
+      "title": "How familiar are you with this farm?",
+      "options": [
+        "New to the land",
+        "Less than one full year",
+        "I have seen several seasons",
+        "Long-term family knowledge"
+      ],
+      "why": "A full season can reveal things a single visit misses.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "farm_records",
+      "domain": "identity",
+      "title": "What records can help us build the picture?",
+      "options": [
+        "Survey or contour map",
+        "Boundary records",
+        "Older photos",
+        "Crop or harvest records",
+        "Soil or water reports",
+        "Notes from local people",
+        "No records yet"
+      ],
+      "why": "Documents and local knowledge help us check assumptions.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_areas",
+      "domain": "identity",
+      "title": "Which parts of the farm have different uses?",
+      "options": [
+        "Home and yard",
+        "Productive planting",
+        "Open land",
+        "Animal area",
+        "Natural habitat",
+        "Water or wet areas"
+      ],
+      "why": "A farm can contain several different places with different needs.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "farm_constraints",
+      "domain": "identity",
+      "title": "What needs checking before major changes?",
+      "options": [
+        "Ownership or permissions",
+        "Local land-use rules",
+        "Shared access",
+        "Neighbours or shared water",
+        "Protected habitat or trees",
+        "No restriction known"
+      ],
+      "why": "Important limits should be visible before a design is treated as feasible.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "boundary_known",
+      "domain": "land",
+      "title": "How well do you know the farm boundary?",
+      "options": [
+        "Marked and checked",
+        "Visible but not checked",
+        "Some edges are unclear",
+        "A dispute needs resolving"
+      ],
+      "why": "Reliable boundaries prevent us planning on the wrong land.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "terrain_shape",
+      "domain": "land",
+      "title": "How would you describe the ground?",
+      "options": [
+        "Mostly flat",
+        "Gentle slopes",
+        "Steep areas",
+        "Terraces or steps",
+        "A mix of shapes"
+      ],
+      "why": "Ground shape affects access, planting and water movement.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "terrain_change",
+      "domain": "land",
+      "title": "Has the land changed since your map or survey?",
+      "options": [
+        "No changes known",
+        "Boundary changes",
+        "New road or path",
+        "Earth moved or terraces changed",
+        "No survey available"
+      ],
+      "why": "Old maps may miss changes that matter to today\u2019s design.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "erosion_seen",
+      "domain": "land",
+      "title": "Where have you seen soil washing away?",
+      "options": [
+        "Bare slopes",
+        "Road or path edges",
+        "Drain outlets",
+        "Planted areas",
+        "Along streams",
+        "None seen"
+      ],
+      "why": "Visible soil loss tells us where protection and field checks matter most.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "slope_safety",
+      "domain": "land",
+      "title": "Have you seen unstable ground?",
+      "options": [
+        "Small slips",
+        "Cracks in the ground",
+        "Leaning trees or retaining walls",
+        "Falling rocks",
+        "None seen"
+      ],
+      "why": "Signs of movement call for closer assessment before digging or building.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "land_low_spots",
+      "domain": "land",
+      "title": "Which ground features can you identify?",
+      "options": [
+        "High ridges",
+        "Low hollows",
+        "Seasonal stream beds",
+        "Rocky patches",
+        "Filled or disturbed ground"
+      ],
+      "why": "These features help explain water routes and places that need checking.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_depth_places",
+      "domain": "land",
+      "title": "Where is digging or planting difficult?",
+      "options": [
+        "Shallow soil",
+        "Large stones or bedrock",
+        "Very hard ground",
+        "Wet or soft ground",
+        "No difficulty noticed"
+      ],
+      "why": "Planting depth and workable ground affect where changes can succeed.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "outside_runoff",
+      "domain": "land",
+      "title": "Does rainwater enter from outside the farm?",
+      "options": [
+        "From a road",
+        "From higher neighbouring land",
+        "From a stream",
+        "No inflow noticed"
+      ],
+      "why": "Water coming from beyond the boundary can change the whole water plan.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "land_mapping",
+      "domain": "land",
+      "title": "What can you confidently locate on a map?",
+      "options": [
+        "Boundary corners",
+        "Buildings",
+        "Paths",
+        "Water sources",
+        "Distinct trees",
+        "I need help matching the map"
+      ],
+      "why": "Recognisable places help align the digital map with the real farm.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "land_season_access",
+      "domain": "land",
+      "title": "Which areas are difficult to reach or work in?",
+      "options": [
+        "Steep slopes",
+        "Very wet areas",
+        "Dense growth",
+        "Rocky areas",
+        "No difficult area known"
+      ],
+      "why": "A useful plan must fit safe, practical access throughout the year.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "inventory",
+      "domain": "vegetation",
+      "title": "What do you know about the plants already here?",
+      "options": [
+        "I know the main species",
+        "I have plant counts",
+        "I can locate some plants",
+        "I have a mapped inventory",
+        "There is little planting yet"
+      ],
+      "why": "Existing plants are the starting point for the food-forest plan.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_layers",
+      "domain": "vegetation",
+      "title": "Which kinds of plants grow here?",
+      "options": [
+        "Tall trees",
+        "Smaller fruit or crop trees",
+        "Shrubs",
+        "Vegetables or herbs",
+        "Ground cover",
+        "Climbers",
+        "Mostly open ground"
+      ],
+      "why": "Different plant heights can share space, but their needs still have to fit.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_health",
+      "domain": "vegetation",
+      "title": "How are the existing plants doing?",
+      "options": [
+        "Mostly healthy",
+        "Some grow poorly",
+        "Some are dying",
+        "Pests or disease noticed",
+        "It varies by patch"
+      ],
+      "why": "Healthy and struggling patches help us decide what to retain and investigate.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_keep",
+      "domain": "vegetation",
+      "title": "Which plants or habitats should we protect?",
+      "options": [
+        "Productive trees",
+        "Old or special trees",
+        "Native plants",
+        "Bird or pollinator habitat",
+        "Streamside growth",
+        "I need help identifying them"
+      ],
+      "why": "A new design should not accidentally remove what is already valuable.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_harvest",
+      "domain": "vegetation",
+      "title": "What is already producing something useful?",
+      "options": [
+        "Fruit or nuts",
+        "Vegetables",
+        "Spices or beverages",
+        "Fodder",
+        "Timber or fuel",
+        "Mulch material",
+        "Nothing harvested yet"
+      ],
+      "why": "Existing useful plants can support food, income and new planting.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_gaps",
+      "domain": "vegetation",
+      "title": "Where could new planting fit?",
+      "options": [
+        "Open patches",
+        "Gaps between trees",
+        "Along boundaries",
+        "Near the house",
+        "Along suitable paths",
+        "Space needs checking"
+      ],
+      "why": "New planting should fit real space and existing roots, access and light.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_pressure",
+      "domain": "vegetation",
+      "title": "What damages plants most often?",
+      "options": [
+        "Wild animals",
+        "Livestock",
+        "Pests",
+        "Disease",
+        "Dry weather",
+        "Flooding or waterlogging",
+        "No clear damage"
+      ],
+      "why": "Protection and plant choice should respond to actual pressures.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_unwanted",
+      "domain": "vegetation",
+      "title": "Which unwanted plants are difficult to manage?",
+      "options": [
+        "Aggressive grasses",
+        "Climbing weeds",
+        "Woody regrowth",
+        "A spreading introduced plant",
+        "No major problem"
+      ],
+      "why": "We need identification and behaviour before choosing how to manage a plant.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_material",
+      "domain": "vegetation",
+      "title": "Where could you get suitable planting material?",
+      "options": [
+        "Own seed or cuttings",
+        "Local nursery",
+        "Neighbouring farmers",
+        "Specialist supplier",
+        "Source not identified"
+      ],
+      "why": "A design is more practical when suitable plants can actually be obtained.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "plant_seasons",
+      "domain": "vegetation",
+      "title": "How does plant growth change through the year?",
+      "options": [
+        "Strong rainy-season growth",
+        "Dry-season slowdown",
+        "Seasonal leaf loss",
+        "Seasonal flowering or harvest",
+        "Little change noticed"
+      ],
+      "why": "Seasonal changes affect shade, harvests, mulch and planting times.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_sources",
+      "domain": "water",
+      "title": "Where does the farm get water?",
+      "options": [
+        "Rain only",
+        "Well or borewell",
+        "Spring",
+        "Stream",
+        "Pond",
+        "Piped or shared supply",
+        "Roof-water collection"
+      ],
+      "why": "We need to know both the source and its limits.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "supply",
+      "domain": "water",
+      "title": "How well do you know the dry-season supply?",
+      "options": [
+        "Measured more than once",
+        "One flow or bucket test",
+        "I judge from experience",
+        "Supply sometimes runs out",
+        "Not measured yet"
+      ],
+      "why": "A source on the map does not tell us how much water is available.",
+      "hint": "Add season, duration and units if known. One test does not establish a reliable long-term supply.",
+      "multiple": false
+    },
+    {
+      "id": "water_shortage",
+      "domain": "water",
+      "title": "When does water become scarce?",
+      "options": [
+        "Before the rains",
+        "During long dry spells",
+        "Only in unusually dry years",
+        "No shortage noticed"
+      ],
+      "why": "Timing shortages helps plan storage, planting and water use.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_paths",
+      "domain": "water",
+      "title": "What happens to rainwater on the farm?",
+      "options": [
+        "Soaks into covered ground",
+        "Runs along paths",
+        "Runs downhill in sheets",
+        "Collects in hollows",
+        "Leaves through a drain or stream"
+      ],
+      "why": "Observed rain routes help us check the terrain model.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_damage",
+      "domain": "water",
+      "title": "Where does water cause trouble?",
+      "options": [
+        "Near buildings",
+        "On roads or paths",
+        "Around plant roots",
+        "At the boundary",
+        "At a drain outlet",
+        "No trouble noticed"
+      ],
+      "why": "Water management should first address places where people, soil or plants are harmed.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_storage",
+      "domain": "water",
+      "title": "What water storage exists today?",
+      "options": [
+        "Household tank",
+        "Irrigation tank",
+        "Pond",
+        "Small collection pit",
+        "No storage yet"
+      ],
+      "why": "Existing storage may help, but its size and condition need checking.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_irrigation",
+      "domain": "water",
+      "title": "How do you water plants now?",
+      "options": [
+        "No irrigation",
+        "Hose",
+        "Buckets or watering cans",
+        "Drip lines",
+        "Sprinklers",
+        "Channels"
+      ],
+      "why": "Current watering methods reveal effort, losses and practical opportunities.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_quality",
+      "domain": "water",
+      "title": "What do you know about water quality?",
+      "options": [
+        "Recent test report",
+        "Looks or smells unusual",
+        "Salty taste or deposits noticed",
+        "Used without testing",
+        "Different sources differ"
+      ],
+      "why": "Suitability depends on the use. Appearance alone does not establish safe water.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_uses",
+      "domain": "water",
+      "title": "What needs water on the farm?",
+      "options": [
+        "Household use",
+        "Crop irrigation",
+        "Animals",
+        "Nursery",
+        "Processing or cleaning",
+        "Habitat or pond"
+      ],
+      "why": "Several uses may compete for the same seasonal supply.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_overflow",
+      "domain": "water",
+      "title": "Where can excess water leave safely?",
+      "options": [
+        "Known drain or stream",
+        "Planned overflow route",
+        "It crosses a neighbour\u2019s land",
+        "It spreads unpredictably",
+        "No route identified"
+      ],
+      "why": "Storage and slowing water also need a safe overflow plan; check it on the ground.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil",
+      "domain": "soil",
+      "title": "What soil information do you already have?",
+      "options": [
+        "Lab report",
+        "Measured depth",
+        "Simple water-soaking test",
+        "Field observations only",
+        "Not checked yet"
+      ],
+      "why": "Tests and observations tell us different things; both need a place and date.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_feel",
+      "domain": "soil",
+      "title": "How does moist soil feel in your hand?",
+      "options": [
+        "Mostly gritty or sandy",
+        "Smooth or silty",
+        "Sticky or clay-like",
+        "A mix",
+        "It varies by patch"
+      ],
+      "why": "A simple description helps start the discussion, but is not a laboratory result.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_cover",
+      "domain": "soil",
+      "title": "How much soil is covered most of the year?",
+      "options": [
+        "Mostly bare",
+        "Mostly mulch",
+        "Mostly living plants",
+        "A mix of covered and bare areas"
+      ],
+      "why": "Soil cover affects drying, rain impact and the work of managing weeds.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_soaking",
+      "domain": "soil",
+      "title": "What happens when rain hits the soil?",
+      "options": [
+        "Soaks in quickly",
+        "Puddles briefly",
+        "Stays wet for days",
+        "Runs off before soaking",
+        "Different patches behave differently"
+      ],
+      "why": "This helps identify where water-soaking checks would be useful.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_life",
+      "domain": "soil",
+      "title": "What signs of life do you notice in the soil?",
+      "options": [
+        "Earthworms",
+        "Fungi or decaying leaves",
+        "Lots of small creatures",
+        "Few visible signs",
+        "I have not looked"
+      ],
+      "why": "Observations can guide learning, without treating a visible sign as proof of soil health.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_inputs",
+      "domain": "soil",
+      "title": "What has been added to the soil recently?",
+      "options": [
+        "Compost or manure",
+        "Mulch",
+        "Chemical fertiliser",
+        "Lime or other minerals",
+        "Natural-farming preparations",
+        "Nothing known"
+      ],
+      "why": "Past inputs help interpret plant response and avoid unsupported assumptions.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "soil_compaction",
+      "domain": "soil",
+      "title": "Where does the soil seem hard or tightly packed?",
+      "options": [
+        "Paths",
+        "Vehicle routes",
+        "Animal areas",
+        "Planting beds",
+        "No hard areas noticed"
+      ],
+      "why": "Repeated traffic can affect roots and water entry.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "light",
+      "domain": "soil",
+      "title": "What shade do you notice where crops grow?",
+      "options": [
+        "Full sun most of the day",
+        "Morning sun only",
+        "Afternoon sun only",
+        "Broken shade",
+        "Deep shade",
+        "It changes with the season"
+      ],
+      "why": "Ground shape alone cannot show shade from trees and buildings.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "light_observation",
+      "domain": "soil",
+      "title": "How well have you checked sunlight?",
+      "options": [
+        "Several times in a day",
+        "In different seasons",
+        "A few photos or visits",
+        "Not checked yet"
+      ],
+      "why": "Time and season help us compare real shade with the sun model.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "soil_exposure",
+      "domain": "soil",
+      "title": "What weather exposure affects plants here?",
+      "options": [
+        "Hot afternoon sun",
+        "Strong wind",
+        "Cold air or frost",
+        "Long periods of damp shade",
+        "No clear issue"
+      ],
+      "why": "These conditions can change where sensitive crops belong.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "access",
+      "domain": "infrastructure",
+      "title": "Which mapped structures or routes need correcting?",
+      "options": [
+        "House or sheds",
+        "Paths or roads",
+        "Water pipes or power lines",
+        "Fence or gates",
+        "No correction known"
+      ],
+      "why": "Existing features should guide designs, and proposed buildings must stay separate.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "building_current",
+      "domain": "infrastructure",
+      "title": "Which buildings exist today?",
+      "options": [
+        "House",
+        "Cowshed or animal shelter",
+        "Tool store",
+        "Processing area",
+        "Nursery shelter",
+        "No buildings"
+      ],
+      "why": "The current farm scene should show what really exists.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "building_planned",
+      "domain": "infrastructure",
+      "title": "Which structures are only planned?",
+      "options": [
+        "New or rebuilt house",
+        "Animal shelter",
+        "Water tank",
+        "Storage or processing space",
+        "Nursery",
+        "None planned"
+      ],
+      "why": "A future structure must never be mistaken for an existing one.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "access_vehicle",
+      "domain": "infrastructure",
+      "title": "What can reach the farm reliably?",
+      "options": [
+        "Walking only",
+        "Two-wheelers",
+        "Small vehicles",
+        "Tractor",
+        "Larger delivery vehicle",
+        "Access changes with rain"
+      ],
+      "why": "Access determines how materials, harvests and people can move.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "fence_condition",
+      "domain": "infrastructure",
+      "title": "What is the boundary protection like?",
+      "options": [
+        "Barbed wire",
+        "Live hedge",
+        "Wall or other fence",
+        "Open boundary",
+        "Some damaged sections"
+      ],
+      "why": "Boundary type and weak spots affect animals, access and planting.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "power_supply",
+      "domain": "infrastructure",
+      "title": "What power is available?",
+      "options": [
+        "Grid power",
+        "Solar power",
+        "Generator",
+        "Frequent power cuts",
+        "No power"
+      ],
+      "why": "Pumps, tools and future systems need a realistic energy plan.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "water_equipment",
+      "domain": "infrastructure",
+      "title": "What water equipment is already installed?",
+      "options": [
+        "Pump",
+        "Pipes",
+        "Drip or sprinkler system",
+        "Tank plumbing",
+        "Roof gutters",
+        "None"
+      ],
+      "why": "Existing equipment may be reusable if its location and condition are known.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "structure_condition",
+      "domain": "infrastructure",
+      "title": "What needs repair or a closer look?",
+      "options": [
+        "Roof or building",
+        "Tank or pond lining",
+        "Pump or irrigation",
+        "Road or steps",
+        "Retaining wall",
+        "Nothing known"
+      ],
+      "why": "Repairs may be more urgent than adding new infrastructure.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "material_storage",
+      "domain": "infrastructure",
+      "title": "Where can materials and harvests be kept?",
+      "options": [
+        "Dry secure store",
+        "Covered outdoor space",
+        "Cold storage",
+        "Temporary space only",
+        "No suitable space"
+      ],
+      "why": "Storage affects losses, safety and the practicality of farm work.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "access_safety",
+      "domain": "infrastructure",
+      "title": "Which places need safer access or protection?",
+      "options": [
+        "Steep steps or paths",
+        "Open well or tank",
+        "Power lines or poles",
+        "Road crossing",
+        "Animal area",
+        "No issue identified"
+      ],
+      "why": "Everyday safety should be visible before new routes or work are planned.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "labour",
+      "domain": "operations",
+      "title": "Who can help with farm work?",
+      "options": [
+        "Owner",
+        "Family",
+        "Regular workers",
+        "Occasional hired workers",
+        "Neighbour or shared help"
+      ],
+      "why": "The design must fit the people available to look after it.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_time",
+      "domain": "operations",
+      "title": "How much owner time is usually available each week?",
+      "options": [
+        "Less than half a day",
+        "Half a day to two days",
+        "Three to four days",
+        "Most days",
+        "It changes a lot"
+      ],
+      "why": "A realistic time budget helps prevent an unmanageable plan.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "work_difficult",
+      "domain": "operations",
+      "title": "Which work takes the most effort?",
+      "options": [
+        "Watering",
+        "Weeding",
+        "Pruning",
+        "Harvesting",
+        "Moving materials",
+        "Animal care",
+        "Keeping records"
+      ],
+      "why": "The best improvement may be the one that removes a recurring burden.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_tools",
+      "domain": "operations",
+      "title": "What tools can you use now?",
+      "options": [
+        "Hand tools",
+        "Brush cutter",
+        "Powered tools",
+        "Tractor or hired machinery",
+        "Borrowed or shared tools",
+        "Very few tools"
+      ],
+      "why": "Available tools affect cost, timing and what can be done safely.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_harvest",
+      "domain": "operations",
+      "title": "How are harvests used?",
+      "options": [
+        "Family food",
+        "Local sales",
+        "Wholesale or trader",
+        "Processing",
+        "Animal feed",
+        "No harvest yet"
+      ],
+      "why": "Use and sales channels should guide crop and work decisions.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_records",
+      "domain": "operations",
+      "title": "What do you track already?",
+      "options": [
+        "Tasks",
+        "Harvest quantities",
+        "Income and costs",
+        "Inputs",
+        "Plant health",
+        "Weather or water",
+        "Nothing regularly"
+      ],
+      "why": "Start from existing habits instead of making farmers duplicate work.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_animals",
+      "domain": "operations",
+      "title": "Are animals part of the farm?",
+      "options": [
+        "Cattle or buffalo",
+        "Goats or sheep",
+        "Poultry",
+        "Other livestock",
+        "Occasional grazing animals",
+        "No livestock"
+      ],
+      "why": "Animals affect fodder, fencing, manure, water and daily care.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_materials",
+      "domain": "operations",
+      "title": "What useful materials are available locally?",
+      "options": [
+        "Leaves or prunings",
+        "Animal manure",
+        "Compost",
+        "Straw or crop waste",
+        "Wood chips",
+        "Materials are hard to obtain"
+      ],
+      "why": "Local materials can reduce cost, but quantity and suitability still need checking.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "work_spend",
+      "domain": "operations",
+      "title": "How would you like to manage spending?",
+      "options": [
+        "Very small steps",
+        "A fixed seasonal budget",
+        "Invest more after seeing results",
+        "A budget is ready",
+        "Budget not set"
+      ],
+      "why": "A plan should fit actual cash flow and investment comfort.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": false
+    },
+    {
+      "id": "work_followup",
+      "domain": "operations",
+      "title": "How often can work and plant health be checked?",
+      "options": [
+        "Daily",
+        "A few times a week",
+        "Weekly",
+        "Less often",
+        "Someone else can check"
+      ],
+      "why": "Follow-up frequency determines which tasks and trials are realistic.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "income",
+      "domain": "goals",
+      "title": "What matters most for the farm\u2019s future?",
+      "options": [
+        "Household food",
+        "Income",
+        "Biodiversity and restoration",
+        "Less maintenance",
+        "Learning or visitors",
+        "A resilient home"
+      ],
+      "why": "Several goals can matter together; making them visible helps compare choices.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_first",
+      "domain": "goals",
+      "title": "What would you most like to improve first?",
+      "options": [
+        "Water security",
+        "Food-forest planting",
+        "Soil protection",
+        "Existing crop health",
+        "Access or infrastructure",
+        "Workload or income"
+      ],
+      "why": "A first priority connects the profile to a practical next action.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_horizon",
+      "domain": "goals",
+      "title": "When do you hope to see useful progress?",
+      "options": [
+        "This season",
+        "Within a year",
+        "In two to three years",
+        "Over five years or more",
+        "Different goals have different timelines"
+      ],
+      "why": "Quick benefits and long-term tree systems need different expectations.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_protect",
+      "domain": "goals",
+      "title": "What must a new design preserve?",
+      "options": [
+        "Existing productive plants",
+        "Natural habitat",
+        "Household water",
+        "Access and daily routines",
+        "Cultural or special places",
+        "Current income"
+      ],
+      "why": "Design should respect what the farmer cannot afford to lose.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_food",
+      "domain": "goals",
+      "title": "What foods or products would you like more of?",
+      "options": [
+        "Fruit",
+        "Vegetables and greens",
+        "Spices",
+        "Staples or pulses",
+        "Fodder",
+        "Timber or fuel",
+        "Market crops"
+      ],
+      "why": "Desired outputs help compare planting mixes rather than suggest generic species.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_approaches",
+      "domain": "goals",
+      "title": "Which farming approaches would you like to explore?",
+      "options": [
+        "Natural farming",
+        "Permaculture",
+        "Syntropic agroforestry",
+        "Other agroforestry",
+        "Local traditional practices",
+        "Help me compare"
+      ],
+      "why": "Preferences guide learning; the app must still check whether a practice fits this farm.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_risk",
+      "domain": "goals",
+      "title": "How would you prefer to try a new idea?",
+      "options": [
+        "Small reversible trial",
+        "Keep a comparison patch",
+        "Expand something already successful",
+        "Larger staged change",
+        "I want more evidence first"
+      ],
+      "why": "Your comfort with uncertainty should shape the size and pace of changes.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_success",
+      "domain": "goals",
+      "title": "What signs would tell you a change is helping?",
+      "options": [
+        "More reliable water",
+        "Healthier plants",
+        "Better harvests",
+        "Less work",
+        "Lower costs",
+        "More wildlife or soil cover"
+      ],
+      "why": "Choose observable signs so a trial can teach us something useful.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_blockers",
+      "domain": "goals",
+      "title": "What is most likely to hold the plan back?",
+      "options": [
+        "Water",
+        "Time or labour",
+        "Money",
+        "Skills or confidence",
+        "Planting material",
+        "Permissions",
+        "No clear blocker"
+      ],
+      "why": "Making obstacles visible helps us choose achievable next steps.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    },
+    {
+      "id": "goal_decisions",
+      "domain": "goals",
+      "title": "Which decisions need more information before you act?",
+      "options": [
+        "Where to plant",
+        "Which plants to choose",
+        "How to manage rainwater",
+        "What to keep or remove",
+        "How much to invest",
+        "What to trial first"
+      ],
+      "why": "Unanswered decisions should lead to questions and checks, not confident guesses.",
+      "hint": "Choose what you know. Add a place or a short explanation if helpful.",
+      "multiple": true
+    }
+  ]
+}

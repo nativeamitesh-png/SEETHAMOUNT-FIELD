@@ -1,0 +1,9 @@
+// Keeps the phone recorder and the web app working offline after the first visit (network first, cache as fallback).
+const C = 'seethamount-field-v17';
+const FILES = ['phone.html', 'phone.css', 'phone.js', 'phonemap.js', 'exif.js', 'store.js', 'filer.js', 'places.js', 'farm.js', 'edition.json', 'phone.webmanifest'];
+const WEB = ['index.html', 'onboard.js', 'onboard.css', 'climate.js', 'plants.js', 'data/plants-shared.json', 'data/questions.json', 'app.css', 'engine.css', 'app.js', 'engine.js', 'engine-3d.js', 'work.js', 'trade.js', 'atlas.js', 'whatif.js', 'caps.js', 'people.js', 'analysis.js', 'brain.js', 'vision.js', 'grow.js', 'qr.js', 'reach.js', 'scenmap.js', 'journey.js', 'meaning.js', 'data/meaning.json', 'data/journey.json', 'data/scenario-maps.json', 'data/plants.json', 'data/precedents.json', 'data/tests-register.json', 'data/glossary.json', 'data/capabilities.json', 'vendor/suncalc.js', 'vendor/three.module.js', 'vendor/OrbitControls.js', 'data/terrain.json', 'data/terrain-grid.csv', 'data/survey-trees.json', 'data/scene-features.json', 'data/profile-seed.json', 'data/contours.png', 'data/rain-weekly.json'];
+const ALL = FILES.concat(WEB);
+self.addEventListener('install', e => e.waitUntil(caches.open(C).then(c => c.addAll(FILES).then(() => c.addAll(WEB).catch(() => {}))).then(() => self.skipWaiting())));
+self.addEventListener('activate', e => e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x)))).then(() => self.clients.claim())));
+self.addEventListener('fetch', e => { const u = new URL(e.request.url); if (e.request.method !== 'GET' || !ALL.some(f => u.pathname.endsWith('/' + f))) return;
+  e.respondWith(fetch(e.request).then(r => { const copy = r.clone(); caches.open(C).then(c => c.put(e.request, copy)); return r; }).catch(() => caches.match(e.request))); });

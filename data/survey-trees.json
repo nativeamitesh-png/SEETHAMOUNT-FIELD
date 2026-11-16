@@ -1,0 +1,3658 @@
+{
+  "schema": "seethamount-survey-vegetation-v1",
+  "origin": [
+    631050,
+    1309585
+  ],
+  "surveyDate": "2026-03-27",
+  "records": [
+    {
+      "id": "dwg-34315",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -52.42076899996027,
+      "northing": 12.029916000319645,
+      "block": "WELL2 MT",
+      "handles": [
+        34315
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10780,
+      "groundSampleOffsetM": 0.477
+    },
+    {
+      "id": "dwg-34316",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -63.182712999987416,
+      "northing": 4.690067000221461,
+      "block": "WELL2 MT",
+      "handles": [
+        34316
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9665,
+      "groundSampleOffsetM": 0.37
+    },
+    {
+      "id": "dwg-34317",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -61.462513999897055,
+      "northing": 1.4052780002821237,
+      "block": "WELL2 MT",
+      "handles": [
+        34317
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9253,
+      "groundSampleOffsetM": 0.102
+    },
+    {
+      "id": "dwg-34318",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -60.45207100000698,
+      "northing": -0.9276379998773336,
+      "block": "WELL2 MT",
+      "handles": [
+        34318
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8978,
+      "groundSampleOffsetM": 0.43
+    },
+    {
+      "id": "dwg-34319",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -53.7810359998839,
+      "northing": -14.934917999664322,
+      "block": "WELL2 MT",
+      "handles": [
+        34319
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7053,
+      "groundSampleOffsetM": 0.518
+    },
+    {
+      "id": "dwg-34320",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -49.4201259999536,
+      "northing": -24.08959799981676,
+      "block": "WELL2 MT",
+      "handles": [
+        34320
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5677,
+      "groundSampleOffsetM": 0.418
+    },
+    {
+      "id": "dwg-34321",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -47.813922000001185,
+      "northing": -27.747554999776185,
+      "block": "WELL2 MT",
+      "handles": [
+        34321
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5265,
+      "groundSampleOffsetM": 0.4
+    },
+    {
+      "id": "dwg-34322",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -43.9495529999258,
+      "northing": -35.02584299980663,
+      "block": "WELL2 MT",
+      "handles": [
+        34322
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4165,
+      "groundSampleOffsetM": 0.653
+    },
+    {
+      "id": "dwg-34323",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -40.70025899994653,
+      "northing": -42.71122799976729,
+      "block": "WELL2 MT",
+      "handles": [
+        34323
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3202,
+      "groundSampleOffsetM": 0.291
+    },
+    {
+      "id": "dwg-34324",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -36.56248199986294,
+      "northing": -50.836989999748766,
+      "block": "WELL2 MT",
+      "handles": [
+        34324
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2102,
+      "groundSampleOffsetM": 0.343
+    },
+    {
+      "id": "dwg-34325",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -32.889333999948576,
+      "northing": -59.19262899970636,
+      "block": "WELL2 MT",
+      "handles": [
+        34325
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 864,
+      "groundSampleOffsetM": 0.496
+    },
+    {
+      "id": "dwg-34326",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -31.45929399994202,
+      "northing": -61.74244699976407,
+      "block": "WELL2 MT",
+      "handles": [
+        34326
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 589,
+      "groundSampleOffsetM": 0.246
+    },
+    {
+      "id": "dwg-34327",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -24.123101999866776,
+      "northing": -58.98257799982093,
+      "block": "WELL2 MT",
+      "handles": [
+        34327
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 1010,
+      "groundSampleOffsetM": 0.612
+    },
+    {
+      "id": "dwg-34328",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -21.47060599992983,
+      "northing": -57.44691099971533,
+      "block": "WELL2 MT",
+      "handles": [
+        34328
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 1151,
+      "groundSampleOffsetM": 0.061
+    },
+    {
+      "id": "dwg-34329",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -19.764299999922514,
+      "northing": -56.37805899977684,
+      "block": "WELL2 MT",
+      "handles": [
+        34329
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 1291,
+      "groundSampleOffsetM": 0.291
+    },
+    {
+      "id": "dwg-34330",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -12.25302189856302,
+      "northing": -52.037530994042754,
+      "block": "WELL2 MT",
+      "handles": [
+        34330
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 1850,
+      "groundSampleOffsetM": 0.524
+    },
+    {
+      "id": "dwg-34331",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -3.8648378985235468,
+      "northing": -46.88337999396026,
+      "block": "WELL2 MT",
+      "handles": [
+        34331
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2687,
+      "groundSampleOffsetM": 0.529
+    },
+    {
+      "id": "dwg-34332",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 0.3078821013914421,
+      "northing": -44.69865399389528,
+      "block": "WELL2 MT",
+      "handles": [
+        34332
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2967,
+      "groundSampleOffsetM": 0.276
+    },
+    {
+      "id": "dwg-34333",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 5.689782101428136,
+      "northing": -41.07205399405211,
+      "block": "WELL2 MT",
+      "handles": [
+        34333
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3386,
+      "groundSampleOffsetM": 0.468
+    },
+    {
+      "id": "dwg-34334",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 11.3399431015132,
+      "northing": -38.08393299416639,
+      "block": "WELL2 MT",
+      "handles": [
+        34334
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3806,
+      "groundSampleOffsetM": 0.446
+    },
+    {
+      "id": "dwg-34335",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 16.303964101476595,
+      "northing": -35.008494993904606,
+      "block": "WELL2 MT",
+      "handles": [
+        34335
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4225,
+      "groundSampleOffsetM": 0.529
+    },
+    {
+      "id": "dwg-34336",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 20.158274101442657,
+      "northing": -32.410119993845,
+      "block": "WELL2 MT",
+      "handles": [
+        34336
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4643,
+      "groundSampleOffsetM": 0.353
+    },
+    {
+      "id": "dwg-34337",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 22.357275101472624,
+      "northing": -30.968264993978664,
+      "block": "WELL2 MT",
+      "handles": [
+        34337
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4921,
+      "groundSampleOffsetM": 0.49
+    },
+    {
+      "id": "dwg-34338",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 27.788893101504073,
+      "northing": -27.309164993930608,
+      "block": "WELL2 MT",
+      "handles": [
+        34338
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5340,
+      "groundSampleOffsetM": 0.346
+    },
+    {
+      "id": "dwg-34339",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 29.69392710144166,
+      "northing": -25.940813994035125,
+      "block": "WELL2 MT",
+      "handles": [
+        34339
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5618,
+      "groundSampleOffsetM": 0.482
+    },
+    {
+      "id": "dwg-34340",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 41.93284410145134,
+      "northing": -19.369481994071975,
+      "block": "WELL2 MT",
+      "handles": [
+        34340
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6458,
+      "groundSampleOffsetM": 0.452
+    },
+    {
+      "id": "dwg-34341",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 44.64905910147354,
+      "northing": -18.31105299387127,
+      "block": "WELL2 MT",
+      "handles": [
+        34341
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6599,
+      "groundSampleOffsetM": 0.241
+    },
+    {
+      "id": "dwg-34342",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 47.213760101469234,
+      "northing": -16.759880993980914,
+      "block": "WELL2 MT",
+      "handles": [
+        34342
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6878,
+      "groundSampleOffsetM": 0.387
+    },
+    {
+      "id": "dwg-34343",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 50.312634101486765,
+      "northing": -15.557951994007453,
+      "block": "WELL2 MT",
+      "handles": [
+        34343
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7019,
+      "groundSampleOffsetM": 0.196
+    },
+    {
+      "id": "dwg-34344",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 56.23138810147066,
+      "northing": -9.591656994074583,
+      "block": "WELL2 MT",
+      "handles": [
+        34344
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7853,
+      "groundSampleOffsetM": 0.284
+    },
+    {
+      "id": "dwg-34345",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 49.44063176715281,
+      "northing": -12.587862290907651,
+      "block": "WELL2 MT",
+      "handles": [
+        34345
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7432,
+      "groundSampleOffsetM": 0.106
+    },
+    {
+      "id": "dwg-34346",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 48.27650710137095,
+      "northing": -10.321421993896365,
+      "block": "WELL2 MT",
+      "handles": [
+        34346
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7707,
+      "groundSampleOffsetM": 0.286
+    },
+    {
+      "id": "dwg-34347",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 47.6036969255656,
+      "northing": -8.118297037668526,
+      "block": "WELL2 MT",
+      "handles": [
+        34347
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7982,
+      "groundSampleOffsetM": 0.396
+    },
+    {
+      "id": "dwg-34348",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 43.18391290388536,
+      "northing": 1.4005116070620716,
+      "block": "WELL2 MT",
+      "handles": [
+        34348
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9358,
+      "groundSampleOffsetM": 0.331
+    },
+    {
+      "id": "dwg-34349",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 44.32317290385254,
+      "northing": -1.2975113929715008,
+      "block": "WELL2 MT",
+      "handles": [
+        34349
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8945,
+      "groundSampleOffsetM": 0.269
+    },
+    {
+      "id": "dwg-34350",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 44.88058390386868,
+      "northing": -3.28111039288342,
+      "block": "WELL2 MT",
+      "handles": [
+        34350
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8669,
+      "groundSampleOffsetM": 0.439
+    },
+    {
+      "id": "dwg-34351",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 40.82110900001135,
+      "northing": 6.367373000364751,
+      "block": "WELL2 MT",
+      "handles": [
+        34351
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10045,
+      "groundSampleOffsetM": 0.347
+    },
+    {
+      "id": "dwg-34352",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 37.62936200003605,
+      "northing": 12.131595000158995,
+      "block": "WELL2 MT",
+      "handles": [
+        34352
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10870,
+      "groundSampleOffsetM": 0.39
+    },
+    {
+      "id": "dwg-34353",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 34.13648300000932,
+      "northing": 20.003644000273198,
+      "block": "WELL2 MT",
+      "handles": [
+        34353
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11971,
+      "groundSampleOffsetM": 0.615
+    },
+    {
+      "id": "dwg-34354",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 28.95955600007437,
+      "northing": 30.374699000269175,
+      "block": "WELL2 MT",
+      "handles": [
+        34354
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13345,
+      "groundSampleOffsetM": 0.476
+    },
+    {
+      "id": "dwg-34355",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 24.241067000082694,
+      "northing": 40.891214000293985,
+      "block": "WELL2 MT",
+      "handles": [
+        34355
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14721,
+      "groundSampleOffsetM": 0.469
+    },
+    {
+      "id": "dwg-34356",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 19.7606290000258,
+      "northing": 51.18771900027059,
+      "block": "WELL2 MT",
+      "handles": [
+        34356
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 16234,
+      "groundSampleOffsetM": 0.407
+    },
+    {
+      "id": "dwg-34357",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 20.937449000077322,
+      "northing": 48.35872900020331,
+      "block": "WELL2 MT",
+      "handles": [
+        34357
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15821,
+      "groundSampleOffsetM": 0.46
+    },
+    {
+      "id": "dwg-34358",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 21.84366300003603,
+      "northing": 45.91558500006795,
+      "block": "WELL2 MT",
+      "handles": [
+        34358
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15408,
+      "groundSampleOffsetM": 0.539
+    },
+    {
+      "id": "dwg-34359",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 31.611848999978974,
+      "northing": 63.60900000017136,
+      "block": "WELL2 MT",
+      "handles": [
+        34359
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 17902,
+      "groundSampleOffsetM": 0.156
+    },
+    {
+      "id": "dwg-34360",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 27.25105100008659,
+      "northing": 61.331764000235125,
+      "block": "WELL2 MT",
+      "handles": [
+        34360
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 17622,
+      "groundSampleOffsetM": 0.3
+    },
+    {
+      "id": "dwg-34361",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 46.7439510000404,
+      "northing": 37.60403300030157,
+      "block": "WELL2 MT",
+      "handles": [
+        34361
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14329,
+      "groundSampleOffsetM": 0.265
+    },
+    {
+      "id": "dwg-34362",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 48.941644000122324,
+      "northing": 32.48698000027798,
+      "block": "WELL2 MT",
+      "handles": [
+        34362
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13641,
+      "groundSampleOffsetM": 0.442
+    },
+    {
+      "id": "dwg-34363",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 50.21131200005766,
+      "northing": 29.502242000075057,
+      "block": "WELL2 MT",
+      "handles": [
+        34363
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13229,
+      "groundSampleOffsetM": 0.289
+    },
+    {
+      "id": "dwg-34364",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 51.68755400006194,
+      "northing": 26.90002700011246,
+      "block": "WELL2 MT",
+      "handles": [
+        34364
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12816,
+      "groundSampleOffsetM": 0.442
+    },
+    {
+      "id": "dwg-34365",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 52.65065210114699,
+      "northing": 24.463180006016046,
+      "block": "WELL2 MT",
+      "handles": [
+        34365
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12541,
+      "groundSampleOffsetM": 0.155
+    },
+    {
+      "id": "dwg-34366",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 55.249574101064354,
+      "northing": 18.379861006047577,
+      "block": "WELL2 MT",
+      "handles": [
+        34366
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11716,
+      "groundSampleOffsetM": 0.278
+    },
+    {
+      "id": "dwg-34367",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 58.64253210101742,
+      "northing": 12.973136005923152,
+      "block": "WELL2 MT",
+      "handles": [
+        34367
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10891,
+      "groundSampleOffsetM": 0.494
+    },
+    {
+      "id": "dwg-34368",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 60.03734310111031,
+      "northing": 10.273663006024435,
+      "block": "WELL2 MT",
+      "handles": [
+        34368
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10617,
+      "groundSampleOffsetM": 0.515
+    },
+    {
+      "id": "dwg-34369",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 9.01255410106387,
+      "northing": 51.4069770060014,
+      "block": "WELL2 MT",
+      "handles": [
+        34369
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 16224,
+      "groundSampleOffsetM": 0.496
+    },
+    {
+      "id": "dwg-34370",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 6.133447101106867,
+      "northing": 49.73065300588496,
+      "block": "WELL2 MT",
+      "handles": [
+        34370
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15945,
+      "groundSampleOffsetM": 0.433
+    },
+    {
+      "id": "dwg-34371",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 0.7272311011329293,
+      "northing": 47.04802100593224,
+      "block": "WELL2 MT",
+      "handles": [
+        34371
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15663,
+      "groundSampleOffsetM": 0.506
+    },
+    {
+      "id": "dwg-34372",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 3.0795011011650786,
+      "northing": 44.66179100610316,
+      "block": "WELL2 MT",
+      "handles": [
+        34372
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15252,
+      "groundSampleOffsetM": 0.451
+    },
+    {
+      "id": "dwg-34373",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 4.102341101039201,
+      "northing": 42.606385005870834,
+      "block": "WELL2 MT",
+      "handles": [
+        34373
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14977,
+      "groundSampleOffsetM": 0.412
+    },
+    {
+      "id": "dwg-34374",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 5.344570101122372,
+      "northing": 40.454920005984604,
+      "block": "WELL2 MT",
+      "handles": [
+        34374
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14702,
+      "groundSampleOffsetM": 0.162
+    },
+    {
+      "id": "dwg-34375",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -3.156026898883283,
+      "northing": 45.235309005947784,
+      "block": "WELL2 MT",
+      "handles": [
+        34375
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15383,
+      "groundSampleOffsetM": 0.434
+    },
+    {
+      "id": "dwg-34376",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -5.997994898934849,
+      "northing": 44.131891006138176,
+      "block": "WELL2 MT",
+      "handles": [
+        34376
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 15243,
+      "groundSampleOffsetM": 0.619
+    },
+    {
+      "id": "dwg-34377",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 13.981848101131618,
+      "northing": 21.838166006142274,
+      "block": "WELL2 MT",
+      "handles": [
+        34377
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12088,
+      "groundSampleOffsetM": 0.589
+    },
+    {
+      "id": "dwg-34378",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 15.459107101080008,
+      "northing": 18.194986006012186,
+      "block": "WELL2 MT",
+      "handles": [
+        34378
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11676,
+      "groundSampleOffsetM": 0.308
+    },
+    {
+      "id": "dwg-34379",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 18.196634101099335,
+      "northing": 12.686523006064817,
+      "block": "WELL2 MT",
+      "handles": [
+        34379
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10851,
+      "groundSampleOffsetM": 0.356
+    },
+    {
+      "id": "dwg-34380",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 20.58582510112319,
+      "northing": 7.392431006068364,
+      "block": "WELL2 MT",
+      "handles": [
+        34380
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10163,
+      "groundSampleOffsetM": 0.138
+    },
+    {
+      "id": "dwg-34381",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 21.77154410118237,
+      "northing": 4.606168005848303,
+      "block": "WELL2 MT",
+      "handles": [
+        34381
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9750,
+      "groundSampleOffsetM": 0.292
+    },
+    {
+      "id": "dwg-34382",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 24.3549871010473,
+      "northing": -0.1647599940188229,
+      "block": "WELL2 MT",
+      "handles": [
+        34382
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9063,
+      "groundSampleOffsetM": 0.365
+    },
+    {
+      "id": "dwg-34383",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 25.95744710112922,
+      "northing": -4.735871993936598,
+      "block": "WELL2 MT",
+      "handles": [
+        34383
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8512,
+      "groundSampleOffsetM": 0.515
+    },
+    {
+      "id": "dwg-34384",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 28.23583010106813,
+      "northing": -10.085025993874297,
+      "block": "WELL2 MT",
+      "handles": [
+        34384
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7687,
+      "groundSampleOffsetM": 0.492
+    },
+    {
+      "id": "dwg-34385",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 29.657166101038456,
+      "northing": -12.254194993991405,
+      "block": "WELL2 MT",
+      "handles": [
+        34385
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7412,
+      "groundSampleOffsetM": 0.292
+    },
+    {
+      "id": "dwg-34386",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 15.235876101069152,
+      "northing": -24.20024899416603,
+      "block": "WELL2 MT",
+      "handles": [
+        34386
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5742,
+      "groundSampleOffsetM": 0.4
+    },
+    {
+      "id": "dwg-34387",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 13.316636101109907,
+      "northing": -3.396888993913308,
+      "block": "WELL2 MT",
+      "handles": [
+        34387
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8638,
+      "groundSampleOffsetM": 0.21
+    },
+    {
+      "id": "dwg-34388",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 9.795380101073533,
+      "northing": -3.9062409941107035,
+      "block": "WELL2 MT",
+      "handles": [
+        34388
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8634,
+      "groundSampleOffsetM": 0.502
+    },
+    {
+      "id": "dwg-34389",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 7.761720101116225,
+      "northing": -1.598539994098246,
+      "block": "WELL2 MT",
+      "handles": [
+        34389
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8908,
+      "groundSampleOffsetM": 0.28
+    },
+    {
+      "id": "dwg-34390",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 6.3186041010776535,
+      "northing": 0.49159500608220696,
+      "block": "WELL2 MT",
+      "handles": [
+        34390
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9183,
+      "groundSampleOffsetM": 0.182
+    },
+    {
+      "id": "dwg-34391",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 4.490882101119496,
+      "northing": 4.833485005889088,
+      "block": "WELL2 MT",
+      "handles": [
+        34391
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9733,
+      "groundSampleOffsetM": 0.334
+    },
+    {
+      "id": "dwg-34392",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -15.067427898873575,
+      "northing": 14.483771006111056,
+      "block": "WELL2 MT",
+      "handles": [
+        34392
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11093,
+      "groundSampleOffsetM": 0.433
+    },
+    {
+      "id": "dwg-34393",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -15.988396797911264,
+      "northing": 38.65689701214433,
+      "block": "WELL2 MT",
+      "handles": [
+        34393
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14405,
+      "groundSampleOffsetM": 0.513
+    },
+    {
+      "id": "dwg-34394",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -18.549981898861006,
+      "northing": 37.48392900591716,
+      "block": "WELL2 MT",
+      "handles": [
+        34394
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14264,
+      "groundSampleOffsetM": 0.053
+    },
+    {
+      "id": "dwg-34395",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -34.97187299991492,
+      "northing": 29.18437200016342,
+      "block": "WELL2 MT",
+      "handles": [
+        34395
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13144,
+      "groundSampleOffsetM": 0.568
+    },
+    {
+      "id": "dwg-34396",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": 1.0483590001240373,
+      "northing": -18.0634439997375,
+      "block": "WELL2 MT",
+      "handles": [
+        34396
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6556,
+      "groundSampleOffsetM": 0.628
+    },
+    {
+      "id": "dwg-34397",
+      "speciesKey": "teak",
+      "label": "Teak",
+      "x": -0.01925199991092086,
+      "northing": -18.52577199973166,
+      "block": "WELL2 MT",
+      "handles": [
+        34397
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6554,
+      "groundSampleOffsetM": 0.481
+    },
+    {
+      "id": "dwg-34398",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -60.17474024160765,
+      "northing": 14.341146375052631,
+      "block": "WELL1 CC",
+      "handles": [
+        34398
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11048,
+      "groundSampleOffsetM": 0.362
+    },
+    {
+      "id": "dwg-34399",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -65.59522910334636,
+      "northing": 11.433791162678972,
+      "block": "WELL1 CC",
+      "handles": [
+        34399
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10629,
+      "groundSampleOffsetM": 0.116
+    },
+    {
+      "id": "dwg-34400",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -56.18569810327608,
+      "northing": 6.456954162567854,
+      "block": "WELL1 CC",
+      "handles": [
+        34400
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9948,
+      "groundSampleOffsetM": 0.317
+    },
+    {
+      "id": "dwg-34401",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -48.94763110333588,
+      "northing": 10.921271162573248,
+      "block": "WELL1 CC",
+      "handles": [
+        34401
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10508,
+      "groundSampleOffsetM": 0.615
+    },
+    {
+      "id": "dwg-34402",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -45.25198510324117,
+      "northing": 3.289974162587896,
+      "block": "WELL1 CC",
+      "handles": [
+        34402
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9545,
+      "groundSampleOffsetM": 0.325
+    },
+    {
+      "id": "dwg-34403",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -37.79946510330774,
+      "northing": 7.080240162555128,
+      "block": "WELL1 CC",
+      "handles": [
+        34403
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10105,
+      "groundSampleOffsetM": 0.516
+    },
+    {
+      "id": "dwg-34404",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -52.72249910328537,
+      "northing": -0.9652138375677168,
+      "block": "WELL1 CC",
+      "handles": [
+        34404
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8986,
+      "groundSampleOffsetM": 0.516
+    },
+    {
+      "id": "dwg-34405",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -58.0818381033605,
+      "northing": -4.394637837540358,
+      "block": "WELL1 CC",
+      "handles": [
+        34405
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8428,
+      "groundSampleOffsetM": 0.431
+    },
+    {
+      "id": "dwg-34406",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -41.69055110332556,
+      "northing": -4.467498837271705,
+      "block": "WELL1 CC",
+      "handles": [
+        34406
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8445,
+      "groundSampleOffsetM": 0.193
+    },
+    {
+      "id": "dwg-34407",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -29.2844741033623,
+      "northing": -14.556360837304965,
+      "block": "WELL1 CC",
+      "handles": [
+        34407
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7077,
+      "groundSampleOffsetM": 0.223
+    },
+    {
+      "id": "dwg-34408",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -37.965424103313126,
+      "northing": -13.380091837374493,
+      "block": "WELL1 CC",
+      "handles": [
+        34408
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7207,
+      "groundSampleOffsetM": 0.481
+    },
+    {
+      "id": "dwg-34409",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -35.629235103260726,
+      "northing": -18.625874837394804,
+      "block": "WELL1 CC",
+      "handles": [
+        34409
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6519,
+      "groundSampleOffsetM": 0.18
+    },
+    {
+      "id": "dwg-34410",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -45.2463021032745,
+      "northing": -16.945105837425217,
+      "block": "WELL1 CC",
+      "handles": [
+        34410
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6785,
+      "groundSampleOffsetM": 0.512
+    },
+    {
+      "id": "dwg-34411",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -22.471616103313863,
+      "northing": -19.065492837456986,
+      "block": "WELL1 CC",
+      "handles": [
+        34411
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6394,
+      "groundSampleOffsetM": 0.435
+    },
+    {
+      "id": "dwg-34412",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -31.244784103240818,
+      "northing": -22.385390837211162,
+      "block": "WELL1 CC",
+      "handles": [
+        34412
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5971,
+      "groundSampleOffsetM": 0.28
+    },
+    {
+      "id": "dwg-34413",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -37.34690310328733,
+      "northing": -26.514154837466776,
+      "block": "WELL1 CC",
+      "handles": [
+        34413
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5413,
+      "groundSampleOffsetM": 0.154
+    },
+    {
+      "id": "dwg-34414",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -42.90359310328495,
+      "northing": -22.78594983741641,
+      "block": "WELL1 CC",
+      "handles": [
+        34414
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5960,
+      "groundSampleOffsetM": 0.495
+    },
+    {
+      "id": "dwg-34415",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -34.125454103341326,
+      "northing": -34.04062483739108,
+      "block": "WELL1 CC",
+      "handles": [
+        34415
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4312,
+      "groundSampleOffsetM": 0.593
+    },
+    {
+      "id": "dwg-34416",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -26.962773103266954,
+      "northing": -29.45051783742383,
+      "block": "WELL1 CC",
+      "handles": [
+        34416
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5010,
+      "groundSampleOffsetM": 0.465
+    },
+    {
+      "id": "dwg-34417",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -23.738792103365995,
+      "northing": -37.67927783750929,
+      "block": "WELL1 CC",
+      "handles": [
+        34417
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3909,
+      "groundSampleOffsetM": 0.299
+    },
+    {
+      "id": "dwg-34418",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -29.782514103339054,
+      "northing": -42.19422583724372,
+      "block": "WELL1 CC",
+      "handles": [
+        34418
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3213,
+      "groundSampleOffsetM": 0.416
+    },
+    {
+      "id": "dwg-34419",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -19.345571103389375,
+      "northing": -25.45756783732213,
+      "block": "WELL1 CC",
+      "handles": [
+        34419
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5569,
+      "groundSampleOffsetM": 0.16
+    },
+    {
+      "id": "dwg-34420",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -37.95295110333245,
+      "northing": -46.55925983726047,
+      "block": "WELL1 CC",
+      "handles": [
+        34420
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2653,
+      "groundSampleOffsetM": 0.457
+    },
+    {
+      "id": "dwg-34421",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -19.677210103254765,
+      "northing": -45.571804837556556,
+      "block": "WELL1 CC",
+      "handles": [
+        34421
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2809,
+      "groundSampleOffsetM": 0.191
+    },
+    {
+      "id": "dwg-34422",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -17.24726110335905,
+      "northing": -41.563987837405875,
+      "block": "WELL1 CC",
+      "handles": [
+        34422
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3363,
+      "groundSampleOffsetM": 0.261
+    },
+    {
+      "id": "dwg-34423",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -12.237683103303425,
+      "northing": -40.9512198374141,
+      "block": "WELL1 CC",
+      "handles": [
+        34423
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 3506,
+      "groundSampleOffsetM": 0.522
+    },
+    {
+      "id": "dwg-34424",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -8.188787103281356,
+      "northing": -49.20451383735053,
+      "block": "WELL1 CC",
+      "handles": [
+        34424
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2268,
+      "groundSampleOffsetM": 0.429
+    },
+    {
+      "id": "dwg-34425",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 2.769003896624781,
+      "northing": -32.434305837377906,
+      "block": "WELL1 CC",
+      "handles": [
+        34425
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4625,
+      "groundSampleOffsetM": 0.277
+    },
+    {
+      "id": "dwg-34426",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -8.035381103283726,
+      "northing": -28.666916837450117,
+      "block": "WELL1 CC",
+      "handles": [
+        34426
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5166,
+      "groundSampleOffsetM": 0.494
+    },
+    {
+      "id": "dwg-34427",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 11.194460896658711,
+      "northing": -17.42179183731787,
+      "block": "WELL1 CC",
+      "handles": [
+        34427
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6704,
+      "groundSampleOffsetM": 0.315
+    },
+    {
+      "id": "dwg-34428",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 3.261812896700576,
+      "northing": -12.32504583732225,
+      "block": "WELL1 CC",
+      "handles": [
+        34428
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7386,
+      "groundSampleOffsetM": 0.296
+    },
+    {
+      "id": "dwg-34429",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 18.10374489671085,
+      "northing": -12.185540837235749,
+      "block": "WELL1 CC",
+      "handles": [
+        34429
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7401,
+      "groundSampleOffsetM": 0.506
+    },
+    {
+      "id": "dwg-34430",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 36.63143689662684,
+      "northing": -12.405671837506816,
+      "block": "WELL1 CC",
+      "handles": [
+        34430
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7419,
+      "groundSampleOffsetM": 0.162
+    },
+    {
+      "id": "dwg-34431",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 32.921485896687955,
+      "northing": -4.649471837561578,
+      "block": "WELL1 CC",
+      "handles": [
+        34431
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8519,
+      "groundSampleOffsetM": 0.447
+    },
+    {
+      "id": "dwg-34432",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 40.05388889671303,
+      "northing": -0.9195098374038935,
+      "block": "WELL1 CC",
+      "handles": [
+        34432
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9079,
+      "groundSampleOffsetM": 0.612
+    },
+    {
+      "id": "dwg-34433",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 32.71791789669078,
+      "northing": 15.43415316264145,
+      "block": "WELL1 CC",
+      "handles": [
+        34433
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11279,
+      "groundSampleOffsetM": 0.228
+    },
+    {
+      "id": "dwg-34434",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 22.047562896623276,
+      "northing": 19.034525162773207,
+      "block": "WELL1 CC",
+      "handles": [
+        34434
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11821,
+      "groundSampleOffsetM": 0.649
+    },
+    {
+      "id": "dwg-34435",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 29.193018896738067,
+      "northing": 22.43154616258107,
+      "block": "WELL1 CC",
+      "handles": [
+        34435
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12242,
+      "groundSampleOffsetM": 0.315
+    },
+    {
+      "id": "dwg-34436",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 14.594737896695733,
+      "northing": 34.04325516265817,
+      "block": "WELL1 CC",
+      "handles": [
+        34436
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13883,
+      "groundSampleOffsetM": 0.466
+    },
+    {
+      "id": "dwg-34437",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 18.475269896676764,
+      "northing": 26.419014162616804,
+      "block": "WELL1 CC",
+      "handles": [
+        34437
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12783,
+      "groundSampleOffsetM": 0.085
+    },
+    {
+      "id": "dwg-34438",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 10.943726896657608,
+      "northing": 22.70400416245684,
+      "block": "WELL1 CC",
+      "handles": [
+        34438
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12223,
+      "groundSampleOffsetM": 0.488
+    },
+    {
+      "id": "dwg-34439",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 6.485078896628693,
+      "northing": 29.64237416256219,
+      "block": "WELL1 CC",
+      "handles": [
+        34439
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13185,
+      "groundSampleOffsetM": 0.143
+    },
+    {
+      "id": "dwg-34440",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 0.24671089672483504,
+      "northing": 26.358788162702695,
+      "block": "WELL1 CC",
+      "handles": [
+        34440
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12765,
+      "groundSampleOffsetM": 0.29
+    },
+    {
+      "id": "dwg-34441",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -7.958463103394024,
+      "northing": 24.35762916249223,
+      "block": "WELL1 CC",
+      "handles": [
+        34441
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12481,
+      "groundSampleOffsetM": 0.48
+    },
+    {
+      "id": "dwg-34442",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -4.5585431032814085,
+      "northing": 17.324540162691846,
+      "block": "WELL1 CC",
+      "handles": [
+        34442
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11518,
+      "groundSampleOffsetM": 0.185
+    },
+    {
+      "id": "dwg-34443",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -3.3097321033710614,
+      "northing": 34.11109216278419,
+      "block": "WELL1 CC",
+      "handles": [
+        34443
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13865,
+      "groundSampleOffsetM": 0.433
+    },
+    {
+      "id": "dwg-34444",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 3.8310358966700733,
+      "northing": 37.890072162495926,
+      "block": "WELL1 CC",
+      "handles": [
+        34444
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14286,
+      "groundSampleOffsetM": 0.512
+    },
+    {
+      "id": "dwg-34445",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -11.69212410331238,
+      "northing": 32.29819216276519,
+      "block": "WELL1 CC",
+      "handles": [
+        34445
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13581,
+      "groundSampleOffsetM": 0.279
+    },
+    {
+      "id": "dwg-34446",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -18.687317103380337,
+      "northing": 27.588219162542373,
+      "block": "WELL1 CC",
+      "handles": [
+        34446
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12884,
+      "groundSampleOffsetM": 0.207
+    },
+    {
+      "id": "dwg-34447",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -26.442923103342764,
+      "northing": 24.184026162605733,
+      "block": "WELL1 CC",
+      "handles": [
+        34447
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12462,
+      "groundSampleOffsetM": 0.321
+    },
+    {
+      "id": "dwg-34448",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -29.484454103396274,
+      "northing": 30.4697361625731,
+      "block": "WELL1 CC",
+      "handles": [
+        34448
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13287,
+      "groundSampleOffsetM": 0.034
+    },
+    {
+      "id": "dwg-34449",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -21.562293103314005,
+      "northing": 34.08285616268404,
+      "block": "WELL1 CC",
+      "handles": [
+        34449
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13847,
+      "groundSampleOffsetM": 0.422
+    },
+    {
+      "id": "dwg-34450",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -33.38153410330415,
+      "northing": 19.32844916265458,
+      "block": "WELL1 CC",
+      "handles": [
+        34450
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11765,
+      "groundSampleOffsetM": 0.208
+    },
+    {
+      "id": "dwg-34451",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -22.87676710332744,
+      "northing": 15.708012162474915,
+      "block": "WELL1 CC",
+      "handles": [
+        34451
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11224,
+      "groundSampleOffsetM": 0.43
+    },
+    {
+      "id": "dwg-34452",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -12.175776103278622,
+      "northing": 12.593079162528738,
+      "block": "WELL1 CC",
+      "handles": [
+        34452
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10820,
+      "groundSampleOffsetM": 0.337
+    },
+    {
+      "id": "dwg-34453",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -25.431477103265934,
+      "northing": 3.9592121625319123,
+      "block": "WELL1 CC",
+      "handles": [
+        34453
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9565,
+      "groundSampleOffsetM": 0.464
+    },
+    {
+      "id": "dwg-34454",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -44.977678103372455,
+      "northing": 22.00399116263725,
+      "block": "WELL1 CC",
+      "handles": [
+        34454
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12168,
+      "groundSampleOffsetM": 0.689
+    },
+    {
+      "id": "dwg-34455",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -41.358423201949336,
+      "northing": 14.524074473418295,
+      "block": "WELL1 CC",
+      "handles": [
+        34455
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11067,
+      "groundSampleOffsetM": 0.144
+    },
+    {
+      "id": "dwg-34456",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -37.027876103296876,
+      "northing": 26.14157116250135,
+      "block": "WELL1 CC",
+      "handles": [
+        34456
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12727,
+      "groundSampleOffsetM": 0.593
+    },
+    {
+      "id": "dwg-34457",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -22.669863103306852,
+      "northing": -10.740978837478906,
+      "block": "WELL1 CC",
+      "handles": [
+        34457
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7636,
+      "groundSampleOffsetM": 0.295
+    },
+    {
+      "id": "dwg-34458",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 3.5448848967207596,
+      "northing": -0.9086058374959975,
+      "block": "WELL1 CC",
+      "handles": [
+        34458
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9042,
+      "groundSampleOffsetM": 0.411
+    },
+    {
+      "id": "dwg-34459",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 0.7936158967204392,
+      "northing": 3.4477621626574546,
+      "block": "WELL1 CC",
+      "handles": [
+        34459
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9591,
+      "groundSampleOffsetM": 0.298
+    },
+    {
+      "id": "dwg-34460",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -52.41110610333271,
+      "northing": 18.518994162557647,
+      "block": "WELL1 CC",
+      "handles": [
+        34460
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11608,
+      "groundSampleOffsetM": 0.091
+    },
+    {
+      "id": "dwg-34461",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 25.614813896710984,
+      "northing": -27.398892837343737,
+      "block": "WELL1 CC",
+      "handles": [
+        34461
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5338,
+      "groundSampleOffsetM": 0.153
+    },
+    {
+      "id": "dwg-34462",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 7.378195896628313,
+      "northing": 11.280655162641779,
+      "block": "WELL1 CC",
+      "handles": [
+        34462
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10702,
+      "groundSampleOffsetM": 0.251
+    },
+    {
+      "id": "dwg-34463",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 10.6508678967366,
+      "northing": 4.641902162693441,
+      "block": "WELL1 CC",
+      "handles": [
+        34463
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9739,
+      "groundSampleOffsetM": 0.207
+    },
+    {
+      "id": "dwg-34464",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": 17.655016896664165,
+      "northing": 7.418205162510276,
+      "block": "WELL1 CC",
+      "handles": [
+        34464
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10160,
+      "groundSampleOffsetM": 0.175
+    },
+    {
+      "id": "dwg-34465",
+      "speciesKey": "coconut",
+      "label": "Coconut",
+      "x": -1.08422810328193,
+      "northing": 9.088340162532404,
+      "block": "WELL1 CC",
+      "handles": [
+        34465
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10417,
+      "groundSampleOffsetM": 0.585
+    },
+    {
+      "id": "dwg-34467",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 57.135063000023365,
+      "northing": -2.3859639998991042,
+      "block": "WELL7 AJT",
+      "handles": [
+        34467
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8820,
+      "groundSampleOffsetM": 0.382
+    },
+    {
+      "id": "dwg-34468",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 49.925752000068314,
+      "northing": -4.131199999945238,
+      "block": "WELL7 AJT",
+      "handles": [
+        34468
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8536,
+      "groundSampleOffsetM": 0.563
+    },
+    {
+      "id": "dwg-34469",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 34.929437987622805,
+      "northing": 22.716939107514918,
+      "block": "WELL7 AJT",
+      "handles": [
+        34469
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12247,
+      "groundSampleOffsetM": 0.481
+    },
+    {
+      "id": "dwg-34470",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 24.901797000085935,
+      "northing": 21.80049500009045,
+      "block": "WELL7 AJT",
+      "handles": [
+        34470
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12099,
+      "groundSampleOffsetM": 0.502
+    },
+    {
+      "id": "dwg-34471",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 32.96704600006342,
+      "northing": 37.288567000068724,
+      "block": "WELL7 AJT",
+      "handles": [
+        34471
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14315,
+      "groundSampleOffsetM": 0.513
+    },
+    {
+      "id": "dwg-34472",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 32.69776600005571,
+      "northing": 57.71534000034444,
+      "block": "WELL7 AJT",
+      "handles": [
+        34472
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 17075,
+      "groundSampleOffsetM": 0.292
+    },
+    {
+      "id": "dwg-34473",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 37.35701100016013,
+      "northing": 57.984318000031635,
+      "block": "WELL7 AJT",
+      "handles": [
+        34473
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 17080,
+      "groundSampleOffsetM": 0.505
+    },
+    {
+      "id": "dwg-34474",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 34.95172900008038,
+      "northing": 52.711274000350386,
+      "block": "WELL7 AJT",
+      "handles": [
+        34474
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 16387,
+      "groundSampleOffsetM": 0.499
+    },
+    {
+      "id": "dwg-34475",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 8.661968000116758,
+      "northing": 34.01600000006147,
+      "block": "WELL7 AJT",
+      "handles": [
+        34475
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13877,
+      "groundSampleOffsetM": 0.51
+    },
+    {
+      "id": "dwg-34476",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 6.176801000023261,
+      "northing": 33.445336000062525,
+      "block": "WELL7 AJT",
+      "handles": [
+        34476
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13737,
+      "groundSampleOffsetM": 0.328
+    },
+    {
+      "id": "dwg-34477",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 12.107078901026398,
+      "northing": 25.647093305829912,
+      "block": "WELL7 AJT",
+      "handles": [
+        34477
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12639,
+      "groundSampleOffsetM": 0.42
+    },
+    {
+      "id": "dwg-34478",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 1.7135740000521764,
+      "northing": 16.57246800023131,
+      "block": "WELL7 AJT",
+      "handles": [
+        34478
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11386,
+      "groundSampleOffsetM": 0.226
+    },
+    {
+      "id": "dwg-34479",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 4.718679000041448,
+      "northing": 16.615540000144392,
+      "block": "WELL7 AJT",
+      "handles": [
+        34479
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11389,
+      "groundSampleOffsetM": 0.247
+    },
+    {
+      "id": "dwg-34480",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -6.57500699989032,
+      "northing": 11.85645700036548,
+      "block": "WELL7 AJT",
+      "handles": [
+        34480
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10688,
+      "groundSampleOffsetM": 0.364
+    },
+    {
+      "id": "dwg-34481",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 16.52885000000242,
+      "northing": 5.421026000054553,
+      "block": "WELL7 AJT",
+      "handles": [
+        34481
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9883,
+      "groundSampleOffsetM": 0.084
+    },
+    {
+      "id": "dwg-34482",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 31.722829000093043,
+      "northing": -2.667808999773115,
+      "block": "WELL7 AJT",
+      "handles": [
+        34482
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8794,
+      "groundSampleOffsetM": 0.279
+    },
+    {
+      "id": "dwg-34483",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 8.269094000104815,
+      "northing": -16.921828999882564,
+      "block": "WELL7 AJT",
+      "handles": [
+        34483
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6839,
+      "groundSampleOffsetM": 0.481
+    },
+    {
+      "id": "dwg-34484",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -38.198195999953896,
+      "northing": -29.744343999773264,
+      "block": "WELL7 AJT",
+      "handles": [
+        34484
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4998,
+      "groundSampleOffsetM": 0.388
+    },
+    {
+      "id": "dwg-34485",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -37.425733898882754,
+      "northing": -36.91603399673477,
+      "block": "WELL7 AJT",
+      "handles": [
+        34485
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 4033,
+      "groundSampleOffsetM": 0.423
+    },
+    {
+      "id": "dwg-34486",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -52.09740347741172,
+      "northing": 5.615262753795832,
+      "block": "WELL7 AJT",
+      "handles": [
+        34486
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9814,
+      "groundSampleOffsetM": 0.419
+    },
+    {
+      "id": "dwg-34487",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -56.834907477372326,
+      "northing": 1.094732753932476,
+      "block": "WELL7 AJT",
+      "handles": [
+        34487
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9258,
+      "groundSampleOffsetM": 0.526
+    },
+    {
+      "id": "dwg-34488",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -21.217882477445528,
+      "northing": 4.675454753916711,
+      "block": "WELL7 AJT",
+      "handles": [
+        34488
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9707,
+      "groundSampleOffsetM": 0.332
+    },
+    {
+      "id": "dwg-34489",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": -33.880353477434255,
+      "northing": 15.064722753828391,
+      "block": "WELL7 AJT",
+      "handles": [
+        34489
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11213,
+      "groundSampleOffsetM": 0.578
+    },
+    {
+      "id": "dwg-34490",
+      "speciesKey": "other",
+      "label": "Other important tree",
+      "x": 23.59809752262663,
+      "northing": -11.303152246167883,
+      "block": "WELL7 AJT",
+      "handles": [
+        34490
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7544,
+      "groundSampleOffsetM": 0.22
+    },
+    {
+      "id": "dwg-34491",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 45.049423000076786,
+      "northing": 41.68940100003965,
+      "block": "mgo",
+      "handles": [
+        34491
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14880,
+      "groundSampleOffsetM": 0.489
+    },
+    {
+      "id": "dwg-34492",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 26.25849100004416,
+      "northing": 36.7332250000909,
+      "block": "mgo",
+      "handles": [
+        34492
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 14171,
+      "groundSampleOffsetM": 0.336
+    },
+    {
+      "id": "dwg-34493",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 30.19949800008908,
+      "northing": 28.135126000037417,
+      "block": "mgo",
+      "handles": [
+        34493
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13071,
+      "groundSampleOffsetM": 0.473
+    },
+    {
+      "id": "dwg-34494",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 25.621380000025965,
+      "northing": 20.28454800019972,
+      "block": "mgo",
+      "handles": [
+        34494
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11962,
+      "groundSampleOffsetM": 0.247
+    },
+    {
+      "id": "dwg-34495",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 44.20577335276175,
+      "northing": -0.18423611600883305,
+      "block": "mgo",
+      "handles": [
+        34495
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9083,
+      "groundSampleOffsetM": 0.432
+    },
+    {
+      "id": "dwg-34496",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": -62.438495999900624,
+      "northing": 6.293233000207692,
+      "block": "mgo",
+      "handles": [
+        34496
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9942,
+      "groundSampleOffsetM": 0.216
+    },
+    {
+      "id": "dwg-34497",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": -57.142321999999695,
+      "northing": -8.8433589998167,
+      "block": "mgo",
+      "handles": [
+        34497
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7877,
+      "groundSampleOffsetM": 0.496
+    },
+    {
+      "id": "dwg-34498",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 1.3518740000436082,
+      "northing": -10.060770999873057,
+      "block": "mgo",
+      "handles": [
+        34498
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 7660,
+      "groundSampleOffsetM": 0.464
+    },
+    {
+      "id": "dwg-34499",
+      "speciesKey": "mango",
+      "label": "Mango",
+      "x": 42.84916700003669,
+      "northing": 2.765893000178039,
+      "block": "mgo",
+      "handles": [
+        34499
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9495,
+      "groundSampleOffsetM": 0.439
+    },
+    {
+      "id": "dwg-34500",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": -16.538015378988348,
+      "northing": 34.040000377222896,
+      "block": "jack",
+      "handles": [
+        34500
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13852,
+      "groundSampleOffsetM": 0.462
+    },
+    {
+      "id": "dwg-34501",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": -6.304685773211531,
+      "northing": 26.33164774812758,
+      "block": "jack",
+      "handles": [
+        34501
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12758,
+      "groundSampleOffsetM": 0.258
+    },
+    {
+      "id": "dwg-34502",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": 1.5832292267587036,
+      "northing": 22.651773748220876,
+      "block": "jack",
+      "handles": [
+        34502
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12214,
+      "groundSampleOffsetM": 0.173
+    },
+    {
+      "id": "dwg-34503",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": 4.207467352040112,
+      "northing": -16.984060197602957,
+      "block": "jack",
+      "handles": [
+        34503
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 6835,
+      "groundSampleOffsetM": 0.566
+    },
+    {
+      "id": "dwg-34504",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": -17.35628964798525,
+      "northing": -49.13981819758192,
+      "block": "jack",
+      "handles": [
+        34504
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 2259,
+      "groundSampleOffsetM": 0.388
+    },
+    {
+      "id": "dwg-34505",
+      "speciesKey": "jackfruit",
+      "label": "Jackfruit",
+      "x": -60.560730647994205,
+      "northing": 7.768493802519515,
+      "block": "jack",
+      "handles": [
+        34505
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10082,
+      "groundSampleOffsetM": 0.275
+    },
+    {
+      "id": "dwg-34542",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 43.51777600008063,
+      "northing": 34.320383000187576,
+      "block": "WELL5 TK",
+      "handles": [
+        34542
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13912,
+      "groundSampleOffsetM": 0.18
+    },
+    {
+      "id": "dwg-34543",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 46.48343200003728,
+      "northing": 28.269089000299573,
+      "block": "WELL5 TK",
+      "handles": [
+        34543
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 13087,
+      "groundSampleOffsetM": 0.232
+    },
+    {
+      "id": "dwg-34544",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 48.002094000112265,
+      "northing": 25.09748200024478,
+      "block": "WELL5 TK",
+      "handles": [
+        34544
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12675,
+      "groundSampleOffsetM": 0.64
+    },
+    {
+      "id": "dwg-34545",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 49.275953000062145,
+      "northing": 22.28253100020811,
+      "block": "WELL5 TK",
+      "handles": [
+        34545
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12262,
+      "groundSampleOffsetM": 0.312
+    },
+    {
+      "id": "dwg-34546",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 50.53366390103474,
+      "northing": 18.587746305856854,
+      "block": "WELL5 TK",
+      "handles": [
+        34546
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11711,
+      "groundSampleOffsetM": 0.094
+    },
+    {
+      "id": "dwg-34547",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 52.21456700004637,
+      "northing": 15.574767000041902,
+      "block": "WELL5 TK",
+      "handles": [
+        34547
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 11299,
+      "groundSampleOffsetM": 0.295
+    },
+    {
+      "id": "dwg-34548",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 56.34911200008355,
+      "northing": 10.709620000096038,
+      "block": "WELL5 TK",
+      "handles": [
+        34548
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10613,
+      "groundSampleOffsetM": 0.258
+    },
+    {
+      "id": "dwg-34549",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 57.482877000118606,
+      "northing": 8.128899000352249,
+      "block": "WELL5 TK",
+      "handles": [
+        34549
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10338,
+      "groundSampleOffsetM": 0.371
+    },
+    {
+      "id": "dwg-34550",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 52.74288000003435,
+      "northing": 7.842143000103533,
+      "block": "WELL5 TK",
+      "handles": [
+        34550
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 10195,
+      "groundSampleOffsetM": 0.42
+    },
+    {
+      "id": "dwg-34551",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 53.16356600006111,
+      "northing": 5.675242000026628,
+      "block": "WELL5 TK",
+      "handles": [
+        34551
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9920,
+      "groundSampleOffsetM": 0.379
+    },
+    {
+      "id": "dwg-34552",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 63.93100200011395,
+      "northing": 0.6441860001068562,
+      "block": "WELL5 TK",
+      "handles": [
+        34552
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9240,
+      "groundSampleOffsetM": 0.454
+    },
+    {
+      "id": "dwg-34553",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 55.76911000011023,
+      "northing": -0.8291649997700006,
+      "block": "WELL5 TK",
+      "handles": [
+        34553
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9094,
+      "groundSampleOffsetM": 0.425
+    },
+    {
+      "id": "dwg-34554",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 57.52067600004375,
+      "northing": -4.196156999794766,
+      "block": "WELL5 TK",
+      "handles": [
+        34554
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8544,
+      "groundSampleOffsetM": 0.305
+    },
+    {
+      "id": "dwg-34555",
+      "speciesKey": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "x": 49.59933400002774,
+      "northing": 0.5485510001890361,
+      "block": "WELL5 TK",
+      "handles": [
+        34555
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 9226,
+      "groundSampleOffsetM": 0.111
+    },
+    {
+      "id": "dwg-34556",
+      "speciesKey": "silver-rock",
+      "label": "Silver rock \u2014 identity unresolved",
+      "x": -57.92119720147457,
+      "northing": -7.254585271235555,
+      "block": "AnjiliI",
+      "handles": [
+        34556
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 8015,
+      "groundSampleOffsetM": 0.487
+    },
+    {
+      "id": "dwg-34557",
+      "speciesKey": "silver-rock",
+      "label": "Silver rock \u2014 identity unresolved",
+      "x": 8.250811237492599,
+      "northing": -27.92565411888063,
+      "block": "AnjiliI",
+      "handles": [
+        34557
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 5321,
+      "groundSampleOffsetM": 0.493
+    },
+    {
+      "id": "dwg-34558",
+      "speciesKey": "silver-rock",
+      "label": "Silver rock \u2014 identity unresolved",
+      "x": -40.19384476263076,
+      "northing": 26.204410881036893,
+      "block": "AnjiliI",
+      "handles": [
+        34558
+      ],
+      "symbolCount": 1,
+      "insideCandidateBoundary": true,
+      "evidence": "Survey symbol; not field-verified",
+      "positionNote": "Block insertion coordinates retained; ground height is sampled from the selected terrain model.",
+      "terrainCell": 12724,
+      "groundSampleOffsetM": 0.426
+    },
+    {
+      "id": "dwg-bamboo-clump",
+      "speciesKey": "bamboo",
+      "label": "Bamboo clump",
+      "x": 15.255111071041249,
+      "northing": 57.32530235730563,
+      "block": "rtrg",
+      "handles": [
+        34509,
+        34510,
+        34511,
+        34512,
+        34513,
+        34514,
+        34515,
+        34516,
+        34517,
+        34518,
+        34519,
+        34520,
+        34521,
+        34522,
+        34523,
+        34524,
+        34525,
+        34526,
+        34527,
+        34528,
+        34529,
+        34530,
+        34531,
+        34532,
+        34533,
+        34534,
+        34535,
+        34536,
+        34537,
+        34538,
+        34539,
+        34540,
+        34541
+      ],
+      "symbolCount": 33,
+      "insideCandidateBoundary": false,
+      "evidence": "Survey clump symbol; not an individual stem count",
+      "positionNote": "Centroid of 33 decorative block instances; clump extends across the provisional boundary.",
+      "footprintBounds": [
+        [
+          12.50996384921018,
+          55.471534717828035
+        ],
+        [
+          18.223396745859645,
+          59.75302249356173
+        ]
+      ],
+      "terrainCell": 16921,
+      "groundSampleOffsetM": 1.494
+    }
+  ],
+  "species": [
+    {
+      "key": "teak",
+      "label": "Teak",
+      "color": "#72552e",
+      "block": "WELL2 MT",
+      "count": 83
+    },
+    {
+      "key": "coconut",
+      "label": "Coconut",
+      "color": "#26764c",
+      "block": "WELL1 CC",
+      "count": 68
+    },
+    {
+      "key": "other",
+      "label": "Other important tree",
+      "color": "#597b45",
+      "block": "WELL7 AJT",
+      "count": 24
+    },
+    {
+      "key": "mahogany",
+      "label": "Mahogany (survey: MAHAGONY)",
+      "color": "#884c43",
+      "block": "WELL5 TK",
+      "count": 14
+    },
+    {
+      "key": "mango",
+      "label": "Mango",
+      "color": "#b27a21",
+      "block": "mgo",
+      "count": 9
+    },
+    {
+      "key": "jackfruit",
+      "label": "Jackfruit",
+      "color": "#83943c",
+      "block": "jack",
+      "count": 6
+    },
+    {
+      "key": "silver-rock",
+      "label": "Silver rock \u2014 identity unresolved",
+      "color": "#778a96",
+      "block": "AnjiliI",
+      "count": 3
+    },
+    {
+      "key": "bamboo",
+      "label": "Bamboo clump",
+      "color": "#459c76",
+      "block": "rtrg",
+      "count": 1
+    }
+  ],
+  "provenance": {
+    "source": "CONTOUR SEETHAMAUND (3).dwg, model-space block INSERT entities in original main-parcel coordinate range",
+    "legendMapping": "Matched block types against adjacent text and block instances in the drawing legend. Original labels retained where identity unresolved.",
+    "treeSymbols": 207,
+    "clumps": 1,
+    "excluded": "Electric posts (WELL10 EP), drawing legend, copied layouts, and non-vegetation geometry excluded.",
+    "bamboo": "33 rtrg block insertions form one compact mapped clump; not 33 individual trees.",
+    "height": "INSERT Z values are not used as tree heights or absolute ground elevations. Ground elevation comes from the selected model; all marker dimensions are symbolic.",
+    "inventoryLimit": "Selected survey vegetation, not a complete or current plant census. Coffee, pepper, smaller plants and unmapped vegetation are not represented.",
+    "coconutComparison": "68 extracted coconut symbols versus approximately 90 palms in the owner-reported baseline. Earlier visual symbol counts also differ; reconciliation requires field inventory.",
+    "spatialLimit": "Original drawing coordinates are preserved. CRS, datum and candidate boundary remain provisional. Near-edge ground heights use the nearest supported model cell."
+  }
+}
