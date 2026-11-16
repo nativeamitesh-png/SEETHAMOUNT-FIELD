@@ -41,3 +41,5 @@ section{margin:14px 0}h2{font:20px/1.2 var(--serif);margin:10px 0 8px}
 .mm-row{display:flex;gap:8px;margin:8px 0}.mm-row button{flex:1}
 .mm-card{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;margin:8px 0}.mm-card b,.mm-card small{display:block}.mm-card small{color:var(--muted);font-size:13px}
 .p-lbl select,.p-lbl input{width:100%;min-height:44px;margin-top:4px;border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:#fff}
+
+.p-save{position:sticky;bottom:10px;z-index:6;box-shadow:0 6px 18px #0004}

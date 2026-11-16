@@ -130,6 +130,7 @@ export async function put(e) { validate(e); if (memory) memory.events.set(e.id, 
 export async function remove(id) { if (memory) memory.events.delete(id); else await tx('events', 'readwrite', s => s.delete(id)); emit(); }
 export async function putMedia(m) { if (memory) memory.media.set(m.id, m); else await tx('media', 'readwrite', s => s.put(m)); return m.id; }
 export async function getMedia(id) { if (memory) return memory.media.get(id) || null; return tx('media', 'readonly', s => reqP(s.get(id))); }
+export async function delMedia(id) { if (memory) { memory.media.delete(id); return; } await tx('media', 'readwrite', s => s.delete(id)); }
 export async function allMedia() { if (memory) return [...memory.media.values()]; return tx('media', 'readonly', s => reqP(s.getAll())); }
 export async function meta(key, value) {
   if (value === undefined) { if (memory) return memory.meta.get(key)?.value; const r = await tx('meta', 'readonly', s => reqP(s.get(key))); return r?.value; }

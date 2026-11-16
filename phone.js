@@ -70,7 +70,7 @@ async function voiceToggle() {
     const chunks = []; const r = new MediaRecorder(stream); P.rec = r; const t0 = Date.now();
     r.ondataavailable = e => e.data.size && chunks.push(e.data);
     r.onstop = () => { stream.getTracks().forEach(t => t.stop()); const blob = new Blob(chunks, {type: r.mimeType || 'audio/webm'});
-      P.draft.media.push({kind: 'voice', file: new File([blob], `voice-${Date.now()}.webm`, {type: blob.type}), secs: Math.round((Date.now() - t0) / 1000)}); P.rec = null; P.speech = null; paintDraft(); };
+      const m = {kind: 'voice', file: new File([blob], `voice-${Date.now()}.webm`, {type: blob.type}), secs: Math.round((Date.now() - t0) / 1000)}; P.draft.media.push(m); P.rec = null; P.speech = null; keepMedia(m).then(paintDraft); paintDraft(); };
     r.start();
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SR) { const s = new SR(); s.lang = P.lang; s.continuous = true; s.interimResults = false; P.speech = s;
@@ -78,6 +78,30 @@ async function voiceToggle() {
       s.onerror = () => {}; try { s.start(); } catch {} }
     paintDraft();
   } catch { toast('The microphone is blocked. Type a note instead.'); }
+}
+
+/* ---------- draft that survives the phone closing the page while the camera is open ---------- */
+const DK = 'lf-draft';
+async function keepMedia(m) {
+  m.draftId = 'draft-' + crypto.randomUUID();
+  try { await St.putMedia({id: m.draftId, name: m.file.name, type: m.file.type, size: m.file.size, blob: m.file, kind: m.kind, heading: m.heading ?? null, draft: true}); } catch {}
+  stash();
+}
+function stash() {
+  const d = P.draft; if (!d) return;
+  try { localStorage.setItem(DK, JSON.stringify({text: d.text || '', hint: d.hint || '', stop: d.stop ? {id: d.stop.id, title: d.stop.title, ask: d.stop.ask, hint: d.stop.hint} : null,
+    media: d.media.filter(m => m.draftId).map(m => ({id: m.draftId, kind: m.kind, secs: m.secs ?? null, tag: m.tag || null, heading: m.heading ?? null}))})); } catch {}
+}
+async function dropDraft(keepIds = []) {
+  let s = null; try { s = JSON.parse(localStorage.getItem(DK) || 'null'); localStorage.removeItem(DK); } catch {}
+  for (const m of s?.media || []) if (!keepIds.includes(m.id)) { try { await St.delMedia(m.id); } catch {} }
+}
+async function restoreDraft() {
+  let s = null; try { s = JSON.parse(localStorage.getItem(DK) || 'null'); } catch {}
+  if (!s || (!s.text && !s.media?.length)) return null;
+  const media = [];
+  for (const m of s.media || []) { const r = await St.getMedia(m.id).catch(() => null); if (!r?.blob) continue; const file = new File([r.blob], r.name, {type: r.type}); media.push({kind: m.kind, file, url: m.kind === 'photo' ? URL.createObjectURL(file) : undefined, secs: m.secs, tag: m.tag, heading: m.heading, draftId: m.id}); }
+  return {media, text: s.text || '', hint: s.hint || '', stop: s.stop};
 }
 
 /* ---------- screens ---------- */
@@ -88,6 +112,7 @@ function home() {
   $('#pMain').innerHTML = `
    <button class="p-rec" id="pRec" aria-label="Record">●<span>Record</span></button>
    <p class="p-hint">Photo, video or voice. Your spot is added by itself.</p>
+   ${P.saved ? `<button class="p-mapbtn" id="pCont">↩ Continue your unsaved record (${P.saved.media.length} file${P.saved.media.length === 1 ? '' : 's'}${P.saved.text ? ', words' : ''})</button>` : ''}
    <button class="p-mapbtn" id="pMap">🗺 Farm map · mark trees</button>
    <section><h2>Today's stops</h2>${stops.map((s, n) => `<div class="p-stop"><b>${n + 1}</b><div><strong>${esc(s.title)}</strong><small>${esc(s.ask)}</small></div><button data-stop="${n}">Record</button></div>`).join('') || '<p class="p-small">Nothing due today.</p>'}</section>
    <section><h2>Saved today · ${mine.length}</h2>${mine.slice().reverse().map(e => `<div class="p-item"><span>${e.media.length ? '📷' : '✎'}</span><div>${esc(e.text || (e.data.mediaKinds || []).join(', ') || 'Record')}<small>${new Date(e.createdAt).toLocaleTimeString('en-IN', {hour: '2-digit', minute: '2-digit'})} · ${e.place ? esc(e.place.label) : 'no spot'}${e.data.hint ? ' · ' + esc(e.data.hint) : ''}</small></div></div>`).join('') || '<p class="p-small">Nothing yet today.</p>'}</section>
@@ -96,6 +121,7 @@ function home() {
    <p class="p-small">The file goes wherever you choose (WhatsApp to yourself, email or Drive). Open it in the web app under Records. Nothing is sent by itself.</p>`;
   $('#pRec').onclick = () => openDraft();
   $('#pMap').onclick = () => MAP.openMap(home);
+  if ($('#pCont')) $('#pCont').onclick = () => { P.draft = P.saved; P.saved = null; startGPS(); paintDraft(); };
   document.querySelectorAll('[data-stop]').forEach(b => b.onclick = () => openDraft(stops[+b.dataset.stop]));
   $('#pSend').onclick = sendDay;
   $('#pCopy').onclick = copyNotes;
@@ -108,7 +134,7 @@ function phoneStops(d) {
   for (const w of WALK) if (!seen('walk-' + w.n) && out.length < 3) out.push({id: 'walk-' + w.n, title: 'Walk stop ' + w.n + ': ' + w.name, ask: 'Look, then record what you see.'});
   return out.slice(0, 3);
 }
-function openDraft(stop) { P.draft = {media: [], text: '', hint: stop?.hint || '', stop: stop || null}; startGPS(); paintDraft(); }
+function openDraft(stop) { dropDraft(); P.saved = null; P.draft = {media: [], text: '', hint: stop?.hint || '', stop: stop || null}; startGPS(); paintDraft(); }
 const sugText = sug => sug.length ? `The web app will suggest: ${sug.join(' · ')}. You confirm there.` : '';
 function paintDraft() {
   const d = P.draft; const hints = ['Plant', 'Problem', 'Well reading', 'Task', 'Something else'];
@@ -128,16 +154,16 @@ function paintDraft() {
    <div class="p-hints" role="group" aria-label="What is it about? (optional)">${hints.map(h => `<button data-hint="${h}" class="${d.hint === h ? 'on' : ''}">${h}</button>`).join('')}</div>
    <p class="p-small" id="pSug" aria-live="polite">${sugText(sug)}</p>
    <button class="p-save" id="pSave">Save</button>`;
-  paintGPS();
-  $('#pBack').onclick = () => { stopGPS(); if (P.rec) P.rec.stop(); P.draft = null; home(); };
+  paintGPS(); stash();
+  $('#pBack').onclick = () => { stash(); stopGPS(); if (P.rec) P.rec.stop(); P.draft = null; restoreDraft().then(s => { P.saved = s; home(); }); };
   $('#pVoice').onclick = voiceToggle;
   document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { P.lang = b.dataset.lang; paintDraft(); });
   document.querySelectorAll('[data-hint]').forEach(b => b.onclick = () => { d.text = $('#pText').value; d.hint = d.hint === b.dataset.hint ? '' : b.dataset.hint; paintDraft(); });
-  document.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { d.text = $('#pText').value; d.media.splice(+b.dataset.rm, 1); paintDraft(); });
-  $('#pText').oninput = e => { d.text = e.target.value; clearTimeout(paintDraft.t); paintDraft.t = setTimeout(() => { const el = $('#pSug'); if (el) el.textContent = sugText(d.text ? fileText(d.text).proposals.map(p => p.label) : []); }, 250); };
-  $('#pPhoto').onchange = async e => { d.text = $('#pText').value; for (const f of e.target.files) { const tag = await readGps(f); const s = await shrink(f); d.media.push({kind: 'photo', file: s, url: URL.createObjectURL(s), heading: P.heading, tag}); } paintDraft(); };
-  $('#pAudio').onchange = e => { d.text = $('#pText').value; const f = e.target.files[0]; if (!f) return; d.media.push({kind: 'voice', file: f, secs: null}); paintDraft(); toast('Voice note added. Type a few words so it can be filed.'); };
-  $('#pVideo').onchange = async e => { d.text = $('#pText').value; const f = e.target.files[0]; if (!f) return; const tag = await readGps(f); if (f.size > 40e6) toast('That video is over 40 MB. Keep clips under a minute.'); d.media.push({kind: 'video', file: f, tag}); paintDraft(); };
+  document.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { d.text = $('#pText').value; const gone = d.media.splice(+b.dataset.rm, 1)[0]; if (gone?.draftId) St.delMedia(gone.draftId).catch(() => {}); paintDraft(); });
+  $('#pText').oninput = e => { d.text = e.target.value; stash(); clearTimeout(paintDraft.t); paintDraft.t = setTimeout(() => { const el = $('#pSug'); if (el) el.textContent = sugText(d.text ? fileText(d.text).proposals.map(p => p.label) : []); }, 250); };
+  $('#pPhoto').onchange = async e => { d.text = $('#pText').value; for (const f of e.target.files) { const tag = await readGps(f); const s = await shrink(f); const m = {kind: 'photo', file: s, url: URL.createObjectURL(s), heading: P.heading, tag}; d.media.push(m); await keepMedia(m); } paintDraft(); };
+  $('#pAudio').onchange = async e => { d.text = $('#pText').value; const f = e.target.files[0]; if (!f) return; const m = {kind: 'voice', file: f, secs: null}; d.media.push(m); keepMedia(m).then(paintDraft); paintDraft(); toast('Voice note added. Type a few words so it can be filed.'); };
+  $('#pVideo').onchange = async e => { d.text = $('#pText').value; const f = e.target.files[0]; if (!f) return; const tag = await readGps(f); if (f.size > 40e6) toast('That video is over 40 MB. Keep clips under a minute.'); const m = {kind: 'video', file: f, tag}; d.media.push(m); await keepMedia(m); paintDraft(); };
   $('#pSave').onclick = save;
 }
 async function save() {
@@ -146,7 +172,7 @@ async function save() {
   if (P.rec) { P.rec.stop(); await new Promise(r => setTimeout(r, 300)); }
   stopGPS(); const g = P.gps;
   const ids = [];
-  for (const m of d.media) { const id = 'm-' + crypto.randomUUID(); await St.putMedia({id, name: m.file.name, type: m.file.type, size: m.file.size, blob: m.file, kind: m.kind, heading: m.heading ?? null}); ids.push(id); }
+  for (const m of d.media) { const id = m.draftId || 'm-' + crypto.randomUUID(); await St.putMedia({id, name: m.file.name, type: m.file.type, size: m.file.size, blob: m.file, kind: m.kind, heading: m.heading ?? null}); ids.push(id); }
   let place = g?.status === 'ok' && g.farm.inside ? {x: +g.farm.x.toFixed(1), y: +g.farm.y.toFixed(1), label: nearName(g.farm.x, g.farm.y), acc: g.fix.acc} : null;
   const tagged = d.media.find(m => m.tag); let tagFarm = null;
   if (!place && tagged) { const f = gpsToFarm(tagged.tag.lat, tagged.tag.lon); if (f.inside) { tagFarm = tagged.tag; place = {x: +f.x.toFixed(1), y: +f.y.toFixed(1), label: nearName(f.x, f.y) + ' (from the ' + tagged.tag.src + ')'}; } }
@@ -154,7 +180,7 @@ async function save() {
     await St.add({type: 'capture', grade: 'seen', place, text: d.text, media: ids,
       data: {gps: g?.fix || null, gpsStatus: g?.status || 'none', hint: d.hint, lang: P.lang, mediaKinds: d.media.map(m => m.kind), stopId: d.stop?.id || null, filed: false, tagGps: tagFarm, positionBasis: place ? (tagFarm ? 'model (phone photo tag, frame assumed)' : 'model (GPS, frame assumed)') : 'unknown', heading: d.media.find(m => m.heading != null)?.heading ?? null}});
   } catch (e) { return toast(e.message); }
-  P.draft = null; await load(); home(); toast(place ? 'Saved at ' + place.label : g?.fix ? 'Saved with GPS' : 'Saved (no spot)');
+  P.draft = null; try { localStorage.removeItem(DK); } catch {} await load(); home(); toast(place ? 'Saved at ' + place.label : g?.fix ? 'Saved with GPS' : 'Saved (no spot)');
 }
 /* Copy button for places where files cannot leave the page (a preview inside another app): plain text of today's records, no photos. */
 async function copyNotes() {
@@ -175,6 +201,6 @@ async function load() { P.events = await St.all(); }
 (async () => {
   const mode = await St.open(); if (mode === 'memory') $('#pStore').textContent = 'Not saving: storage blocked';
   try { window.claude?.use?.('dictation').then(d => { if (d) P.dict = d; }).catch(() => {}); window.claude?.use?.('downloads').then(d => { if (d) P.dl = d; }).catch(() => {}); } catch {}
-  listenHeading(); await load(); home(); document.body.dataset.app = 'ready';
+  listenHeading(); await load(); P.saved = await restoreDraft(); home(); document.body.dataset.app = 'ready';
   if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
