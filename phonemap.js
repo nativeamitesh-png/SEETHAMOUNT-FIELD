@@ -56,6 +56,12 @@ function draw() {
   for (const q of M.tent || []) { const [x, y] = toScr(q.x, q.y); g.beginPath(); g.arc(x, y, r + 4, 0, 7); g.setLineDash([4, 3]); g.lineWidth = 2.5; g.strokeStyle = '#b4691f'; g.stroke(); g.setLineDash([]); g.fillStyle = '#fff'; g.font = 'bold 11px sans-serif'; g.textAlign = 'center'; g.fillStyle = '#b4691f'; g.fillText('?', x, y + 4); }
   for (const c of M.caps || []) { const [x, y] = toScr(c.x, c.y); g.fillStyle = c.done ? '#1f7a3a' : '#c0661b'; g.fillRect(x - 7, y - 7, 14, 14); g.strokeStyle = '#fff'; g.lineWidth = 2; g.strokeRect(x - 7, y - 7, 14, 14); }
   const dot = (p, col, ring) => { const [x, y] = toScr(p.x, p.y); if (ring) { g.beginPath(); g.arc(x, y, Math.max(8, ring * k), 0, 7); g.fillStyle = col + '22'; g.fill(); } g.beginPath(); g.arc(x, y, 8, 0, 7); g.fillStyle = col; g.fill(); g.lineWidth = 3; g.strokeStyle = '#fff'; g.stroke(); };
+  for (const t of M.tracks || []) { g.beginPath(); t.pts.forEach((q, i) => { const [x, y] = toScr(q.x, q.y); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.setLineDash([6, 4]); g.lineWidth = 2.5; g.strokeStyle = '#1a6fd199'; g.stroke(); g.setLineDash([]); }
+  (M.ctl || []).forEach((c, i) => { const [x, y] = toScr(c.x, c.y), [gx, gy] = toScr(c.gx, c.gy);
+    g.beginPath(); g.moveTo(x, y); g.lineTo(gx, gy); g.lineWidth = 2; g.strokeStyle = '#c0261b'; g.stroke();
+    g.beginPath(); g.arc(gx, gy, 5, 0, 7); g.fillStyle = '#fff'; g.fill(); g.lineWidth = 2; g.stroke();
+    g.beginPath(); g.moveTo(x, y - 9); g.lineTo(x + 9, y); g.lineTo(x, y + 9); g.lineTo(x - 9, y); g.closePath(); g.fillStyle = '#c0261b'; g.fill(); g.lineWidth = 2; g.strokeStyle = '#fff'; g.stroke();
+    g.fillStyle = '#fff'; g.font = 'bold 10px sans-serif'; g.textAlign = 'center'; g.fillText(String(i + 1), x, y + 3.5); });
   if (W.pts.length > 1) { g.beginPath(); W.pts.forEach((q, i) => { const [x, y] = toScr(q.x, q.y); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.setLineDash([6, 4]); g.lineWidth = 3; g.strokeStyle = '#1a6fd1'; g.stroke(); g.setLineDash([]); }
   if (M.gps?.farm?.inside) dot(M.gps.farm, '#1a6fd1', M.gps.acc);
   if (M.spot) dot(M.spot, '#7a3dc9');
@@ -88,26 +94,27 @@ function feed(c, f) {
 }
 const walkMsg = () => { const el = $('#mmWalk'); if (!el) return; const n = W.pts.length; el.textContent = W.on ? `⏹ Stop walk (${n} dots)` : '🚶 Start walk'; };
 async function toggleWalk() {
+  if (W.still) return toast('A stand-still reading is running: stay put until it finishes');
   if (!W.on) { if (M.gpsState !== 'ok' && M.gpsState !== 'off') return toast('Waiting for GPS: wait for the blue dot first'); W.on = true; W.pts = []; W.last = 0; toast('Walking: a dot about every second'); walkMsg(); draw(); return; }
   W.on = false; walkMsg();
   if (W.pts.length < 5) { W.pts = []; draw(); return toast('Too short to save (under 5 dots)'); }
   const pts = W.pts, len = pts.slice(1).reduce((s, q, i) => s + Math.hypot(q.x - pts[i].x, q.y - pts[i].y), 0), acc = Math.round(pts.reduce((s, q) => s + q.acc, 0) / pts.length);
   try { await St.add({type: 'track', grade: 'model', text: `Walked path, ${pts.length} dots, about ${Math.round(len)} m`, data: {points: pts.map(q => [+q.lat.toFixed(7), +q.lon.toFixed(7), q.acc, q.t]), meanAcc: acc, basis: 'model, not measured (phone GPS, about 5 to 30 m)'}}); } catch (e) { return toast(e.message); }
-  await loadOwn(); draw(); toast('Walk saved');
+  await loadOwn(); paintList(); draw(); toast('Walk saved');
 }
 async function stillRead() {
   if (W.still) return toast('Already reading: stand still');
   if (!M.pick || M.pick.survey) return toast('First tap the map exactly where you stand (for example a house corner)');
   if (M.gpsState !== 'ok' && M.gpsState !== 'off') return toast('Waiting for GPS: wait for the blue dot first');
   const at = {x: M.pick.x, y: M.pick.y}, btn = $('#mmStill'); W.still = {fixes: []}; const t0 = Date.now();
-  const tick = setInterval(() => { const s = Math.max(0, 60 - Math.round((Date.now() - t0) / 1000)); if (btn) btn.textContent = `Standing still… ${s} s (${W.still?.fixes.length || 0} readings)`; if (s <= 0) { clearInterval(tick); done(); } }, 500);
+  const tick = setInterval(() => { const s = Math.max(0, (window.__stillSeconds || 60) - Math.round((Date.now() - t0) / 1000)); const m = $('#mmStillMsg'); if (m) m.textContent = `Standing still… ${s} s left (${W.still?.fixes.length || 0} readings). Do not move or tap.`; if (btn) btn.disabled = true; const wb = $('#mmWalk'); if (wb) wb.disabled = true; if (s <= 0) { clearInterval(tick); done(); } }, 500);
   async function done() {
-    const fx = W.still.fixes; W.still = null; if (btn) btn.textContent = '⌖ Stand-still reading (60 s)';
+    const fx = W.still.fixes; W.still = null; const m = $('#mmStillMsg'); if (m) m.textContent = ''; if (btn) btn.disabled = false; const wb = $('#mmWalk'); if (wb) wb.disabled = false;
     if (fx.length < 5) return toast('Too few GPS readings (' + fx.length + '). Try again in the open.');
     const wt = fx.map(q => 1 / (q.acc * q.acc)), sw = wt.reduce((a, b) => a + b, 0), lat = fx.reduce((s, q, i) => s + q.lat * wt[i], 0) / sw, lon = fx.reduce((s, q, i) => s + q.lon * wt[i], 0) / sw, acc = +(1 / Math.sqrt(sw)).toFixed(1);
     const g = gpsToFarm(lat, lon);
     try { await St.add({type: 'control', grade: 'model', text: 'Stand-still point (phone)', place: {x: +at.x.toFixed(1), y: +at.y.toFixed(1), label: 'Stand-still point'}, data: {pt: 'phone-' + Date.now(), x: at.x, y: at.y, gps: {lat, lon, acc}, readings: fx.length, offFromTap: +Math.hypot(g.x - at.x, g.y - at.y).toFixed(1), basis: 'model, not measured (average of phone GPS readings; the spot you tapped is the truth)'}}); } catch (e) { return toast(e.message); }
-    M.pick = null; paintPanel(); draw(); toast(`Saved: averaged ${fx.length} readings, GPS is ${Math.hypot(g.x - at.x, g.y - at.y).toFixed(1)} m from your tap`);
+    M.pick = null; await loadOwn(); paintList(); paintPanel(); draw(); toast(`Saved: averaged ${fx.length} readings, GPS is ${Math.hypot(g.x - at.x, g.y - at.y).toFixed(1)} m from your tap`);
   }
 }
 function startGps() {
@@ -128,7 +135,9 @@ function paintStatus() {
 }
 
 /* ---------- own tree records ---------- */
-export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.tent = tentative(ev); M.caps = ev.filter(e => e.type === 'capture' && e.place && (e.media?.length || e.text)).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at, media: e.media || [], hint: e.data?.hint || '', label: e.place.label, acc: e.place.acc, done: ev.some(o => o.type === 'tree' && o.data?.fromCapture === e.id)})); }
+export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.ctl = ev.filter(e => e.type === 'control' && e.data?.gps && e.data?.pt && String(e.data.pt).startsWith('phone-')).map(e => { const g = gpsToFarm(e.data.gps.lat, e.data.gps.lon); return {id: e.id, x: e.data.x, y: e.data.y, gx: g.x, gy: g.y, off: e.data.offFromTap, n: e.data.readings, acc: e.data.gps.acc, at: e.at, text: e.text}; });
+  M.tracks = ev.filter(e => e.type === 'track' && e.data?.points?.length).map(e => ({id: e.id, text: e.text, pts: e.data.points.map(q => { const g = gpsToFarm(q[0], q[1]); return {x: g.x, y: g.y}; })}));
+  M.tent = tentative(ev); M.caps = ev.filter(e => e.type === 'capture' && e.place && (e.media?.length || e.text)).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at, media: e.media || [], hint: e.data?.hint || '', label: e.place.label, acc: e.place.acc, done: ev.some(o => o.type === 'tree' && o.data?.fromCapture === e.id)})); }
 /* Possible trees from records: a spot-tagged record with plant words, or a free photo/video/voice record, that is not a stop about a wall, tank or well.
    These are guesses from the owner's own words and spots: drawn dashed, never counted as trees until the owner confirms. */
 const DISMISS = 'lf-dismissed-trees';
@@ -179,7 +188,10 @@ async function saveTree() {
   } catch (e) { return toast(e.message); }
   M.pick = null; await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved' + (pl ? '' : ' (species not known)'));
 }
-function paintList() { const el = $('#mmCount'); if (el) el.textContent = `${M.own.length} marked by you · ${M.survey.length} on the survey sheet` + (M.tent?.length ? ` · ${M.tent.length} possible tree${M.tent.length === 1 ? '' : 's'} from your records (dashed, tap to confirm)` : ''); }
+function paintCtl() { const el = $('#mmCtl'); if (!el) return; const c = M.ctl || [];
+  el.innerHTML = c.length ? `<b>Stand-still points (${c.length})</b><br>` + c.map((q, i) => `${i + 1}. ${new Date(q.at).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}: GPS was <b>${q.off} m</b> from the spot you tapped (${q.n} readings, ±${q.acc} m)`).join('<br>') + `<br><span class="p-small">Red diamond = the spot you tapped (the truth). White dot at the end of the red line = where GPS said you were. Model, not measured.${c.length < 3 ? ' Need 3 or more to judge a steady shift.' : ''}</span>` : '';
+}
+function paintList() { paintCtl(); const el = $('#mmCount'); if (el) el.textContent = `${M.own.length} marked by you · ${M.survey.length} on the survey sheet` + (M.tent?.length ? ` · ${M.tent.length} possible tree${M.tent.length === 1 ? '' : 's'} from your records (dashed, tap to confirm)` : ''); }
 function toast(m) { const t = $('#pToast'); if (!t) return; t.textContent = m; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 3000); }
 
 /* ---------- screen ---------- */
@@ -193,6 +205,7 @@ export async function openMap(back) {
     <p class="p-small" id="mmStatus"></p>
     <div class="mm-row"><button id="mmHere">📍 I’m here</button><button id="mmMark">🌳 Mark a tree at my spot</button></div>
     <div class="mm-row"><button id="mmWalk">🚶 Start walk</button><button id="mmStill">⌖ Stand-still reading (60 s)</button></div>
+    <p class="p-small" id="mmStillMsg" aria-live="polite"></p><p class="p-small" id="mmCtl"></p>
     <p class="p-small">Walk draws a dashed path, a dot about every second. Stand-still: tap the map on the exact spot you stand (a house corner, the tank), press it and stay put for 60 seconds. It averages the GPS and saves how far GPS was from your tap. Three of these let the map line up with the real ground. Both are the phone's own readings (model, not measured).</p>
     <div id="mmPanel"></div><p class="p-small" id="mmCount"></p>
     <p class="p-small">Brown shapes are the house and tank, the dark line is the retaining wall, grey is the road, black squares are poles (from the survey drawing; heights and shapes are not measured on site). Blue flags are the five walk stops, orange flags are open questions. Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
