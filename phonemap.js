@@ -2,6 +2,7 @@
 // Contours are drawn from the surveyed 1 m grid (model, not measured). The survey frame is assumed WGS84 until 3 GPS points are walked.
 import * as St from './store.js';
 import {gpsToFarm, file as fileText, PLANTS as FPLANTS} from './filer.js';
+import {QUESTIONS, WALK} from './places.js';
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
@@ -11,9 +12,10 @@ export const state = M;
 
 export async function loadData() {
   if (M.grid) return;
-  const [csv, ter, trees, plants] = await Promise.all([
+  const [csv, ter, trees, plants, scene] = await Promise.all([
     fetch('data/terrain-grid.csv').then(r => r.ok ? r.text() : ''), fetch('data/terrain.json').then(r => r.ok ? r.json() : null),
-    fetch('data/survey-trees.json').then(r => r.ok ? r.json() : null), fetch('data/plants.json').then(r => r.ok ? r.json() : null)]);
+    fetch('data/survey-trees.json').then(r => r.ok ? r.json() : null), fetch('data/plants.json').then(r => r.ok ? r.json() : null), fetch('data/scene-features.json').then(r => r.ok ? r.json() : null).catch(() => null)]);
+  M.scene = scene;
   const rows = csv.trim().split('\n').slice(1).map(l => l.split(',')).filter(a => a.length > 3).map(a => ({x: +a[0] - E0, y: +a[1] - N0, z: +a[2]}));
   M.grid = rows; M.boundary = (ter?.boundary || []).map(p => ({x: p[0], y: p[1]}));
   M.survey = (trees?.records || []).filter(r => r.insideCandidateBoundary).map(r => ({id: r.id, x: r.x, y: r.northing, key: r.speciesKey, label: r.label}));
@@ -47,15 +49,31 @@ function draw() {
   g.clearRect(0, 0, cv.width, cv.height); g.fillStyle = '#e9e7da'; g.fillRect(0, 0, cv.width, cv.height);
   g.imageSmoothingEnabled = true; g.drawImage(M.off, b.x0 * k + M.view.ox, M.view.oy - b.y1 * k, (b.x1 - b.x0) * k, (b.y1 - b.y0) * k);
   if (M.boundary.length) { g.beginPath(); M.boundary.forEach((p, i) => { const [x, y] = toScr(p.x, p.y); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath(); g.strokeStyle = '#254f3d'; g.lineWidth = 2; g.setLineDash([8, 5]); g.stroke(); g.setLineDash([]); }
+  drawLandmarks(g, k);
   const r = Math.max(2.5, Math.min(7, k * 0.9));
   for (const t of M.survey) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = (M.colors[t.key] || '#597b45') + 'cc'; g.fill(); }
   for (const t of M.own) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r + 2.5, 0, 7); g.fillStyle = '#fff'; g.fill(); g.lineWidth = 3; g.strokeStyle = '#1f7a3a'; g.stroke(); g.beginPath(); g.arc(x, y, r - 1, 0, 7); g.fillStyle = '#1f7a3a'; g.fill(); }
   for (const q of M.tent || []) { const [x, y] = toScr(q.x, q.y); g.beginPath(); g.arc(x, y, r + 4, 0, 7); g.setLineDash([4, 3]); g.lineWidth = 2.5; g.strokeStyle = '#b4691f'; g.stroke(); g.setLineDash([]); g.fillStyle = '#fff'; g.font = 'bold 11px sans-serif'; g.textAlign = 'center'; g.fillStyle = '#b4691f'; g.fillText('?', x, y + 4); }
-  for (const c of M.caps || []) { const [x, y] = toScr(c.x, c.y); g.fillStyle = '#c0661b'; g.fillRect(x - 5, y - 5, 10, 10); g.strokeStyle = '#fff'; g.lineWidth = 2; g.strokeRect(x - 5, y - 5, 10, 10); }
+  for (const c of M.caps || []) { const [x, y] = toScr(c.x, c.y); g.fillStyle = c.done ? '#1f7a3a' : '#c0661b'; g.fillRect(x - 7, y - 7, 14, 14); g.strokeStyle = '#fff'; g.lineWidth = 2; g.strokeRect(x - 7, y - 7, 14, 14); }
   const dot = (p, col, ring) => { const [x, y] = toScr(p.x, p.y); if (ring) { g.beginPath(); g.arc(x, y, Math.max(8, ring * k), 0, 7); g.fillStyle = col + '22'; g.fill(); } g.beginPath(); g.arc(x, y, 8, 0, 7); g.fillStyle = col; g.fill(); g.lineWidth = 3; g.strokeStyle = '#fff'; g.stroke(); };
   if (M.gps?.farm?.inside) dot(M.gps.farm, '#1a6fd1', M.gps.acc);
   if (M.spot) dot(M.spot, '#7a3dc9');
   if (M.pick) { const [x, y] = toScr(M.pick.x, M.pick.y); g.strokeStyle = '#b23a2a'; g.lineWidth = 3; g.beginPath(); g.moveTo(x - 14, y); g.lineTo(x + 14, y); g.moveTo(x, y - 14); g.lineTo(x, y + 14); g.stroke(); g.beginPath(); g.arc(x, y, 10, 0, 7); g.stroke(); }
+}
+
+/* ---------- landmarks from the survey: buildings, roads, retaining wall, poles; walk stops and open questions ---------- */
+const poly = (g, pts, fill, line) => { g.beginPath(); pts.forEach((q, i) => { const [x, y] = toScr(q[0], q[1]); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath(); if (fill) { g.fillStyle = fill; g.fill(); } if (line) { g.strokeStyle = line; g.lineWidth = 1.5; g.stroke(); } };
+const centre = pts => [pts.reduce((s, q) => s + q[0], 0) / pts.length, pts.reduce((s, q) => s + q[1], 0) / pts.length];
+function label(g, txt, x, y, col = '#2b2b2b') { g.font = 'bold 12px sans-serif'; g.textAlign = 'center'; g.lineWidth = 4; g.strokeStyle = '#fffd'; g.strokeText(txt, x, y); g.fillStyle = col; g.fillText(txt, x, y); }
+function drawLandmarks(g, k) {
+  const S = M.scene; if (!S) return;
+  for (const r of S.roads || []) poly(g, r.footprint, 'rgba(120,120,120,.35)', 'rgba(90,90,90,.6)');
+  const w = S.retainingWall?.points; if (w?.length) { g.beginPath(); w.forEach((q, i) => { const [x, y] = toScr(q[0], q[1]); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.strokeStyle = '#5a3b22'; g.lineWidth = 4; g.stroke(); g.strokeStyle = '#e7c9a5'; g.lineWidth = 1.5; g.stroke(); const mid = w[Math.floor(w.length / 2)]; const [x, y] = toScr(mid[0], mid[1]); label(g, 'Retaining wall', x, y - 8, '#5a3b22'); }
+  const flag = (x0, y0, txt, col) => { const [x, y] = toScr(x0, y0); g.beginPath(); g.moveTo(x, y); g.lineTo(x, y - 16); g.strokeStyle = col; g.lineWidth = 2; g.stroke(); g.fillStyle = col; g.fillRect(x, y - 16, 9, 7); if (k >= 4) label(g, txt, x + 4, y - 20, col); };
+  for (const q of WALK) flag(q.x, q.y, q.n + '. ' + q.name, '#1f5f8f');
+  for (const q of QUESTIONS) flag(q.x, q.y, q.title, '#9a5b00');
+  for (const b of S.buildings || []) { poly(g, b.footprint, b.id === 'house' ? '#b98e5f' : '#8a97a6', '#3a2a1a'); const [cx, cy] = centre(b.footprint), [x, y] = toScr(cx, cy); label(g, b.id === 'house' ? 'House' : b.id === 'tank' ? 'Tank' : b.name.replace('Former ', ''), x, y + 4); }
+  for (const q of S.poles || []) { const [x, y] = toScr(q.point[0], q.point[1]); g.fillStyle = '#333'; g.fillRect(x - 3, y - 3, 6, 6); if (k >= 3) label(g, 'Pole', x, y - 6, '#333'); }
 }
 
 /* ---------- GPS: used where the page may ask for it; otherwise the owner taps "I'm here" ---------- */
@@ -77,7 +95,7 @@ function paintStatus() {
 }
 
 /* ---------- own tree records ---------- */
-export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.tent = tentative(ev); M.caps = ev.filter(e => e.type === 'capture' && e.place && e.media?.length).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at})); }
+export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.tent = tentative(ev); M.caps = ev.filter(e => e.type === 'capture' && e.place && (e.media?.length || e.text)).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at, media: e.media || [], hint: e.data?.hint || '', label: e.place.label, acc: e.place.acc, done: ev.some(o => o.type === 'tree' && o.data?.fromCapture === e.id)})); }
 /* Possible trees from records: a spot-tagged record with plant words, or a free photo/video/voice record, that is not a stop about a wall, tank or well.
    These are guesses from the owner's own words and spots: drawn dashed, never counted as trees until the owner confirms. */
 const DISMISS = 'lf-dismissed-trees';
@@ -139,7 +157,7 @@ export async function openMap(back) {
     <p class="p-small" id="mmStatus"></p>
     <div class="mm-row"><button id="mmHere">📍 I’m here</button><button id="mmMark">🌳 Mark a tree at my spot</button></div>
     <div id="mmPanel"></div><p class="p-small" id="mmCount"></p>
-    <p class="p-small">Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
+    <p class="p-small">Brown shapes are the house and tank, the dark line is the retaining wall, grey is the road, black squares are poles (from the survey drawing; heights and shapes are not measured on site). Blue flags are the five walk stops, orange flags are open questions. Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
   const cv = $('#mmCv'), W = Math.min(main.clientWidth || 360, 560); cv.width = W; cv.height = Math.round(W * 1.05); cv.style.width = W + 'px'; cv.style.height = cv.height + 'px'; fit(cv);
   $('#mmBack').onclick = () => { stopGps(); back(); };
   const zoom = (f, cx = cv.width / 2, cy = cv.height / 2) => { const [fx, fy] = toFarm(cx, cy); M.view.k = Math.max(1, Math.min(40, M.view.k * f)); M.view.ox = cx - fx * M.view.k; M.view.oy = cy + fy * M.view.k; draw(); };
@@ -154,6 +172,33 @@ export async function openMap(back) {
   $('#mmHere').onclick = () => { if (M.gpsState === 'ok' && M.gps) { M.spot = null; toast('Using GPS for your spot'); return; } if (!M.pick) return toast('Tap the map where you stand first'); M.spot = {x: M.pick.x, y: M.pick.y}; M.pick = null; paintPanel(); draw(); toast('Your spot is set (purple dot)'); };
   $('#mmMark').onclick = () => { const s = M.gpsState === 'ok' && M.gps ? {x: M.gps.farm.x, y: M.gps.farm.y, how: 'gps'} : M.spot ? {...M.spot, how: 'spot'} : null; if (!s) return toast('Set your spot first: tap the map and press “I’m here”'); M.pick = s; paintPanel(); draw(); };
   paintStatus(); paintPanel(); paintList(); draw(); startGps();
+}
+const urls = [];
+async function showCap(c) {
+  M.pick = null; urls.splice(0).forEach(u => URL.revokeObjectURL(u));
+  const items = [];
+  for (const id of c.media) { const m = await St.getMedia(id).catch(() => null); if (!m?.blob) continue; const u = URL.createObjectURL(m.blob); urls.push(u);
+    items.push(m.kind === 'photo' ? `<img src="${u}" alt="Photo" style="width:100%;border-radius:10px;margin:6px 0">` : m.kind === 'video' ? `<video src="${u}" controls playsinline style="width:100%;border-radius:10px;margin:6px 0"></video>` : `<audio src="${u}" controls style="width:100%;margin:6px 0"></audio>`); }
+  const f = c.text ? fileText(c.text) : null, guess = f?.plants?.[0] ? FPLANTS[f.plants[0]]?.en : '', gp = matchPlant(guess), sv = nearest(c.x, c.y, M.survey, 3);
+  $('#mmPanel').innerHTML = `<div class="mm-card"><b>${c.done ? '🌳 Saved as a tree · ' : ''}Record from ${esc(c.at.slice(0, 10))}</b>
+    <small>${esc(c.label || '')}${c.acc ? ' · GPS ±' + esc(c.acc) + ' m' : ''} · ${c.text ? '“' + esc(c.text) + '”' : 'no words (a voice note or photo cannot be read by this app yet)'}</small>
+    ${items.join('')}
+    ${sv ? `<small>Nearest survey tree within 3 m: ${esc(sv.label)} (survey symbol, not field-verified).</small>` : ''}
+    <b style="margin-top:8px">Describe the tree</b>
+    <label class="p-lbl">Which tree?<select id="mmSp"><option value="">Not sure yet</option>${M.plants.map(pl => `<option value="${esc(pl.k)}"${gp && gp.k === pl.k ? ' selected' : ''}>${esc(pl.en)} · ${esc(pl.ml)} · ${esc(pl.sci)}</option>`).join('')}</select></label>
+    <p class="p-small" id="mmHz"></p>
+    <label class="p-lbl">Height in metres (optional, your estimate)<input id="mmH" inputmode="decimal"></label>
+    <label class="p-lbl">Note (optional)<input id="mmNote" value="${esc(c.text || '')}"></label>
+    <div class="mm-row"><button class="p-save" id="mmSave">Save as a tree here</button><button id="mmClr">Close</button></div></div>`;
+  const sel = $('#mmSp'); const hz = () => { $('#mmHz').textContent = hazardNote(M.plants.find(x => x.k === sel.value)); }; sel.onchange = hz; hz();
+  $('#mmClr').onclick = () => { urls.splice(0).forEach(u => URL.revokeObjectURL(u)); paintPanel(); };
+  $('#mmSave').onclick = async () => {
+    const pl = M.plants.find(x => x.k === sel.value), hv = parseFloat($('#mmH').value), note = $('#mmNote').value.trim(), name = pl ? pl.en : sv ? sv.label : 'Tree (species not known)';
+    try { await St.add({type: 'tree', grade: 'seen', text: [name, note].filter(Boolean).join(': '), place: {x: c.x, y: c.y, label: 'From a phone record'}, media: c.media,
+      data: {key: pl?.k || '', name, status: 'alive', planted: '', source: 'described from phone record ' + c.id, fromCapture: c.id, ...(Number.isFinite(hv) ? {h: hv, hBasis: 'estimate (owner guess)'} : {}), speciesBasis: pl ? 'told (owner chose it)' : 'unknown', positionBasis: 'model (GPS or tag, frame assumed, ±' + (c.acc || 'unknown') + ' m)'}}); } catch (e) { return toast(e.message); }
+    await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved');
+  };
+  draw();
 }
 function showTent(q) {
   M.pick = null; const pl = matchPlant(q.guess);
@@ -173,7 +218,7 @@ function tap(sx, sy) {
   const [x, y] = toFarm(sx, sy), reach = Math.max(1.5, 14 / M.view.k);
   const tq = nearest(x, y, M.tent || [], reach); if (tq) return showTent(tq);
   const cap = nearest(x, y, M.caps || [], reach), own = !cap && nearest(x, y, M.own, reach), sv = !cap && !own && nearest(x, y, M.survey, reach);
-  if (cap) { M.pick = null; $('#mmPanel').innerHTML = `<div class="mm-card"><b>📷 Photo or video record</b><small>${esc(cap.at.slice(0, 10))} · ${esc(cap.text || 'no words')}</small></div>`; draw(); return; }
+  if (cap) return showCap(cap);
   if (own) { M.pick = null; $('#mmPanel').innerHTML = `<div class="mm-card"><b>Your tree: ${esc(own.name)}</b><small>${own.h ? 'About ' + esc(own.h) + ' m (your estimate)' : 'Height not recorded'}</small></div>`; draw(); return; }
   M.pick = sv ? {x: sv.x, y: sv.y, survey: sv, how: 'tap'} : {x, y, how: 'tap'}; paintPanel(); draw();
 }
