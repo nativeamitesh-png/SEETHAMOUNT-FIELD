@@ -1,7 +1,7 @@
 // Living Farm · phone map. A light contour map of the farm: your spot (GPS, or tapped), survey trees, and trees you mark.
 // Contours are drawn from the surveyed 1 m grid (model, not measured). The survey frame is assumed WGS84 until 3 GPS points are walked.
 import * as St from './store.js';
-import {gpsToFarm} from './filer.js';
+import {gpsToFarm, file as fileText, PLANTS as FPLANTS} from './filer.js';
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
@@ -50,6 +50,7 @@ function draw() {
   const r = Math.max(2.5, Math.min(7, k * 0.9));
   for (const t of M.survey) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = (M.colors[t.key] || '#597b45') + 'cc'; g.fill(); }
   for (const t of M.own) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r + 2.5, 0, 7); g.fillStyle = '#fff'; g.fill(); g.lineWidth = 3; g.strokeStyle = '#1f7a3a'; g.stroke(); g.beginPath(); g.arc(x, y, r - 1, 0, 7); g.fillStyle = '#1f7a3a'; g.fill(); }
+  for (const q of M.tent || []) { const [x, y] = toScr(q.x, q.y); g.beginPath(); g.arc(x, y, r + 4, 0, 7); g.setLineDash([4, 3]); g.lineWidth = 2.5; g.strokeStyle = '#b4691f'; g.stroke(); g.setLineDash([]); g.fillStyle = '#fff'; g.font = 'bold 11px sans-serif'; g.textAlign = 'center'; g.fillStyle = '#b4691f'; g.fillText('?', x, y + 4); }
   for (const c of M.caps || []) { const [x, y] = toScr(c.x, c.y); g.fillStyle = '#c0661b'; g.fillRect(x - 5, y - 5, 10, 10); g.strokeStyle = '#fff'; g.lineWidth = 2; g.strokeRect(x - 5, y - 5, 10, 10); }
   const dot = (p, col, ring) => { const [x, y] = toScr(p.x, p.y); if (ring) { g.beginPath(); g.arc(x, y, Math.max(8, ring * k), 0, 7); g.fillStyle = col + '22'; g.fill(); } g.beginPath(); g.arc(x, y, 8, 0, 7); g.fillStyle = col; g.fill(); g.lineWidth = 3; g.strokeStyle = '#fff'; g.stroke(); };
   if (M.gps?.farm?.inside) dot(M.gps.farm, '#1a6fd1', M.gps.acc);
@@ -76,13 +77,31 @@ function paintStatus() {
 }
 
 /* ---------- own tree records ---------- */
-export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.caps = ev.filter(e => e.type === 'capture' && e.place && e.media?.length).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at})); }
+export async function loadOwn() { const ev = await St.all(); M.own = ev.filter(e => e.type === 'tree' && e.place).map(e => ({id: e.id, x: e.place.x, y: e.place.y, name: e.data?.name || e.text, h: e.data?.h})); M.tent = tentative(ev); M.caps = ev.filter(e => e.type === 'capture' && e.place && e.media?.length).map(e => ({id: e.id, x: e.place.x, y: e.place.y, text: e.text, at: e.at})); }
+/* Possible trees from records: a spot-tagged record with plant words, or a free photo/video/voice record, that is not a stop about a wall, tank or well.
+   These are guesses from the owner's own words and spots: drawn dashed, never counted as trees until the owner confirms. */
+const DISMISS = 'lf-dismissed-trees';
+const dismissed = () => { try { return JSON.parse(localStorage.getItem(DISMISS) || '[]'); } catch { return []; } };
+function tentative(ev) {
+  const gone = new Set(dismissed()), done = new Set(ev.filter(e => e.type === 'tree').map(e => e.data?.fromCapture).filter(Boolean)), out = [];
+  for (const e of ev) {
+    if (e.type !== 'capture' || !e.place || gone.has(e.id) || done.has(e.id) || e.data?.stopId) continue;
+    const hint = e.data?.hint || ''; if (!['', 'Plant', 'Problem', 'Something else'].includes(hint)) continue;
+    const f = e.text ? fileText(e.text) : null, key = f?.plants?.[0] || null;
+    if (!key && !e.media?.length) continue;
+    if (M.own.some(o => Math.hypot(o.x - e.place.x, o.y - e.place.y) < 1.5)) continue;
+    const sv = nearest(e.place.x, e.place.y, M.survey, 3);
+    out.push({id: e.id, x: e.place.x, y: e.place.y, text: e.text || '', at: e.at, key, guess: key ? FPLANTS[key]?.en : '', sv});
+  }
+  return out;
+}
+const matchPlant = en => en ? M.plants.find(pl => pl.en.toLowerCase().includes(en.toLowerCase()) || en.toLowerCase().includes(pl.en.toLowerCase())) : null;
 const nearest = (x, y, list, maxM) => { let best = null, bd = maxM; for (const t of list) { const d = Math.hypot(t.x - x, t.y - y); if (d < bd) { bd = d; best = t; } } return best; };
 const hazardNote = p => !p ? '' : p.hazard ? `⚠ ${esc(p.hazard.level)}: ${esc(p.hazard.who)}${p.hazard.part ? ' (' + esc(p.hazard.part) + ')' : ''}` : 'Safety: not yet checked';
 
 function paintPanel() {
   const el = $('#mmPanel'); if (!el) return; const p = M.pick;
-  if (!p) { el.innerHTML = `<p class="p-small">Tap the map to choose a spot. Tap a grey-green dot to see a survey tree. Green rings are trees you have marked; orange squares are photos and videos.</p>`; return; }
+  if (!p) { el.innerHTML = `<p class="p-small">Tap the map to choose a spot. Tap a grey-green dot to see a survey tree. Green rings are trees you have marked; orange squares are photos and videos; dashed rings with a ? are possible trees from your records.</p>`; return; }
   const sv = p.survey;
   el.innerHTML = `<div class="mm-card"><b>${sv ? 'Survey tree: ' + esc(sv.label) : 'Mark a tree here'}</b>
     <small>x ${p.x.toFixed(1)} m, y ${p.y.toFixed(1)} m from the survey origin${sv ? ' · survey symbol, not field-verified' : ''}</small>
@@ -106,7 +125,7 @@ async function saveTree() {
   } catch (e) { return toast(e.message); }
   M.pick = null; await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved' + (pl ? '' : ' (species not known)'));
 }
-function paintList() { const el = $('#mmCount'); if (el) el.textContent = `${M.own.length} marked by you · ${M.survey.length} on the survey sheet`; }
+function paintList() { const el = $('#mmCount'); if (el) el.textContent = `${M.own.length} marked by you · ${M.survey.length} on the survey sheet` + (M.tent?.length ? ` · ${M.tent.length} possible tree${M.tent.length === 1 ? '' : 's'} from your records (dashed, tap to confirm)` : ''); }
 function toast(m) { const t = $('#pToast'); if (!t) return; t.textContent = m; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 3000); }
 
 /* ---------- screen ---------- */
@@ -136,8 +155,23 @@ export async function openMap(back) {
   $('#mmMark').onclick = () => { const s = M.gpsState === 'ok' && M.gps ? {x: M.gps.farm.x, y: M.gps.farm.y, how: 'gps'} : M.spot ? {...M.spot, how: 'spot'} : null; if (!s) return toast('Set your spot first: tap the map and press “I’m here”'); M.pick = s; paintPanel(); draw(); };
   paintStatus(); paintPanel(); paintList(); draw(); startGps();
 }
+function showTent(q) {
+  M.pick = null; const pl = matchPlant(q.guess);
+  $('#mmPanel').innerHTML = `<div class="mm-card"><b>🌿 Possible tree (not confirmed)</b>
+    <small>From your record on ${esc(q.at.slice(0, 10))}${q.text ? ': “' + esc(q.text) + '”' : ' (no words)'}.</small>
+    <small>${q.guess ? 'Guessed from your words: ' + esc(q.guess) + ' (model guess).' : 'Species not known.'}${q.sv ? ' Near survey tree: ' + esc(q.sv.label) + ' (survey symbol, not field-verified).' : ''}</small>
+    <div class="mm-row"><button class="p-save" id="mmYes">Yes, it's a tree</button><button id="mmNo">No, dismiss</button></div></div>`;
+  $('#mmNo').onclick = async () => { try { localStorage.setItem(DISMISS, JSON.stringify([...dismissed(), q.id])); } catch {} await loadOwn(); paintPanel(); paintList(); draw(); toast('Dismissed'); };
+  $('#mmYes').onclick = async () => {
+    const name = pl ? pl.en : q.guess || (q.sv ? q.sv.label : 'Tree (species not known)');
+    await St.add({type: 'tree', grade: 'seen', text: name, place: {x: q.x, y: q.y, label: 'Confirmed from a phone record'}, data: {key: pl?.k || '', name, status: 'alive', planted: '', source: 'confirmed from phone record ' + q.id, fromCapture: q.id, speciesBasis: pl ? 'told (from your own words)' : 'unknown', positionBasis: 'model (GPS, frame assumed)'}});
+    await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved' + (pl ? '' : ' (species not known)'));
+  };
+  draw();
+}
 function tap(sx, sy) {
   const [x, y] = toFarm(sx, sy), reach = Math.max(1.5, 14 / M.view.k);
+  const tq = nearest(x, y, M.tent || [], reach); if (tq) return showTent(tq);
   const cap = nearest(x, y, M.caps || [], reach), own = !cap && nearest(x, y, M.own, reach), sv = !cap && !own && nearest(x, y, M.survey, reach);
   if (cap) { M.pick = null; $('#mmPanel').innerHTML = `<div class="mm-card"><b>📷 Photo or video record</b><small>${esc(cap.at.slice(0, 10))} · ${esc(cap.text || 'no words')}</small></div>`; draw(); return; }
   if (own) { M.pick = null; $('#mmPanel').innerHTML = `<div class="mm-card"><b>Your tree: ${esc(own.name)}</b><small>${own.h ? 'About ' + esc(own.h) + ' m (your estimate)' : 'Height not recorded'}</small></div>`; draw(); return; }
