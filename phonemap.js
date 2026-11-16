@@ -115,6 +115,7 @@ function tentative(ev) {
 }
 const matchPlant = en => en ? M.plants.find(pl => pl.en.toLowerCase().includes(en.toLowerCase()) || en.toLowerCase().includes(pl.en.toLowerCase())) : null;
 const nearest = (x, y, list, maxM) => { let best = null, bd = maxM; for (const t of list) { const d = Math.hypot(t.x - x, t.y - y); if (d < bd) { bd = d; best = t; } } return best; };
+function extraOf() { const ly = $('#mmLy')?.value, cw = parseFloat($('#mmCw')?.value); return {...(ly ? {layer: ly, layerBasis: 'told (owner chose it)'} : {}), ...(Number.isFinite(cw) && cw > 0 ? {crown: cw, crownBasis: 'estimate (owner guess)'} : {})}; }
 const hazardNote = p => !p ? '' : p.hazard ? `⚠ ${esc(p.hazard.level)}: ${esc(p.hazard.who)}${p.hazard.part ? ' (' + esc(p.hazard.part) + ')' : ''}` : 'Safety: not yet checked';
 
 function paintPanel() {
@@ -126,6 +127,8 @@ function paintPanel() {
     <label class="p-lbl">Which tree?<select id="mmSp"><option value="">Not sure yet</option>${M.plants.map(pl => `<option value="${esc(pl.k)}">${esc(pl.en)} · ${esc(pl.ml)} · ${esc(pl.sci)}</option>`).join('')}</select></label>
     <p class="p-small" id="mmHz"></p>
     <label class="p-lbl">Height in metres (optional, your estimate)<input id="mmH" inputmode="decimal" placeholder="e.g. 6"></label>
+    <label class="p-lbl">Layer<select id="mmLy"><option value="">Not sure</option><option value="tall">Tall tree (over 10 m)</option><option value="mid">Mid tree (4–10 m)</option><option value="shrub">Shrub or coffee-size (1–4 m)</option><option value="ground">Ground cover (under 1 m)</option></select></label>
+    <label class="p-lbl">Crown width in metres (optional, your estimate)<input id="mmCw" inputmode="decimal" placeholder="across the leaves, e.g. 4"></label>
     <label class="p-lbl">Note (optional)<input id="mmNote" placeholder="${sv ? 'Is it there? Is it this species?' : 'e.g. self-grown, leaning, fruiting'}"></label>
     <div class="mm-row"><button class="p-save" id="mmSave">${sv ? 'Confirm I saw it' : 'Save tree'}</button><button id="mmClr">Cancel</button></div></div>`;
   const sel = $('#mmSp'); sel.onchange = () => { $('#mmHz').textContent = hazardNote(M.plants.find(x => x.k === sel.value)); };
@@ -139,7 +142,7 @@ async function saveTree() {
   try {
     await St.add({type: 'tree', grade: 'seen', text: [name, note].filter(Boolean).join(': '), place,
       data: {key: pl?.k || '', name, status: 'alive', planted: '', source: p.survey ? 'confirmed on phone map (survey symbol ' + p.survey.id + ')' : 'marked on phone map',
-        ...(Number.isFinite(hv) ? {h: hv, hBasis: 'estimate (owner guess)'} : {}), speciesBasis: pl ? 'told (owner chose it)' : 'unknown', positionBasis: p.how === 'spot' ? 'told (owner placed my spot)' : p.how === 'gps' ? 'model (GPS, frame assumed)' : 'seen (tapped on map)'}});
+        ...(Number.isFinite(hv) ? {h: hv, hBasis: 'estimate (owner guess)'} : {}), ...extraOf(), speciesBasis: pl ? 'told (owner chose it)' : 'unknown', positionBasis: p.how === 'spot' ? 'told (owner placed my spot)' : p.how === 'gps' ? 'model (GPS, frame assumed)' : 'seen (tapped on map)'}});
   } catch (e) { return toast(e.message); }
   M.pick = null; await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved' + (pl ? '' : ' (species not known)'));
 }
@@ -188,6 +191,8 @@ async function showCap(c) {
     <label class="p-lbl">Which tree?<select id="mmSp"><option value="">Not sure yet</option>${M.plants.map(pl => `<option value="${esc(pl.k)}"${gp && gp.k === pl.k ? ' selected' : ''}>${esc(pl.en)} · ${esc(pl.ml)} · ${esc(pl.sci)}</option>`).join('')}</select></label>
     <p class="p-small" id="mmHz"></p>
     <label class="p-lbl">Height in metres (optional, your estimate)<input id="mmH" inputmode="decimal"></label>
+    <label class="p-lbl">Layer<select id="mmLy"><option value="">Not sure</option><option value="tall">Tall tree (over 10 m)</option><option value="mid">Mid tree (4–10 m)</option><option value="shrub">Shrub or coffee-size (1–4 m)</option><option value="ground">Ground cover (under 1 m)</option></select></label>
+    <label class="p-lbl">Crown width in metres (optional, your estimate)<input id="mmCw" inputmode="decimal" placeholder="across the leaves, e.g. 4"></label>
     <label class="p-lbl">Note (optional)<input id="mmNote" value="${esc(c.text || '')}"></label>
     <div class="mm-row"><button class="p-save" id="mmSave">Save as a tree here</button><button id="mmClr">Close</button></div></div>`;
   const sel = $('#mmSp'); const hz = () => { $('#mmHz').textContent = hazardNote(M.plants.find(x => x.k === sel.value)); }; sel.onchange = hz; hz();
@@ -195,7 +200,7 @@ async function showCap(c) {
   $('#mmSave').onclick = async () => {
     const pl = M.plants.find(x => x.k === sel.value), hv = parseFloat($('#mmH').value), note = $('#mmNote').value.trim(), name = pl ? pl.en : sv ? sv.label : 'Tree (species not known)';
     try { await St.add({type: 'tree', grade: 'seen', text: [name, note].filter(Boolean).join(': '), place: {x: c.x, y: c.y, label: 'From a phone record'}, media: c.media,
-      data: {key: pl?.k || '', name, status: 'alive', planted: '', source: 'described from phone record ' + c.id, fromCapture: c.id, ...(Number.isFinite(hv) ? {h: hv, hBasis: 'estimate (owner guess)'} : {}), speciesBasis: pl ? 'told (owner chose it)' : 'unknown', positionBasis: 'model (GPS or tag, frame assumed, ±' + (c.acc || 'unknown') + ' m)'}}); } catch (e) { return toast(e.message); }
+      data: {key: pl?.k || '', name, status: 'alive', planted: '', source: 'described from phone record ' + c.id, fromCapture: c.id, ...(Number.isFinite(hv) ? {h: hv, hBasis: 'estimate (owner guess)'} : {}), ...extraOf(), speciesBasis: pl ? 'told (owner chose it)' : 'unknown', positionBasis: 'model (GPS or tag, frame assumed, ±' + (c.acc || 'unknown') + ' m)'}}); } catch (e) { return toast(e.message); }
     await loadOwn(); paintPanel(); paintList(); draw(); toast('Tree saved');
   };
   draw();
