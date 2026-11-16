@@ -59,23 +59,54 @@ async function dictToggle() {
   const d = P.draft, dict = P.dict;
   if (P.dictOn) { try { await dict.stop(); } catch {} return; }
   if (!P.dictBound) { P.dictBound = true; dict.onFinal(({text}) => { if (!P.draft) return; P.draft.text = (P.draft.text ? P.draft.text + ' ' : '') + text; const ta = $('#pText'); if (ta) { ta.value = P.draft.text; ta.dispatchEvent(new Event('input')); } });
-    dict.onState(({state}) => { P.dictOn = state === 'listening'; const b = $('#pVoice'); if (b) { b.classList.toggle('on', P.dictOn); b.innerHTML = (P.dictOn ? '■' : '🎙') + '<span>' + (P.dictOn ? 'Stop' : 'Voice to text') + '</span>'; } }); }
+    dict.onState(({state}) => { P.dictOn = state === 'listening'; const b = $('#pSpeak'); if (b) { b.classList.toggle('on', P.dictOn); b.innerHTML = (P.dictOn ? '■' : '🗣') + '<span>' + (P.dictOn ? 'Stop' : 'Speak') + '</span>'; } }); }
   dict.start().catch(e => toast(e?.code === 'not_granted' || /not_granted/.test(String(e)) ? 'Voice to text was declined. Type a note instead.' : 'Voice to text did not start. Type a note instead.'));
 }
-async function voiceToggle() {
+/* Many photos: an in-page camera that stays open. Each tap of the shutter adds a photo to the record and keeps it safe straight away. */
+async function manyPhotos() {
+  const d = P.draft; d.text = $('#pText')?.value ?? d.text;
+  let stream, cam = 'environment';
+  const ov = document.createElement('div'); ov.id = 'pCam'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', 'Camera');
+  ov.innerHTML = `<video id="pCamV" autoplay playsinline muted></video><div class="pc-bar"><button id="pcFlip" aria-label="Switch camera">⟲</button><button id="pcShot" aria-label="Take photo"></button><button id="pcDone">Done</button></div><div class="pc-n" id="pcN" aria-live="polite">0 photos</div>`;
+  document.body.append(ov); let n = 0;
+  const open = async () => { try { stream?.getTracks().forEach(x => x.stop()); stream = await navigator.mediaDevices.getUserMedia({video: {facingMode: cam, width: {ideal: 4096}}, audio: false}); $('#pCamV').srcObject = stream; return true; } catch { return false; } };
+  if (!navigator.mediaDevices?.getUserMedia || !(await open())) { ov.remove(); toast('The camera is blocked for this site. Use the Photo button instead.'); return; }
+  const done = () => { stream?.getTracks().forEach(x => x.stop()); ov.remove(); paintDraft(); };
+  $('#pcDone').onclick = done; $('#pcFlip').onclick = async () => { cam = cam === 'environment' ? 'user' : 'environment'; await open(); };
+  $('#pcShot').onclick = async () => {
+    const v = $('#pCamV'); let file = null;
+    try { const tr = stream.getVideoTracks()[0]; if (window.ImageCapture) { const blob = await new ImageCapture(tr).takePhoto(); file = new File([blob], `photo-${Date.now()}.jpg`, {type: blob.type || 'image/jpeg'}); } } catch {}
+    if (!file) { const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight; c.getContext('2d').drawImage(v, 0, 0); const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', 0.9)); if (blob) file = new File([blob], `photo-${Date.now()}.jpg`, {type: 'image/jpeg'}); }
+    if (!file) return toast('The photo did not save. Try again.');
+    const s = await shrink(file); const m = {kind: 'photo', file: s, url: URL.createObjectURL(s), heading: P.heading, tag: null}; d.media.push(m); await keepMedia(m);
+    n++; $('#pcN').textContent = n + (n === 1 ? ' photo saved' : ' photos saved'); ov.classList.add('flash'); setTimeout(() => ov.classList.remove('flash'), 120);
+  };
+}
+
+/* Speak: the phone turns your voice into words while you talk (Chrome speech typing). Words only, no audio kept; the microphone is used by this alone. */
+const SRC = () => window.SpeechRecognition || window.webkitSpeechRecognition;
+function speakPaint() { const b = $('#pSpeak'); if (!b) return; b.classList.toggle('on', !!P.speakOn); b.innerHTML = (P.speakOn ? '■' : '🗣') + '<span>' + (P.speakOn ? 'Stop' : 'Speak') + '</span>'; }
+function speakToggle() {
   if (P.dict) return dictToggle();
-  if (P.rec) { P.rec.stop(); P.speech?.stop(); return; }
+  if (P.speakOn) { P.speakOn = false; try { P.speech?.stop(); } catch {} speakPaint(); return; }
+  const SR = SRC(); if (!SR) return toast('Speech to words is not available in this browser. Use Chrome, or type a note, or Record audio.');
+  const s = new SR(); s.lang = P.lang; s.continuous = true; s.interimResults = true; P.speech = s; P.speakOn = true; const base = () => P.draft.text || '';
+  s.onresult = e => { let interim = ''; for (let i = e.resultIndex; i < e.results.length; i++) { const r = e.results[i]; if (r.isFinal) P.draft.text = (base() ? base() + ' ' : '') + r[0].transcript.trim(); else interim += r[0].transcript; }
+    const ta = $('#pText'); if (ta) ta.value = base() + (interim ? (base() ? ' ' : '') + interim : ''); stash(); const sg = $('#pSug'); if (sg) sg.textContent = sugText(base() ? fileText(base()).proposals.map(p => p.label) : []); };
+  s.onerror = e => { const c = e.error; if (c === 'no-speech' || c === 'aborted') return; P.speakOn = false; speakPaint(); toast(c === 'not-allowed' || c === 'service-not-allowed' ? 'The microphone is blocked for this site. Allow it in the browser, or type a note.' : c === 'network' ? 'Speech to words needs internet. Type a note, or Record audio.' : 'Speech to words stopped (' + c + '). Type a note instead.'); };
+  s.onend = () => { if (P.speakOn && P.draft) { try { s.start(); } catch { P.speakOn = false; } } else P.speakOn = false; speakPaint(); };
+  try { s.start(); } catch { P.speakOn = false; toast('Could not start speech to words.'); }
+  speakPaint();
+}
+async function voiceToggle() {
+  if (P.rec) { P.rec.stop(); return; }
   try {
     const stream = await navigator.mediaDevices.getUserMedia({audio: true});
     const chunks = []; const r = new MediaRecorder(stream); P.rec = r; const t0 = Date.now();
     r.ondataavailable = e => e.data.size && chunks.push(e.data);
     r.onstop = () => { stream.getTracks().forEach(t => t.stop()); const blob = new Blob(chunks, {type: r.mimeType || 'audio/webm'});
-      const m = {kind: 'voice', file: new File([blob], `voice-${Date.now()}.webm`, {type: blob.type}), secs: Math.round((Date.now() - t0) / 1000)}; P.draft.media.push(m); P.rec = null; P.speech = null; keepMedia(m).then(paintDraft); paintDraft(); };
+      const m = {kind: 'voice', file: new File([blob], `voice-${Date.now()}.webm`, {type: blob.type}), secs: Math.round((Date.now() - t0) / 1000)}; P.draft.media.push(m); P.rec = null; keepMedia(m).then(paintDraft); paintDraft(); };
     r.start();
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SR) { const s = new SR(); s.lang = P.lang; s.continuous = true; s.interimResults = false; P.speech = s;
-      s.onresult = e => { for (let i = e.resultIndex; i < e.results.length; i++) if (e.results[i].isFinal) { P.draft.text = (P.draft.text ? P.draft.text + ' ' : '') + e.results[i][0].transcript; const ta = $('#pText'); if (ta) ta.value = P.draft.text; } };
-      s.onerror = () => {}; try { s.start(); } catch {} }
     paintDraft();
   } catch { toast('The microphone is blocked. Type a note instead.'); }
 }
@@ -135,7 +166,10 @@ function phoneStops(d) {
   return out.slice(0, 3);
 }
 function openDraft(stop) { dropDraft(); P.saved = null; P.draft = {media: [], text: '', hint: stop?.hint || '', stop: stop || null}; startGPS(); paintDraft(); }
-const sugText = sug => sug.length ? `The web app will suggest: ${sug.join(' · ')}. You confirm there.` : '';
+/* Keyword filing from the words (typed or spoken). A guess from keywords: shown, tagged on save, never a fact; you confirm in the web app. */
+const HINT_OF = {reading: 'Well reading', health: 'Problem', plant: 'Plant', task: 'Task'};
+function autoHint(text) { if (!text) return ''; const k = fileText(text).proposals.map(p => p.kind); for (const x of ['reading', 'health', 'plant', 'task']) if (k.includes(x)) return HINT_OF[x]; return ''; }
+const sugText = sug => sug.length ? `Heard: ${sug.join(' · ')}. It will be filed from these keywords (a guess, you confirm in the web app).` : '';
 function paintDraft() {
   const d = P.draft; const hints = ['Plant', 'Problem', 'Well reading', 'Task', 'Something else'];
   const sug = d.text ? fileText(d.text).proposals.map(p => p.label) : [];
@@ -144,8 +178,10 @@ function paintDraft() {
    <div id="pGps" class="p-gps"></div>
    <div class="p-cap">
      <label class="p-btn">📷<span>Photo</span><input type="file" accept="image/*" capture="environment" id="pPhoto" multiple></label>
+     <button class="p-btn" id="pMany">📸<span>Many photos</span></button>
      <label class="p-btn">🎥<span>Video</span><input type="file" accept="video/*" capture="environment" id="pVideo"></label>
-     <button class="p-btn ${P.rec ? 'on' : ''}" id="pVoice">${P.rec ? '■' : '🎙'}<span>${P.rec ? 'Stop' : P.dict ? 'Voice to text' : 'Voice'}</span></button>
+     <button class="p-btn ${P.speakOn || P.dictOn ? 'on' : ''}" id="pSpeak">${P.speakOn || P.dictOn ? '■' : '🗣'}<span>${P.speakOn || P.dictOn ? 'Stop' : 'Speak'}</span></button>
+     <button class="p-btn ${P.rec ? 'on' : ''}" id="pVoice">${P.rec ? '■' : '🎙'}<span>${P.rec ? 'Stop' : 'Record audio'}</span></button>
      <label class="p-btn">🎧<span>Voice note</span><input type="file" accept="audio/*" id="pAudio"></label>
    </div>
    <div class="p-lang"><button data-lang="ml-IN" class="${P.lang === 'ml-IN' ? 'on' : ''}">മലയാളം</button><button data-lang="en-IN" class="${P.lang === 'en-IN' ? 'on' : ''}">English</button></div>
@@ -155,8 +191,8 @@ function paintDraft() {
    <p class="p-small" id="pSug" aria-live="polite">${sugText(sug)}</p>
    <button class="p-save" id="pSave">Save</button>`;
   paintGPS(); stash();
-  $('#pBack').onclick = () => { stash(); stopGPS(); if (P.rec) P.rec.stop(); P.draft = null; restoreDraft().then(s => { P.saved = s; home(); }); };
-  $('#pVoice').onclick = voiceToggle;
+  $('#pBack').onclick = () => { P.speakOn = false; try { P.speech?.stop(); } catch {} stash(); stopGPS(); if (P.rec) P.rec.stop(); P.draft = null; restoreDraft().then(s => { P.saved = s; home(); }); };
+  $('#pMany').onclick = manyPhotos; $('#pVoice').onclick = voiceToggle; $('#pSpeak').onclick = speakToggle;
   document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { P.lang = b.dataset.lang; paintDraft(); });
   document.querySelectorAll('[data-hint]').forEach(b => b.onclick = () => { d.text = $('#pText').value; d.hint = d.hint === b.dataset.hint ? '' : b.dataset.hint; paintDraft(); });
   document.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { d.text = $('#pText').value; const gone = d.media.splice(+b.dataset.rm, 1)[0]; if (gone?.draftId) St.delMedia(gone.draftId).catch(() => {}); paintDraft(); });
@@ -168,9 +204,10 @@ function paintDraft() {
 }
 async function save() {
   const d = P.draft; d.text = $('#pText').value.trim();
+  const heard = d.text ? autoHint(d.text) : ''; const hintAuto = !d.hint && !!heard; if (hintAuto) d.hint = heard;
   if (!d.text && !d.media.length) return toast('Take a photo, record your voice or write a few words first');
   if (P.rec) { P.rec.stop(); await new Promise(r => setTimeout(r, 300)); }
-  stopGPS(); const g = P.gps;
+  P.speakOn = false; try { P.speech?.stop(); } catch {} stopGPS(); const g = P.gps;
   const ids = [];
   for (const m of d.media) { const id = m.draftId || 'm-' + crypto.randomUUID(); await St.putMedia({id, name: m.file.name, type: m.file.type, size: m.file.size, blob: m.file, kind: m.kind, heading: m.heading ?? null}); ids.push(id); }
   let place = g?.status === 'ok' && g.farm.inside ? {x: +g.farm.x.toFixed(1), y: +g.farm.y.toFixed(1), label: nearName(g.farm.x, g.farm.y), acc: g.fix.acc} : null;
@@ -178,7 +215,7 @@ async function save() {
   if (!place && tagged) { const f = gpsToFarm(tagged.tag.lat, tagged.tag.lon); if (f.inside) { tagFarm = tagged.tag; place = {x: +f.x.toFixed(1), y: +f.y.toFixed(1), label: nearName(f.x, f.y) + ' (from the ' + tagged.tag.src + ')'}; } }
   try {
     await St.add({type: 'capture', grade: 'seen', place, text: d.text, media: ids,
-      data: {gps: g?.fix || null, gpsStatus: g?.status || 'none', hint: d.hint, lang: P.lang, mediaKinds: d.media.map(m => m.kind), stopId: d.stop?.id || null, filed: false, tagGps: tagFarm, positionBasis: place ? (tagFarm ? 'model (phone photo tag, frame assumed)' : 'model (GPS, frame assumed)') : 'unknown', heading: d.media.find(m => m.heading != null)?.heading ?? null}});
+      data: {gps: g?.fix || null, gpsStatus: g?.status || 'none', hint: d.hint, hintBasis: d.hint ? (hintAuto ? 'model (keyword match on your words, not confirmed)' : 'told (you chose it)') : 'unknown', heard: d.text ? fileText(d.text).proposals.map(p => p.label) : [], lang: P.lang, mediaKinds: d.media.map(m => m.kind), stopId: d.stop?.id || null, filed: false, tagGps: tagFarm, positionBasis: place ? (tagFarm ? 'model (phone photo tag, frame assumed)' : 'model (GPS, frame assumed)') : 'unknown', heading: d.media.find(m => m.heading != null)?.heading ?? null}});
   } catch (e) { return toast(e.message); }
   P.draft = null; try { localStorage.removeItem(DK); } catch {} await load(); home(); toast(place ? 'Saved at ' + place.label : g?.fix ? 'Saved with GPS' : 'Saved (no spot)');
 }
