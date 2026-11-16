@@ -38,7 +38,7 @@ section{margin:14px 0}h2{font:20px/1.2 var(--serif);margin:10px 0 8px}
 .p-mapbtn{width:100%;margin:0 0 12px;font-weight:650;border-color:var(--green);color:var(--green)}
 .mm-wrap{position:relative;margin:8px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#e9e7da}
 .mm-wrap canvas{display:block;touch-action:none;max-width:100%}
-.mm-btns{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}.mm-btns button{width:44px;min-height:44px;padding:0;font-size:20px}
+.mm-btns{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}.mm-btns button.on{background:#1a6fd1;color:#fff}.mm-btns button{width:44px;min-height:44px;padding:0;font-size:20px}
 .mm-row{display:flex;gap:8px;margin:8px 0}.mm-row button{flex:1}
 .mm-card{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;margin:8px 0}.mm-card b,.mm-card small{display:block}.mm-card small{color:var(--muted);font-size:13px}
 .p-lbl select,.p-lbl input{width:100%;min-height:44px;margin-top:4px;border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:#fff}
@@ -51,3 +51,6 @@ section{margin:14px 0}h2{font:20px/1.2 var(--serif);margin:10px 0 8px}
 #pcFlip,#pcDone{min-width:64px;background:#222;color:#fff;border-color:#444;font-size:18px}
 .pc-n{position:absolute;top:calc(12px + env(safe-area-inset-top));left:0;right:0;text-align:center;color:#fff;font-weight:650;text-shadow:0 1px 4px #000}
 #pCam.flash{background:#fff}#pCam.flash video{opacity:.4}
+/* tree details open as a sheet over the bottom of the map: no scrolling to reach Save */
+#mmPanel:has(.mm-card){position:fixed;left:0;right:0;bottom:0;z-index:30;max-height:46vh;overflow:auto;background:var(--bg,#fff);padding:10px 12px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(0,0,0,.25);border-radius:14px 14px 0 0}
+#mmPanel:has(.mm-card) .mm-card{margin:0}

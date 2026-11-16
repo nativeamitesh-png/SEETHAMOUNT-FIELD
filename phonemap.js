@@ -30,14 +30,24 @@ function prerender() {
   const c = new OffscreenCanvas(W, H), g = c.getContext('2d'); g.fillStyle = '#f6f5ef'; g.fillRect(0, 0, W, H);
   const zs = M.grid.map(r => r.z), zmin = Math.min(...zs), zmax = Math.max(...zs), at = new Map();
   for (const r of M.grid) { at.set(Math.round(r.x - 0.5) + ',' + Math.round(r.y - 0.5), r.z); const t = (r.z - zmin) / ((zmax - zmin) || 1); g.fillStyle = `hsl(${95 - 45 * t} ${38 - 8 * t}% ${88 - 26 * t}%)`; g.fillRect((r.x - 0.5 - b.x0) * PX, (b.y1 - (r.y + 0.5)) * PX, PX + 0.5, PX + 0.5); }
+  const lab = new Map(); M.zAt = at;
   for (const r of M.grid) {
     const kx = Math.round(r.x - 0.5), ky = Math.round(r.y - 0.5), px = (r.x - 0.5 - b.x0) * PX, py = (b.y1 - (r.y + 0.5)) * PX;
-    const edge = (n, vx, vy, w, h) => { if (n == null) return; const a = Math.floor(r.z), bb = Math.floor(n); if (a === bb) return; const lv = Math.max(a, bb); g.fillStyle = lv % 5 === 0 ? 'rgba(80,50,20,.85)' : 'rgba(120,85,45,.45)'; g.fillRect(vx, vy, w, h); };
+    const edge = (n, vx, vy, w, h) => { if (n == null) return; const a = Math.floor(r.z), bb = Math.floor(n); if (a === bb) return; const lv = Math.max(a, bb); if (lv % 5 === 0) { const bk = lv + ':' + Math.floor(r.x / 25) + ',' + Math.floor(r.y / 25); if (!lab.has(bk)) lab.set(bk, {x: r.x, y: r.y, lv}); } g.fillStyle = lv % 5 === 0 ? 'rgba(80,50,20,.85)' : 'rgba(120,85,45,.45)'; g.fillRect(vx, vy, w, h); };
     edge(at.get((kx + 1) + ',' + ky), px + PX - 0.5, py, lv5(r), PX); edge(at.get(kx + ',' + (ky - 1)), px, py + PX - 0.5, PX, lv5(r));
   }
-  M.off = c; M.z = {min: zmin, max: zmax};
+  M.off = c; M.z = {min: zmin, max: zmax}; M.lab = [...lab.values()];
 }
 const lv5 = () => 1;
+/* height and slope at a farm spot from the 1 m survey grid. Model, not measured (survey height, not phone altitude). */
+function elevAt(x, y) {
+  const z = (dx, dy) => M.zAt?.get((Math.floor(x) + dx) + ',' + (Math.floor(y) + dy)); const c = z(0, 0); if (c == null) return null;
+  const xe = z(1, 0), xw = z(-1, 0), yn = z(0, 1), ys = z(0, -1);
+  const gx = xe != null && xw != null ? (xe - xw) / 2 : 0, gy = yn != null && ys != null ? (yn - ys) / 2 : 0, sl = Math.hypot(gx, gy) * 100;
+  const dir = sl < 1 ? '' : ['east', 'north-east', 'north', 'north-west', 'west', 'south-west', 'south', 'south-east'][((Math.round(Math.atan2(-gy, -gx) / (Math.PI / 4)) % 8) + 8) % 8];
+  return {z: c, slope: sl, down: dir};
+}
+const elevText = e => e ? `Ground about <b>${e.z.toFixed(1)} m</b> above sea level, slope ${e.slope.toFixed(0)} %${e.down ? ', falling towards the ' + e.down : ''} (survey grid: model, not measured)` : 'Outside the surveyed area';
 
 /* ---------- view ---------- */
 function fit(cv) { const b = M.bb, w = b.x1 - b.x0, h = b.y1 - b.y0; const k = Math.min(cv.width / w, cv.height / h); M.view = {k, ox: (cv.width - w * k) / 2 - b.x0 * k, oy: (cv.height - h * k) / 2 + b.y1 * k}; }
@@ -50,6 +60,7 @@ function draw() {
   g.imageSmoothingEnabled = true; g.drawImage(M.off, b.x0 * k + M.view.ox, M.view.oy - b.y1 * k, (b.x1 - b.x0) * k, (b.y1 - b.y0) * k);
   if (M.boundary.length) { g.beginPath(); M.boundary.forEach((p, i) => { const [x, y] = toScr(p.x, p.y); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath(); g.strokeStyle = '#254f3d'; g.lineWidth = 2; g.setLineDash([8, 5]); g.stroke(); g.setLineDash([]); }
   drawLandmarks(g, k);
+  if (k >= 4) { g.font = 'bold 10px sans-serif'; g.textAlign = 'center'; for (const l of M.lab || []) { const [x, y] = toScr(l.x, l.y); if (x < 0 || y < 0 || x > cv.width || y > cv.height) continue; const t = l.lv + ' m'; g.lineWidth = 3; g.strokeStyle = 'rgba(255,255,255,.85)'; g.strokeText(t, x, y); g.fillStyle = '#5a3a14'; g.fillText(t, x, y); } }
   const r = Math.max(2.5, Math.min(7, k * 0.9));
   for (const t of M.survey) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = (M.colors[t.key] || '#597b45') + 'cc'; g.fill(); }
   for (const t of M.own) { const [x, y] = toScr(t.x, t.y); g.beginPath(); g.arc(x, y, r + 2.5, 0, 7); g.fillStyle = '#fff'; g.fill(); g.lineWidth = 3; g.strokeStyle = '#1f7a3a'; g.stroke(); g.beginPath(); g.arc(x, y, r - 1, 0, 7); g.fillStyle = '#1f7a3a'; g.fill(); }
@@ -87,6 +98,11 @@ function drawLandmarks(g, k) {
 /* walk path (a dot about every second, fixes worse than 30 m dropped) and stand-still averaging (60 s, weighted by accuracy).
    Both are the phone's own readings: labelled model, not measured. */
 const W = {on: false, pts: [], last: 0, still: null};
+function followGps(cv) {
+  if (!M.gps?.farm?.inside || !cv) return; const f = M.gps.farm;
+  if (!M.zoomed) { M.zoomed = true; M.follow = true; } // first good fix: zoom in once
+  if (M.follow) { M.view.k = Math.max(M.view.k, cv.width / 70); M.view.ox = cv.width / 2 - f.x * M.view.k; M.view.oy = cv.height / 2 + f.y * M.view.k; const b = $('#mmFol'); if (b) b.classList.add('on'); }
+}
 function feed(c, f) {
   const now = Date.now();
   if (W.on && c.accuracy <= 30 && now - W.last >= 1000) { W.last = now; W.pts.push({lat: c.latitude, lon: c.longitude, acc: Math.round(c.accuracy), t: now, x: f.x, y: f.y}); walkMsg(); }
@@ -121,14 +137,14 @@ function startGps() {
   if (!navigator.geolocation) { M.gpsState = 'none'; return paintStatus(); }
   M.gpsState = 'looking';
   try {
-    M.watch = navigator.geolocation.watchPosition(pos => { const c = pos.coords, f = gpsToFarm(c.latitude, c.longitude); M.gps = {farm: f, acc: Math.round(c.accuracy)}; M.gpsState = f.inside ? 'ok' : 'off'; feed(c, f); paintStatus(); draw(); },
+    M.watch = navigator.geolocation.watchPosition(pos => { const c = pos.coords, f = gpsToFarm(c.latitude, c.longitude); M.gps = {farm: f, acc: Math.round(c.accuracy)}; M.gpsState = f.inside ? 'ok' : 'off'; feed(c, f); followGps($('#mmCv')); paintStatus(); draw(); },
       e => { M.gpsState = e.code === 1 ? 'denied' : 'none'; paintStatus(); }, {enableHighAccuracy: true, maximumAge: 2000, timeout: 30000});
   } catch { M.gpsState = 'none'; paintStatus(); }
 }
 export function stopGps() { W.on = false; if (W.still) W.still = null; if (M.watch != null) navigator.geolocation?.clearWatch(M.watch); M.watch = null; }
 function paintStatus() {
   const el = $('#mmStatus'); if (!el) return; const s = M.gpsState;
-  el.innerHTML = s === 'ok' ? `<b>📍 Blue dot is you</b> · GPS ±${M.gps.acc} m (model, not measured; the survey frame is assumed WGS84 until 3 GPS points are walked)`
+  el.innerHTML = s === 'ok' ? `<b>📍 Blue dot is you</b> · GPS ±${M.gps.acc} m (model, not measured; the survey frame is assumed WGS84 until 3 GPS points are walked)<br>${elevText(elevAt(M.gps.farm.x, M.gps.farm.y))}`
     : s === 'off' ? '<b>You seem to be off the surveyed farm.</b> Tap the map to place a spot by hand.'
     : s === 'looking' ? '<b>Finding your spot…</b> You can also tap the map and press “I’m here”.'
     : '<b>GPS is not available in this view.</b> Tap the map where you stand and press “I’m here” (purple dot, told by you).';
@@ -165,7 +181,7 @@ function paintPanel() {
   if (!p) { el.innerHTML = `<p class="p-small">Tap the map to choose a spot. Tap a grey-green dot to see a survey tree. Green rings are trees you have marked; orange squares are photos and videos; dashed rings with a ? are possible trees from your records.</p>`; return; }
   const sv = p.survey;
   el.innerHTML = `<div class="mm-card"><b>${sv ? 'Survey tree: ' + esc(sv.label) : 'Mark a tree here'}</b>
-    <small>x ${p.x.toFixed(1)} m, y ${p.y.toFixed(1)} m from the survey origin${sv ? ' · survey symbol, not field-verified' : ''}</small>
+    <small>${elevText(elevAt(p.x, p.y))}</small><small>x ${p.x.toFixed(1)} m, y ${p.y.toFixed(1)} m from the survey origin${sv ? ' · survey symbol, not field-verified' : ''}</small>
     <label class="p-lbl">Which tree?<select id="mmSp"><option value="">Not sure yet</option>${M.plants.map(pl => `<option value="${esc(pl.k)}">${esc(pl.en)} · ${esc(pl.ml)} · ${esc(pl.sci)}</option>`).join('')}</select></label>
     <p class="p-small" id="mmHz"></p>
     <label class="p-lbl">Height in metres (optional, your estimate)<input id="mmH" inputmode="decimal" placeholder="e.g. 6"></label>
@@ -201,23 +217,23 @@ export async function openMap(back) {
   if (!M.off) { main.innerHTML = '<p class="p-small">No terrain data is loaded for this farm yet, so there is no contour map to show.</p><button id="mmBack">← Back</button>'; $('#mmBack').onclick = back; return; }
   main.innerHTML = `<header class="p-dh"><button id="mmBack" aria-label="Back">←</button><h2>Farm map</h2></header>
     <div class="mm-wrap"><canvas id="mmCv" aria-label="Contour map of the farm"></canvas>
-      <div class="mm-btns"><button id="mmIn" aria-label="Zoom in">+</button><button id="mmOut" aria-label="Zoom out">−</button><button id="mmFit" aria-label="Whole farm">⤢</button></div></div>
+      <div class="mm-btns"><button id="mmIn" aria-label="Zoom in">+</button><button id="mmOut" aria-label="Zoom out">−</button><button id="mmFit" aria-label="Whole farm">⤢</button><button id="mmFol" aria-label="Follow me">🎯</button></div></div>
     <p class="p-small" id="mmStatus"></p>
     <div class="mm-row"><button id="mmHere">📍 I’m here</button><button id="mmMark">🌳 Mark a tree at my spot</button></div>
     <div class="mm-row"><button id="mmWalk">🚶 Start walk</button><button id="mmStill">⌖ Stand-still reading (60 s)</button></div>
     <p class="p-small" id="mmStillMsg" aria-live="polite"></p><p class="p-small" id="mmCtl"></p>
     <p class="p-small">Walk draws a dashed path, a dot about every second. Stand-still: tap the map on the exact spot you stand (a house corner, the tank), press it and stay put for 60 seconds. It averages the GPS and saves how far GPS was from your tap. Three of these let the map line up with the real ground. Both are the phone's own readings (model, not measured).</p>
     <div id="mmPanel"></div><p class="p-small" id="mmCount"></p>
-    <p class="p-small">Brown shapes are the house and tank, the dark line is the retaining wall, grey is the road, black squares are poles (from the survey drawing; heights and shapes are not measured on site). Blue flags are the five walk stops, orange flags are open questions. Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
+    <p class="p-small">Brown shapes are the house and tank, the dark line is the retaining wall, grey is the road, black squares are poles (from the survey drawing; heights and shapes are not measured on site). Blue flags are the five walk stops, orange flags are open questions. Contour lines are every 1 metre (darker every 5 m), drawn from the 27 March 2026 survey grid: model, not measured. Numbers on the darker lines are heights in metres. Tap anywhere to see the ground height and slope there. 🎯 follows your blue dot (it also zooms in once when GPS first finds you; drag the map to stop following). Elevation here is about ${M.z.min.toFixed(0)}–${M.z.max.toFixed(0)} m.</p>`;
   const cv = $('#mmCv'), W = Math.min(main.clientWidth || 360, 560); cv.width = W; cv.height = Math.round(W * 1.05); cv.style.width = W + 'px'; cv.style.height = cv.height + 'px'; fit(cv);
   $('#mmBack').onclick = () => { stopGps(); back(); };
   const zoom = (f, cx = cv.width / 2, cy = cv.height / 2) => { const [fx, fy] = toFarm(cx, cy); M.view.k = Math.max(1, Math.min(40, M.view.k * f)); M.view.ox = cx - fx * M.view.k; M.view.oy = cy + fy * M.view.k; draw(); };
-  $('#mmIn').onclick = () => zoom(1.5); $('#mmOut').onclick = () => zoom(1 / 1.5); $('#mmFit').onclick = () => { fit(cv); draw(); };
+  $('#mmIn').onclick = () => zoom(1.5); $('#mmOut').onclick = () => zoom(1 / 1.5); $('#mmFit').onclick = () => { M.follow = false; $('#mmFol')?.classList.remove('on'); fit(cv); draw(); }; $('#mmFol').onclick = () => { M.follow = !M.follow; $('#mmFol').classList.toggle('on', !!M.follow); if (M.follow) { M.zoomed = true; if (M.gps?.farm?.inside) { M.view.k = Math.max(M.view.k, cv.width / 70); followGps(cv); draw(); } else toast('No GPS dot yet: wait for the blue dot'); } };
   const ptr = new Map(); let moved = 0, pd = 0;
   cv.onpointerdown = e => { cv.setPointerCapture(e.pointerId); ptr.set(e.pointerId, [e.offsetX, e.offsetY]); moved = 0; if (ptr.size === 2) { const [a, b] = [...ptr.values()]; pd = Math.hypot(a[0] - b[0], a[1] - b[1]); } };
   cv.onpointermove = e => { if (!ptr.has(e.pointerId)) return; const o = ptr.get(e.pointerId); ptr.set(e.pointerId, [e.offsetX, e.offsetY]);
     if (ptr.size === 2) { const [a, b] = [...ptr.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pd) zoom(d / pd, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2); pd = d; moved = 99; }
-    else { const dx = e.offsetX - o[0], dy = e.offsetY - o[1]; moved += Math.abs(dx) + Math.abs(dy); if (moved > 8) { M.view.ox += dx; M.view.oy += dy; draw(); } } };
+    else { const dx = e.offsetX - o[0], dy = e.offsetY - o[1]; moved += Math.abs(dx) + Math.abs(dy); if (moved > 8) { M.follow = false; $('#mmFol')?.classList.remove('on'); M.view.ox += dx; M.view.oy += dy; draw(); } } };
   cv.onpointerup = e => { const was = ptr.size; ptr.delete(e.pointerId); if (was === 1 && moved <= 8) tap(e.offsetX, e.offsetY); pd = 0; };
   cv.onpointercancel = e => { ptr.delete(e.pointerId); };
   $('#mmHere').onclick = () => { if (M.gpsState === 'ok' && M.gps) { M.spot = null; toast('Using GPS for your spot'); return; } if (!M.pick) return toast('Tap the map where you stand first'); M.spot = {x: M.pick.x, y: M.pick.y}; M.pick = null; paintPanel(); draw(); toast('Your spot is set (purple dot)'); };
@@ -269,7 +285,7 @@ function showTent(q) {
   draw();
 }
 function tap(sx, sy) {
-  const [x, y] = toFarm(sx, sy), reach = Math.max(1.5, 14 / M.view.k);
+  const [x, y] = toFarm(sx, sy), reach = Math.max(1.5, 20 / M.view.k);
   const tq = nearest(x, y, M.tent || [], reach); if (tq) return showTent(tq);
   const cap = nearest(x, y, M.caps || [], reach), own = !cap && nearest(x, y, M.own, reach), sv = !cap && !own && nearest(x, y, M.survey, reach);
   if (cap) return showCap(cap);
